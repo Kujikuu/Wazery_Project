@@ -18,7 +18,7 @@ namespace LightConquer_Project.Game.MsgMonster
 
         public void ExecuteAction(Role.Player client, Game.MsgMonster.MonsterRole monster)
         {
-            if (monster.Family.ID == 40121 || monster.Family.ID == 40122 || monster.Family.ID == 40123 || monster.Family.ID == 40124)
+            if (monster.Family.ID == 40121 || monster.Family.ID == 40122 || monster.Family.ID == 40123 || monster.Family.ID == 40124 || monster.Family.ID == 21060)
                 return;
             switch (monster.State)
             {
@@ -871,18 +871,18 @@ namespace LightConquer_Project.Game.MsgMonster
                 {
 
                     if (!monster.Target.Alive || monster.Target.ContainFlag(MsgServer.MsgUpdate.Flags.Fly)
-                        || !monster.Target.Owner.Socket.Alive)
+                        || !monster.Target.Owner.Socket.Alive || monster.Family.ID == 21060)
                     {
                         monster.State = MobStatus.Idle;
                         return;
                     }
                 }
-                if (monster.Target == null)
+                if (monster.Target == null || monster.Family.ID == 21060)
                 {
                     monster.State = MobStatus.Idle;
                     return;
                 }
-                if (monster.Family == null)
+                if (monster.Family == null || monster.Family.ID == 21060)
                     return;
                 short distance = MonsterView.GetDistance(monster.Target.X, monster.Target.Y, monster.X, monster.Y);
                 if (distance <= monster.Family.AttackRange || (monster.Boss == 1 && monster.HitPoints > 2000000 && distance <= 18))

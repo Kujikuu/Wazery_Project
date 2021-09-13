@@ -16,7 +16,7 @@ namespace LightConquer_Project.Game.MsgTournaments
         public static List<MsgServer.AttackHandler.coords> HideNSeek = new List<MsgServer.AttackHandler.coords>();
         public static Extensions.Time32 Stamp = Extensions.Time32.Now.AddMilliseconds(KernelThread.TournamentsStamp);
 
-        
+
         public static Dictionary<TournamentType, ITournament> Tournaments = new Dictionary<TournamentType, ITournament>();
         public static ITournament CurrentTournament;
 
@@ -40,7 +40,7 @@ namespace LightConquer_Project.Game.MsgTournaments
         internal static MsgCouples CouplesPKWar;
 
 
-        
+
         internal static void Create()
         {
 
@@ -88,7 +88,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                 }
             }
         }
-        
+
         internal unsafe static void SendSysMesage(string Messaj, Game.MsgServer.MsgMessage.ChatMode ChatType = Game.MsgServer.MsgMessage.ChatMode.TopLeft
            , Game.MsgServer.MsgMessage.MsgColor color = Game.MsgServer.MsgMessage.MsgColor.red, bool SendScren = false)
         {
@@ -100,7 +100,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                     client.Send(packet);
             }
         }
-        
+
         internal static void CheckUp(Extensions.Time32 clock)
         {
 
@@ -129,8 +129,8 @@ namespace LightConquer_Project.Game.MsgTournaments
                     CouplesPKWar.CheckUp();
                     ClanWar.CheckUp(Now64);
 
-                   
-                            
+
+
                     #region CaptureTheFlag
                     if (CaptureTheFlag.Proces == ProcesType.Alive)
                     {
@@ -138,8 +138,8 @@ namespace LightConquer_Project.Game.MsgTournaments
                         CaptureTheFlag.CheckUpX2();
                         CaptureTheFlag.SpawnFlags();
                     }
-                    #endregion                    
-                    
+                    #endregion
+
                     #region Events list
                     if (Program.Events != null)
                         foreach (Game.MsgEvents.Events E in Program.Events.ToList())
@@ -237,7 +237,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                                 var stream = rec.GetStream();
                                 string msg = "TeratoDragon has spawned and terrify the world!";
                                 Program.SendGlobalPackets.Enqueue(new MsgServer.MsgMessage(msg, "ALLUSERS", "Server", MsgServer.MsgMessage.MsgColor.red, MsgServer.MsgMessage.ChatMode.Center).GetArray(stream));
-                                Database.Server.AddMapMonster(stream, Map, 20060, 217,214, 1, 1, 1);
+                                Database.Server.AddMapMonster(stream, Map, 20060, 217, 214, 1, 1, 1);
                             }
                             SendInvitation("TeratoDragon has spawned and terrify the world!", " \nWould you like to join the fight against it?", 336, 241, 1645, 0, 60, MsgServer.MsgStaticMessage.Messages.None);
                             Console.WriteLine("TeratoDragon has spawned at" + DateTime.Now);
@@ -272,6 +272,12 @@ namespace LightConquer_Project.Game.MsgTournaments
                         }
 
                     }
+
+                    if (Database.Server.ServerMaps[1002].ContainMobID(21060))
+                        using (var rec = new ServerSockets.RecycledPacket())
+                            Database.Server.AddMapMonster(rec.GetStream(), Server.ServerMaps[1002], 21060, 450, 340, 1, 1, 1);
+
+
                     if (Now64.Minute == 45 && Now64.Second < 2)
 
                     {
@@ -359,7 +365,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                             if (X == 2)
                                 CurrentTournament = Tournaments[TournamentType.SpeedHunterGame];
                             CurrentTournament.Open();
-                            Console.WriteLine("Started Tournament " + CurrentTournament.Type.ToString() + "at " +DateTime.Now);
+                            Console.WriteLine("Started Tournament " + CurrentTournament.Type.ToString() + "at " + DateTime.Now);
 
                         }
                     }
@@ -413,13 +419,13 @@ namespace LightConquer_Project.Game.MsgTournaments
                     #region Saturday
                     case DayOfWeek.Saturday:
                         {
-							#region Elite Ladder Tournament
-							//if (DateTime.Now.Hour == 16 && DateTime.Now.Minute == 30 && Now64.Second < 0.5)
-							//{
-							//	LightConquer_Project.Game.MsgEvents.Events NextEvent = new LightConquer_Project.Game.MsgEvents.Events();
-							//	NextEvent = new EliteLadderTournament();
-							//	NextEvent.StartTournament();
-							//}
+                            #region Elite Ladder Tournament
+                            //if (DateTime.Now.Hour == 16 && DateTime.Now.Minute == 30 && Now64.Second < 0.5)
+                            //{
+                            //	LightConquer_Project.Game.MsgEvents.Events NextEvent = new LightConquer_Project.Game.MsgEvents.Events();
+                            //	NextEvent = new EliteLadderTournament();
+                            //	NextEvent.StartTournament();
+                            //}
                             #endregion
                             #region ElitePkTournament
                             if ((Now64.Hour == 18 && Now64.Minute == 59))
@@ -458,11 +464,11 @@ namespace LightConquer_Project.Game.MsgTournaments
                             }
                             #endregion
 
-                           
 
-                            
 
-                            
+
+
+
 
 
                             break;
@@ -472,7 +478,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                     #region sunday
                     case DayOfWeek.Sunday:
                         {
-                            
+
                             #region GuildWar
                             if (Now64.Hour < 17)
                             {
@@ -553,7 +559,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                                     EliteGuildWar.CompleteEndGuildWar();
                             }
                             #endregion
-                            
+
                             break;
                         }
                     #endregion
@@ -599,7 +605,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                     #region thursday
                     case DayOfWeek.Thursday:
                         {
-                            
+
                             #region CaptureTheFlag
                             if ((Now64.Hour == 16 && Now64.Minute == 00))
                             {
@@ -626,13 +632,13 @@ namespace LightConquer_Project.Game.MsgTournaments
                     #region Friday
                     case DayOfWeek.Friday:
                         {
-                            
+
 
 
 
                             break;
                         }
-                    #endregion
+                        #endregion
 
                 }
                 Stamp.Value = clock.Value + KernelThread.TournamentsStamp;
