@@ -292,6 +292,14 @@ namespace LightConquer_Project.Game.MsgServer
                         client.Teleport(430, 380, 1002);
 
 
+                    if(client.Player.Reborn < 2)
+                        if(!client.Player.ContainFlag(MsgUpdate.Flags.NewbeeAura))
+                            client.Player.AddFlag(MsgUpdate.Flags.NewbeeAura, Role.StatusFlagsBigVector32.PermanentFlag, false);
+
+                    if (client.Player.ContainFlag(MsgUpdate.Flags.NewbeeAura))
+                        if (client.Player.Reborn >= 2)
+                            client.Player.RemoveFlag(MsgUpdate.Flags.NewbeeAura);
+
                     client.Player.UpdateInventorySash(packet);
                     if (client.Player.ExpProtection > 0)
                         client.Player.CreateExpProtection(packet, 0, false);

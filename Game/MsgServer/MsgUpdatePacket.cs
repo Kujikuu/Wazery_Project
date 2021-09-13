@@ -98,6 +98,7 @@ namespace LightConquer_Project.Game.MsgServer
             Top8Weekly = 63,
             Top4Weekly = 64,
             Top2Weekly = 65,
+            NewbeeAura = 87,
             ChaintBolt = 92,
             AzureShield = 93,
             ScurvyBomb = 96,//that is use for abuse.

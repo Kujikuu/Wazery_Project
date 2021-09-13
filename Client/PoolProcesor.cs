@@ -892,6 +892,12 @@ namespace LightConquer_Project.Client
                 }
                 CheckJiangHu(client);
 
+                if (client.Player.Reborn < 2 && !client.Player.ContainFlag(MsgUpdate.Flags.NewbeeAura))
+                    client.Player.AddFlag(MsgUpdate.Flags.NewbeeAura, Role.StatusFlagsBigVector32.PermanentFlag, false);
+
+                if (client.Player.ContainFlag(MsgUpdate.Flags.NewbeeAura) && client.Player.Reborn >= 2)
+                    client.Player.RemoveFlag(MsgUpdate.Flags.NewbeeAura);
+
                 if (Database.AtributesStatus.IsWindWalker(client.Player.Class))
                 {
                     if (timer > client.Player.WindWalkerEffect.AddSeconds(7))
@@ -961,7 +967,7 @@ namespace LightConquer_Project.Client
                         client.SendSysMesage($"WinnerGuild: {MsgSchedules.GuildWar.Winner.Name}", MsgMessage.ChatMode.ContinueRightCorner, MsgMessage.MsgColor.yellow);
                         client.Player.StampGuildWarScore = timer;
                     }
-                }                
+                }
                 if (client.EventBase != null && client.EventBase.Stage == Game.MsgEvents.EventStage.Fighting)
                     if (client.EventBase.ReviveAllowed)
                     {
@@ -1919,7 +1925,7 @@ namespace LightConquer_Project.Client
 
 
 
-                if(client.MyPokerTable != null)
+                if (client.MyPokerTable != null)
                     client.MyPokerTable.TableMatch.CheckUp();
 
                 Database.VoteSystem.CheckUp(client);
@@ -2484,7 +2490,7 @@ namespace LightConquer_Project.Client
                     client.Player.OnlineMinutes += 1;
                     client.Player.OnlineStamp = Extensions.Time32.Now;
                 }
-                
+
                 if (client.Player.Map == 1005)//pk arena
                 {
                     if (!client.Player.Alive)
@@ -2519,7 +2525,7 @@ namespace LightConquer_Project.Client
 
                     }
                 }
-               
+
                 client.Player.UpdateTaoistPower(timer);
 
                 if (client.Player.X == 0 || client.Player.Y == 0)
@@ -2814,7 +2820,7 @@ namespace LightConquer_Project.Client
                     }
 
                 }
-               
+
                 if (DateTime.Now > client.LastOnlineStamp.AddMinutes(10))
                 {
                     client.LastOnlineStamp = DateTime.Now;
@@ -2960,7 +2966,7 @@ namespace LightConquer_Project.Client
                             damage -= (int)((damage * Math.Min(client.Status.Detoxication, 90)) / 100);
                             client.Player.HitPoints = Math.Max(1, (int)(client.Player.HitPoints - damage));
 
-                            jump:
+                        jump:
 
                             using (var rec = new ServerSockets.RecycledPacket())
                             {
