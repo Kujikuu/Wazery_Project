@@ -1,0 +1,800 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7EA497D7-7FB4-4900-A25A-C4DB528E58A6}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LightConquer_Project</RootNamespace>
+    <AssemblyName>LightConquer_Project</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;Jiang, PROTECTION_SPEEDHACK, Poker</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;Jiang, PROTECTION_SPEEDHACK, Poker</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Itanium'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>Itanium</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>C:\Program Files (x86)\Microsoft Visual Studio 14.0\Team Tools\Static Analysis Tools\Rule Sets\MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Itanium'">
+    <OutputPath>bin\Itanium\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>Itanium</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>FC57B12D3D0538F9C88022BE7F3DD1700F2B7F09</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Project_Terror_v2_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;Jiang, PROTECTION_SPEEDHACK, Poker, RetreatSystem</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;Jiang, PROTECTION_SPEEDHACK, Poker</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Optimize>true</Optimize>
+    <DebugSymbols>true</DebugSymbols>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>GameServer.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Extensions">
+      <HintPath>..\Extensions\bin\Debug\Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="ManagedOpenSsl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ManagedOpenSsl.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\Black_Phoenix GameServer\bin\Debug\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\Black_Phoenix GameServer\bin\Debug\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core">
+      <HintPath>..\Black_Phoenix GameServer\bin\Debug\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\Black_Phoenix GameServer\bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.Entity">
+      <HintPath>C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\System.Web.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseFunc.cs" />
+    <Compile Include="CachedAttributeInvocation.cs" />
+    <Compile Include="Client\GameClient.cs" />
+    <Compile Include="Client\PoolProcesor.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="Cryptography\AuthCryptography.cs" />
+    <Compile Include="Cryptography\BigInteger.cs" />
+    <Compile Include="Cryptography\CAST5.cs" />
+    <Compile Include="Cryptography\DHKeyExchange.cs" />
+    <Compile Include="Cryptography\DiffieHellman.cs" />
+    <Compile Include="Cryptography\TQCast5.cs" />
+    <Compile Include="Database\AchievementCollection.cs" />
+    <Compile Include="Database\ActivityTask.cs" />
+    <Compile Include="Database\ArenaTable.cs" />
+    <Compile Include="Database\AtributesStatus.cs" />
+    <Compile Include="Database\AttackCompatetor.cs" />
+    <Compile Include="Database\ChiTable.cs" />
+    <Compile Include="Database\ClanTable.cs" />
+    <Compile Include="Database\ClientItems.cs" />
+    <Compile Include="Database\ClientProficiency.cs" />
+    <Compile Include="Database\ClientSpells.cs" />
+    <Compile Include="Database\CoatStorage.cs" />
+    <Compile Include="Database\ConfiscatorTable.cs" />
+    <Compile Include="Database\DataCore.cs" />
+    <Compile Include="Database\DBActions\Read.cs" />
+    <Compile Include="Database\DBActions\ReadLine.cs" />
+    <Compile Include="Database\DBActions\Write.cs" />
+    <Compile Include="Database\DBActions\WriteLine.cs" />
+    <Compile Include="Database\DBEffects.cs" />
+    <Compile Include="Database\DBLevExp.cs" />
+    <Compile Include="Database\Disdain.cs" />
+    <Compile Include="Database\ExchangeShop.cs" />
+    <Compile Include="Database\FlowersTable.cs" />
+    <Compile Include="Database\GroupServerList.cs" />
+    <Compile Include="Database\GuildTable.cs" />
+    <Compile Include="Database\HouseTable.cs" />
+    <Compile Include="Database\InfoDemonExterminators.cs" />
+    <Compile Include="Database\InfoHeroReward.cs" />
+    <Compile Include="Database\InnerPowerTable.cs" />
+    <Compile Include="Database\ItemRefineUpgrade.cs" />
+    <Compile Include="Database\ItemType.cs" />
+    <Compile Include="Database\JianHuTable.cs" />
+    <Compile Include="Database\LeagueTable.cs" />
+    <Compile Include="Database\LotteryTable.cs" />
+    <Compile Include="Database\MagicType.cs" />
+    <Compile Include="Database\NpcServer.cs" />
+    <Compile Include="Database\PerfectionPower.cs" />
+    <Compile Include="Database\PocketInformations.cs" />
+    <Compile Include="Database\PrestigeRanking.cs" />
+    <Compile Include="Database\QuestInfo.cs" />
+    <Compile Include="Database\QuizShow.cs" />
+    <Compile Include="Database\RankItems.cs" />
+    <Compile Include="Database\RanksTable.cs" />
+    <Compile Include="Database\RebornInfomations.cs" />
+    <Compile Include="Database\RechargeShop.cs" />
+    <Compile Include="Database\RoleQuests.cs" />
+    <Compile Include="Database\Roulettes.cs" />
+    <Compile Include="Database\Server.cs" />
+    <Compile Include="Database\ServerDatabase.cs" />
+    <Compile Include="Database\Shops\ChampionShop.cs" />
+    <Compile Include="Database\Shops\EShopFile.cs" />
+    <Compile Include="Database\Shops\EShopV2File.cs" />
+    <Compile Include="Database\Shops\HonorShop.cs" />
+    <Compile Include="Database\Shops\RacePointShop.cs" />
+    <Compile Include="Database\Shops\ShopFile.cs" />
+    <Compile Include="Database\SubProfessionInfo.cs" />
+    <Compile Include="Database\SystemBanned.cs" />
+    <Compile Include="Database\SystemBannedAccount.cs" />
+    <Compile Include="Database\TaskRewards.cs" />
+    <Compile Include="Database\TeamArenaTable.cs" />
+    <Compile Include="Database\TheCrimeTable.cs" />
+    <Compile Include="Database\TitleStorage.cs" />
+    <Compile Include="Database\Tranformation.cs" />
+    <Compile Include="Database\TutorInfo.cs" />
+    <Compile Include="Database\TaskReward.cs" />
+    <Compile Include="Database\VoteSystem.cs" />
+    <Compile Include="Fan.cs" />
+    <Compile Include="Game\GamePackets.cs" />
+    <Compile Include="Game\MsgEvents\ArenaDuel.cs" />
+    <Compile Include="Game\MsgEvents\Base\EventBase.cs" />
+    <Compile Include="Game\MsgEvents\Get3Out.cs" />
+    <Compile Include="Game\MsgEvents\EliteLadderTournament.cs" />
+    <Compile Include="Game\MsgEvents\skillmaster.cs" />
+    <Compile Include="Game\MsgEvents\SkillChampionship.cs" />
+    <Compile Include="Game\MsgEvents\PassTheBomb.cs" />
+    <Compile Include="Game\MsgEvents\DragonWar.cs" />
+    <Compile Include="Game\MsgEvents\FreezeWar.cs" />
+    <Compile Include="Game\MsgEvents\Get5Out.cs" />
+    <Compile Include="Game\MsgEvents\FFa.cs" />
+    <Compile Include="Game\MsgEvents\LastManStand.cs" />
+    <Compile Include="Game\MsgEvents\MsgSchedules.cs" />
+    <Compile Include="Game\MsgEvents\LadderTournament.cs" />
+    <Compile Include="Game\MsgEvents\HalloweenInfection.cs" />
+    <Compile Include="Game\MsgEvents\TDM.cs" />
+    <Compile Include="Game\MsgFloorItem\MsgDropID.cs" />
+    <Compile Include="Game\MsgFloorItem\MsgItem.cs" />
+    <Compile Include="Game\MsgFloorItem\MsgItemPacket.cs" />
+    <Compile Include="Game\MsgMonster\ActionHandler.cs" />
+    <Compile Include="Game\MsgMonster\MobCollection.cs" />
+    <Compile Include="Game\MsgMonster\MobItemGenerator.cs" />
+    <Compile Include="Game\MsgMonster\MobStatus.cs" />
+    <Compile Include="Game\MsgMonster\MonsterFamily.cs" />
+    <Compile Include="Game\MsgMonster\MonsterSettings.cs" />
+    <Compile Include="Game\MsgMonster\MonsterRole.cs" />
+    <Compile Include="Game\MsgMonster\MonsterView.cs" />
+    <Compile Include="Game\MsgMonster\PoolProcesor.cs" />
+    <Compile Include="Game\MsgNpc\Dialog.cs" />
+    <Compile Include="Game\MsgNpc\Npc.cs" />
+    <Compile Include="Game\MsgNpc\NpcAttribute.cs" />
+    <Compile Include="Game\MsgNpc\NpcHandler.cs" />
+    <Compile Include="Game\MsgNpc\NpcID.cs" />
+    <Compile Include="Game\MsgNpc\NpcReply.cs" />
+    <Compile Include="Game\MsgNpc\NpcServerReplay.cs" />
+    <Compile Include="Game\MsgNpc\Procesor.cs" />
+    <Compile Include="Game\MsgNpc\StaticGUI.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Algoritms\Extensions.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Algoritms\Line.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Algoritms\Rectangle.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\BladeTempest.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\BurntFrost.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Calculate\FastRandom.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Calculate\Static.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Calculate\Time32.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\CheckAttack\ProcessColdTime.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\GaleBomb.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Omnipotence.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\PetAttachStatus.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Rectangle.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\RemoveStamin.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\SwirlingStorm.cs" />
+    <Compile Include="Game\MsgServer\Inbox\MsgMailList.cs" />
+    <Compile Include="Game\MsgServer\Inbox\MsgMailOperation.cs" />
+    <Compile Include="Game\MsgServer\Inbox\PrizeInfo.cs" />
+    <Compile Include="Game\MsgServer\MsgBossHarmRankingHandler.cs" />
+    <Compile Include="Game\MsgServer\MsgExchangeShopBuy.cs" />
+    <Compile Include="Game\MsgServer\MsgExchangeShop.cs" />
+    <Compile Include="Game\MsgServer\MsgArenaCrossServer.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\AddMana.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\AirKick.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Algoritms\Fan.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Algoritms\InLineAlgorithm.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Algoritms\LayTrapThree.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Algoritms\MoveCoords.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Algoritms\RandomFourLayTraps.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Algoritms\Sector.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\AttachStatus.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Attack.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\AttackStatus.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\ManiacDance.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\BlackSpot.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\BladeFlurry.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Bomb.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\BombLine.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\BreathFocus.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Calculate\AzureShield.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Calculate\BackDmg.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Calculate\Base.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Calculate\Magic.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Calculate\Physical.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Calculate\Range.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\CallPet.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\CannonBarrage.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\ChainBolt.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\ChargingVortex.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\CheckAttack\BlockRefect.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\CheckAttack\CanAttackMonster.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\CheckAttack\CanAttackNpc.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\CheckAttack\CanAttackPlayer.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\CheckAttack\CanUseSpell.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\CheckAttack\CheckFloors.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\CheckAttack\CheckGemEffects.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\CheckAttack\CheckItems.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\CheckAttack\CheckLineSpells.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Collide.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\DecLife.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\DetachStatus.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\DispatchXp.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\DragonCyclone.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\DragonWhirl.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\EffectShield.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\EffectStigma.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\EffectMP.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\FatalCross.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\FatalSpin.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\KineticSpark.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\KrakensRevenge.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\LayTrap.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Line.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\MortalDrag.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\MoveLine.cs" />
+    <Compile Include="Game\MsgServer\MsgBestOfTheWorld.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Perimeter.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Pounce.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\SectorPasive.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Sering.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\StraightFist.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Strike.cs" />
+    <Compile Include="Game\MsgServer\MsgActivityClaims.cs" />
+    <Compile Include="Game\MsgServer\MsgActivityRewardsInfo.cs" />
+    <Compile Include="Game\MsgServer\MsgActivityTasks.cs" />
+    <Compile Include="Game\MsgServer\MsgArenaInfo.cs" />
+    <Compile Include="Game\MsgServer\MsgArenaMatches.cs" />
+    <Compile Include="Game\MsgServer\MsgArenaMatchScore.cs" />
+    <Compile Include="Game\MsgServer\MsgArenaRank10.cs" />
+    <Compile Include="Game\MsgServer\MsgArenaRanking.cs" />
+    <Compile Include="Game\MsgServer\MsgArenaSignup.cs" />
+    <Compile Include="Game\MsgServer\MsgArenaWatchers.cs" />
+    <Compile Include="Game\MsgServer\MsgAtributeSet.cs" />
+    <Compile Include="Game\MsgServer\MsgAutoHunt.cs" />
+    <Compile Include="Game\MsgServer\MsgBenefitsConfig.cs" />
+    <Compile Include="Game\MsgServer\MsgBroadcast.cs" />
+    <Compile Include="Game\MsgServer\MsgBroadcastlist.cs" />
+    <Compile Include="Game\MsgServer\MsgCaptureTheFlagRankings.cs" />
+    <Compile Include="Game\MsgServer\MsgCaptureTheFlagUpdate.cs" />
+    <Compile Include="Game\MsgServer\MsgCoatStorage.cs" />
+    <Compile Include="Game\MsgServer\MsgCountryFlag.cs" />
+    <Compile Include="Game\MsgServer\MsgDetainedItem.cs" />
+    <Compile Include="Game\MsgServer\MsgElitePKBrackets.cs" />
+    <Compile Include="Game\MsgServer\MsgElitePKMatchStats.cs" />
+    <Compile Include="Game\MsgServer\MsgElitePKMatchUI.cs" />
+    <Compile Include="Game\MsgServer\MsgElitePkRanking.cs" />
+    <Compile Include="Game\MsgServer\MsgElitePKWatch.cs" />
+    <Compile Include="Game\MsgServer\MsgEmbedSocket.cs" />
+    <Compile Include="Game\MsgServer\MsgEnlight.cs" />
+    <Compile Include="Game\MsgServer\MsgEquipRefineRank.cs" />
+    <Compile Include="Game\MsgServer\MsgFamilyOccupy.cs" />
+    <Compile Include="Game\MsgServer\MsgGameUpdate.cs" />
+    <Compile Include="Game\MsgServer\MsgGoldLeaguePoint.cs" />
+    <Compile Include="Game\MsgServer\MsgGuildFastArsenal.cs" />
+    <Compile Include="Game\MsgServer\MsgHandBrickInfo.cs" />
+    <Compile Include="Game\MsgServer\MsgHeroReward.cs" />
+    <Compile Include="Game\MsgServer\MsgInnerPower.cs" />
+    <Compile Include="Game\MsgServer\MsgInnerPowerInfoStage.cs" />
+    <Compile Include="Game\MsgServer\MsgInnerPowerGui.cs" />
+    <Compile Include="Game\MsgServer\MsgInterServerIdentifier.cs" />
+    <Compile Include="Game\MsgServer\MsgItemLock.cs" />
+    <Compile Include="Game\MsgServer\MsgItemRefineOpt.cs" />
+    <Compile Include="Game\MsgServer\MsgItemRefineRecord.cs" />
+    <Compile Include="Game\MsgServer\MsgJiangHuUpdates.cs" />
+    <Compile Include="Game\MsgServer\MsgLeagueAllegianceList.cs" />
+    <Compile Include="Game\MsgServer\MsgLeagueConcubines.cs" />
+    <Compile Include="Game\MsgServer\MsgLeagueImperialCourtList.cs" />
+    <Compile Include="Game\MsgServer\MsgLeagueInfo.cs" />
+    <Compile Include="Game\MsgServer\MsgLeagueMainRank.cs" />
+    <Compile Include="Game\MsgServer\MsgLeagueMemList.cs" />
+    <Compile Include="Game\MsgServer\MsgLeagueOpt.cs" />
+    <Compile Include="Game\MsgServer\MsgLeaguePalaceGuardsList.cs" />
+    <Compile Include="Game\MsgServer\MsgLeagueRank.cs" />
+    <Compile Include="Game\MsgServer\MsgLeagueRobOpt.cs" />
+    <Compile Include="Game\MsgServer\MsgLeagueSynList.cs" />
+    <Compile Include="Game\MsgServer\MsgLeagueToken.cs" />
+    <Compile Include="Game\MsgServer\MsgLeagueTokens.cs" />
+    <Compile Include="Game\MsgServer\MsgMagicColdTime.cs" />
+    <Compile Include="Game\MsgServer\MsgMapTraps.cs" />
+    <Compile Include="Game\MsgServer\MsgNameChange.cs" />
+    <Compile Include="Game\MsgServer\MsgOfflineTG.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Oblivion.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\PhysicalSpells.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\PirateXpSkill.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Poison.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\ReceiveAttack\Monster.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\ReceiveAttack\Npc.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\ReceiveAttack\Player.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Recruit.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\RemoveBuffers.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Riding.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\ScurvyBomb.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Sector.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\SectorBack.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\ShieldBlock.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\ShurikenVortex.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Spook.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\StarArrow.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\TargetInLine.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Toxic.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Transform.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Updates\GetWeaponSpell.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Updates\IncreaseExperience.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\Updates\UpdateSpell.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\WarCry.cs" />
+    <Compile Include="Game\MsgServer\AttackHandler\WhirlwindKick.cs" />
+    <Compile Include="Game\MsgServer\MsgAchievement.cs" />
+    <Compile Include="Game\MsgServer\MsgAdvertise.cs" />
+    <Compile Include="Game\MsgServer\MsgAdvertiseGui.cs" />
+    <Compile Include="Game\MsgServer\MsgAdvertiseOpenGui.cs" />
+    <Compile Include="Game\MsgServer\MsgApprenticeInformation.cs" />
+    <Compile Include="Game\MsgServer\MsgAttackPacket.cs" />
+    <Compile Include="Game\MsgServer\MsgBlackspot.cs" />
+    <Compile Include="Game\MsgServer\MsgChiInfo.cs" />
+    <Compile Include="Game\MsgServer\MsgClaim.cs" />
+    <Compile Include="Game\MsgServer\MsgClan.cs" />
+    <Compile Include="Game\MsgServer\MsgClientInfo.cs" />
+    <Compile Include="Game\MsgServer\MsgDataPacket.cs" />
+    <Compile Include="Game\MsgServer\MsgFlagIcon.cs" />
+    <Compile Include="Game\MsgServer\MsgFlower.cs" />
+    <Compile Include="Game\MsgServer\MsgGameItem.cs" />
+    <Compile Include="Game\MsgServer\MsgGenericRanking.cs" />
+    <Compile Include="Game\MsgServer\MsgGuildArsenalInfo.cs" />
+    <Compile Include="Game\MsgServer\MsgGuildArsenalList.cs" />
+    <Compile Include="Game\MsgServer\MsgGuildInformation.cs" />
+    <Compile Include="Game\MsgServer\MsgGuildMembers.cs" />
+    <Compile Include="Game\MsgServer\MsgGuildMinDonations.cs" />
+    <Compile Include="Game\MsgServer\MsgGuildProfile.cs" />
+    <Compile Include="Game\MsgServer\MsgGuildRanks.cs" />
+    <Compile Include="Game\MsgServer\MsgHandShake.cs" />
+    <Compile Include="Game\MsgServer\MsgInterAction.cs" />
+    <Compile Include="Game\MsgServer\MsgItemExtra.cs" />
+    <Compile Include="Game\MsgServer\MsgItemUsuagePacket.cs" />
+    <Compile Include="Game\MsgServer\MsgItemView.cs" />
+    <Compile Include="Game\MsgServer\MsgJiangHuInfo.cs" />
+    <Compile Include="Game\MsgServer\MsgJiangHuRank.cs" />
+    <Compile Include="Game\MsgServer\MsgJiangHuStatus.cs" />
+    <Compile Include="Game\MsgServer\MsgJiangPkMode.cs" />
+    <Compile Include="Game\MsgServer\MsgKnownPersonInfo.cs" />
+    <Compile Include="Game\MsgServer\MsgKnowPersons.cs" />
+    <Compile Include="Game\MsgServer\MsgLoginClient.cs" />
+    <Compile Include="Game\MsgServer\MsgLoginHandler.cs" />
+    <Compile Include="Game\MsgServer\MsgLottery.cs" />
+    <Compile Include="Game\MsgServer\MsgMachine.cs" />
+    <Compile Include="Game\MsgServer\MsgMachineResponse.cs" />
+    <Compile Include="Game\MsgServer\MsgMapStatus.cs" />
+    <Compile Include="Game\MsgServer\MsgMentorApprentice.cs" />
+    <Compile Include="Game\MsgServer\MsgMessage.cs" />
+    <Compile Include="Game\MsgServer\MsgMovement.cs" />
+    <Compile Include="Game\MsgServer\MsgNewRole.cs" />
+    <Compile Include="Game\MsgServer\MsgNobility.cs" />
+    <Compile Include="Game\MsgServer\MsgOfflineTGStats.cs" />
+    <Compile Include="Game\MsgServer\MsgOsShop.cs" />
+    <Compile Include="Game\MsgServer\MsgOverheadLeagueInfo.cs" />
+    <Compile Include="Game\MsgServer\MsgPetAttack.cs" />
+    <Compile Include="Game\MsgServer\MsgPetInfo.cs" />
+    <Compile Include="Game\MsgServer\MsgPkExploit.cs" />
+    <Compile Include="Game\MsgServer\MsgPopupInfo.cs" />
+    <Compile Include="Game\MsgServer\MsgGuildProces.cs" />
+    <Compile Include="Game\MsgServer\MsgProficiency.cs" />
+    <Compile Include="Game\MsgServer\MsgQuestData.cs" />
+    <Compile Include="Game\MsgServer\MsgQuestList.cs" />
+    <Compile Include="Game\MsgServer\MsgQuizShow.cs" />
+    <Compile Include="Game\MsgServer\MsgRacePotion.cs" />
+    <Compile Include="Game\MsgServer\MsgRaceRecord.cs" />
+    <Compile Include="Game\MsgServer\MsgRefineEffect.cs" />
+    <Compile Include="Game\MsgServer\MsgReincarnation.cs" />
+    <Compile Include="Game\MsgServer\MsgRouletteCheck.cs" />
+    <Compile Include="Game\MsgServer\MsgRoulettedAddNewPlayer.cs" />
+    <Compile Include="Game\MsgServer\MsgRouletteRecord.cs" />
+    <Compile Include="Game\MsgServer\MsgRouletteNoWinner.cs" />
+    <Compile Include="Game\MsgServer\MsgRouletteOpenGui.cs" />
+    <Compile Include="Game\MsgServer\MsgRouletteAction.cs" />
+    <Compile Include="Game\MsgServer\MsgRouletteScreen.cs" />
+    <Compile Include="Game\MsgServer\MsgRouletteSetBetting.cs" />
+    <Compile Include="Game\MsgServer\MsgRouletteSignUp.cs" />
+    <Compile Include="Game\MsgServer\MsgRouletteTable.cs" />
+    <Compile Include="Game\MsgServer\MsgSameGroupServerList.cs" />
+    <Compile Include="Game\MsgServer\MsgSecondaryPassword.cs" />
+    <Compile Include="Game\MsgServer\MsgServerConfig.cs" />
+    <Compile Include="Game\MsgServer\MsgServerInfo.cs" />
+    <Compile Include="Game\MsgServer\MsgServerTimer.cs" />
+    <Compile Include="Game\MsgServer\MsgShowEquipment.cs" />
+    <Compile Include="Game\MsgServer\MsgSignIn.cs" />
+    <Compile Include="Game\MsgServer\MsgSpell.cs" />
+    <Compile Include="Game\MsgServer\MsgSpellAnimation.cs" />
+    <Compile Include="Game\MsgServer\MsgStaticMessage.cs" />
+    <Compile Include="Game\MsgServer\MsgStatus.cs" />
+    <Compile Include="Game\MsgServer\MsgStringPacket.cs" />
+    <Compile Include="Game\MsgServer\MsgSubClass.cs" />
+    <Compile Include="Game\MsgServer\MsgSuperFlag.cs" />
+    <Compile Include="Game\MsgServer\MsgTaskReward.cs" />
+    <Compile Include="Game\MsgServer\MsgTeam.cs" />
+    <Compile Include="Game\MsgServer\MsgTeamArenaInfo.cs" />
+    <Compile Include="Game\MsgServer\MsgTeamArenaInfoPlayers.cs" />
+    <Compile Include="Game\MsgServer\MsgTeamArenaMatches.cs" />
+    <Compile Include="Game\MsgServer\MsgTeamArenaMatchScore.cs" />
+    <Compile Include="Game\MsgServer\MsgTeamArenaRank10.cs" />
+    <Compile Include="Game\MsgServer\MsgTeamArenaRanking.cs" />
+    <Compile Include="Game\MsgServer\MsgTeamArenaSignup.cs" />
+    <Compile Include="Game\MsgServer\MsgTeamElitePKBrackets.cs" />
+    <Compile Include="Game\MsgServer\MsgTeamElitePKMatchStats.cs" />
+    <Compile Include="Game\MsgServer\MsgTeamElitePKMatchUI.cs" />
+    <Compile Include="Game\MsgServer\MsgTeamElitePkRanking.cs" />
+    <Compile Include="Game\MsgServer\MsgTeamEliteSetTeamName.cs" />
+    <Compile Include="Game\MsgServer\MsgTeamLeadership.cs" />
+    <Compile Include="Game\MsgServer\MsgTeamMemberInfo.cs" />
+    <Compile Include="Game\MsgServer\MsgTitle.cs" />
+    <Compile Include="Game\MsgServer\MsgTitleStorage.cs" />
+    <Compile Include="Game\MsgServer\MsgTrade.cs" />
+    <Compile Include="Game\MsgServer\MsgTradePartner.cs" />
+    <Compile Include="Game\MsgServer\MsgTradePartnerInfo.cs" />
+    <Compile Include="Game\MsgServer\MsgTransformFairy.cs" />
+    <Compile Include="Game\MsgServer\MsgUpdateItem.cs" />
+    <Compile Include="Game\MsgServer\MsgUpdatePacket.cs" />
+    <Compile Include="Game\MsgServer\MsgUpdateProfExperience.cs" />
+    <Compile Include="Game\MsgServer\MsgUserAbilityScore.cs" />
+    <Compile Include="Game\MsgServer\MsgUserTotalRefineLev.cs" />
+    <Compile Include="Game\MsgServer\MsgVipHandler.cs" />
+    <Compile Include="Game\MsgServer\MsgVipStatus.cs" />
+    <Compile Include="Game\MsgServer\MsgWarehouse.cs" />
+    <Compile Include="Game\MsgServer\MsgWeather.cs" />
+    <Compile Include="Game\MsgServer\Poker\Card.cs" />
+    <Compile Include="Game\MsgServer\Poker\HandAnalysis.cs" />
+    <Compile Include="Game\MsgServer\Poker\HandEvaluator.cs" />
+    <Compile Include="Game\MsgServer\Poker\HandIterator.cs" />
+    <Compile Include="Game\MsgServer\Poker\Match.cs" />
+    <Compile Include="Game\MsgServer\Poker\MsgPokerDrawCards.cs" />
+    <Compile Include="Game\MsgServer\Poker\MsgPokerHand.cs" />
+    <Compile Include="Game\MsgServer\Poker\MsgPokerJoinTable.cs" />
+    <Compile Include="Game\MsgServer\Poker\MsgPokerPlayerInfo.cs" />
+    <Compile Include="Game\MsgServer\Poker\MsgPokerPlayerTurn.cs" />
+    <Compile Include="Game\MsgServer\Poker\MsgShowHandKick.cs" />
+    <Compile Include="Game\MsgServer\Poker\MsgShowHandLostInfo.cs" />
+    <Compile Include="Game\MsgServer\Poker\MsgUpdateTableLocation.cs" />
+    <Compile Include="Game\MsgServer\Poker\PocketCardsGenerator.cs" />
+    <Compile Include="Game\MsgServer\Poker\PokerLeaveTable.cs" />
+    <Compile Include="Game\MsgServer\Poker\PokerRoundResult.cs" />
+    <Compile Include="Game\MsgServer\Poker\PokerShowAllCards.cs" />
+    <Compile Include="Game\MsgServer\Poker\Table.cs" />
+    <Compile Include="Game\MsgServer\RetreatChi\MsgTrainingVitalityExpiryNotify.cs" />
+    <Compile Include="Game\MsgServer\RetreatChi\MsgTrainingVitalityProtect.cs" />
+    <Compile Include="Game\MsgServer\RetreatChi\MsgTrainingVitalityProtectInfo.cs" />
+    <Compile Include="Game\MsgTournaments\ITournament.cs" />
+    <Compile Include="Game\MsgTournaments\KillerSystem.cs" />
+    <Compile Include="Game\MsgTournaments\MsgClanWar.cs" />
+    <Compile Include="Game\MsgTournaments\MsgSpeedHunterGame.cs" />
+    <Compile Include="Game\MsgTournaments\MsgCheckLine.cs" />
+    <Compile Include="Game\MsgTournaments\MsgCouples.cs" />
+    <Compile Include="Game\MsgTournaments\MsgArena.cs" />
+    <Compile Include="Game\MsgTournaments\MsgBroadcast.cs" />
+    <Compile Include="Game\MsgTournaments\MsgCaptureTheFlag.cs" />
+    <Compile Include="Game\MsgTournaments\MsgClassPKWar.cs" />
+    <Compile Include="Game\MsgTournaments\MsgDisCity.cs" />
+    <Compile Include="Game\MsgTournaments\MsgEliteGuildWar.cs" />
+    <Compile Include="Game\MsgTournaments\MsgEliteTournament.cs" />
+    <Compile Include="Game\MsgTournaments\MsgGuildWar.cs" />
+    <Compile Include="Game\MsgTournaments\MsgMonthlyPKChampion.cs" />
+    <Compile Include="Game\MsgTournaments\MsgNone.cs" />
+    <Compile Include="Game\MsgTournaments\MsgTowerOfMystery.cs" />
+    <Compile Include="Game\MsgTournaments\MsgWeeklyPKChampion.cs" />
+    <Compile Include="Game\MsgTournaments\MsgTeamArena.cs" />
+    <Compile Include="Game\MsgTournaments\MsgTeamPkTournament.cs" />
+    <Compile Include="Game\MsgTournaments\MsgTreasureThief.cs" />
+    <Compile Include="Game\MsgTournaments\ProcesType.cs" />
+    <Compile Include="Game\MsgTournaments\TournamentType.cs" />
+    <Compile Include="KernelThread.cs" />
+    <Compile Include="MapGroupThread.cs" />
+    <Compile Include="MsgInterServer\Core.cs" />
+    <Compile Include="MsgInterServer\Instance\CrossElitePKTournament.cs" />
+    <Compile Include="MsgInterServer\Instance\Guilds.cs" />
+    <Compile Include="MsgInterServer\Instance\Union.cs" />
+    <Compile Include="MsgInterServer\Packets\AchievementInfo.cs" />
+    <Compile Include="MsgInterServer\Packets\CheckTransfer.cs" />
+    <Compile Include="MsgInterServer\Packets\ChiInfo.cs" />
+    <Compile Include="MsgInterServer\Packets\ConnectionInfo.cs" />
+    <Compile Include="MsgInterServer\Packets\GuildInfo.cs" />
+    <Compile Include="MsgInterServer\Packets\CreateItem.cs" />
+    <Compile Include="MsgInterServer\Packets\InnerPowerInfo.cs" />
+    <Compile Include="MsgInterServer\Packets\JiangHuInfo.cs" />
+    <Compile Include="MsgInterServer\Packets\RoleInfo.cs" />
+    <Compile Include="MsgInterServer\Packets\ServerInfo.cs" />
+    <Compile Include="MsgInterServer\Packets\SpecialTitles.cs" />
+    <Compile Include="MsgInterServer\Packets\UnionInfo.cs" />
+    <Compile Include="MsgInterServer\PacketTypes.cs" />
+    <Compile Include="MsgInterServer\PipeClient.cs" />
+    <Compile Include="MsgInterServer\PipeServer.cs" />
+    <Compile Include="MsgInterServer\StaticConnexion.cs" />
+    <Compile Include="MyConsole.cs" />
+    <Compile Include="MyMath.cs" />
+    <Compile Include="MyRandom.cs" />
+    <Compile Include="PacketAttribute.cs" />
+    <Compile Include="Panels\AccountsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\AccountsForm.Designer.cs">
+      <DependentUpon>AccountsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\Chat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\Chat.Designer.cs">
+      <DependentUpon>Chat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\Chi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\Chi.designer.cs">
+      <DependentUpon>Chi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\Controlpanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\Controlpanel.designer.cs">
+      <DependentUpon>Controlpanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\JiangHu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\JiangHu.designer.cs">
+      <DependentUpon>JiangHu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\Mysql\DataHolderTable.cs" />
+    <Compile Include="Panels\Mysql\Mongo.cs" />
+    <Compile Include="Panels\Mysql\MySqlCommand.cs" />
+    <Compile Include="Panels\Mysql\MySqlExtensions.cs" />
+    <Compile Include="Panels\Mysql\MySqlReader.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RivestCipher5.cs" />
+    <Compile Include="Role\ClientTransform.cs" />
+    <Compile Include="Role\Clone.cs" />
+    <Compile Include="Role\Core.cs" />
+    <Compile Include="Role\Flags.cs" />
+    <Compile Include="Role\FloorSpell.cs" />
+    <Compile Include="Role\GameMap.cs" />
+    <Compile Include="Role\IMapObj.cs" />
+    <Compile Include="Role\Instance\Activeness.cs" />
+    <Compile Include="Role\Instance\AddMode.cs" />
+    <Compile Include="Role\Instance\Associate.cs" />
+    <Compile Include="Role\Instance\Chi.cs" />
+    <Compile Include="Role\Instance\Clan.cs" />
+    <Compile Include="Role\Instance\Confiscator.cs" />
+    <Compile Include="Role\Instance\DemonExterminator.cs" />
+    <Compile Include="Role\Instance\Equip.cs" />
+    <Compile Include="Role\Instance\ExchangeShop.cs" />
+    <Compile Include="Role\Instance\Flowers.cs" />
+    <Compile Include="Role\Instance\Guild.cs" />
+    <Compile Include="Role\Instance\HeroRewards.cs" />
+    <Compile Include="Role\Instance\House.cs" />
+    <Compile Include="Role\Instance\InnerPower.cs" />
+    <Compile Include="Role\Instance\Inventory.cs" />
+    <Compile Include="Role\Instance\JiangHu.cs" />
+    <Compile Include="Role\Instance\Nobility.cs" />
+    <Compile Include="Role\Instance\PerfectionEffect.cs" />
+    <Compile Include="Role\Instance\Proficiency.cs" />
+    <Compile Include="Role\Instance\Quests.cs" />
+    <Compile Include="Role\Instance\Union.cs" />
+    <Compile Include="Role\Instance\Wardrobe.cs" />
+    <Compile Include="Role\KOBoard.cs" />
+    <Compile Include="Role\MyMath.cs" />
+    <Compile Include="Role\RoleStatus.cs" />
+    <Compile Include="Role\Instance\SlotMachine.cs" />
+    <Compile Include="Role\Instance\Spell.cs" />
+    <Compile Include="Role\Instance\SubClass.cs" />
+    <Compile Include="Role\Instance\Team.cs" />
+    <Compile Include="Role\Instance\Trade.cs" />
+    <Compile Include="Role\Instance\Vendor.cs" />
+    <Compile Include="Role\Instance\Warehouse.cs" />
+    <Compile Include="Role\MapObjectType.cs" />
+    <Compile Include="Role\Player.cs" />
+    <Compile Include="Role\RoleView.cs" />
+    <Compile Include="Role\SobNpc.cs" />
+    <Compile Include="Role\StaticRole.cs" />
+    <Compile Include="Role\Statue.cs" />
+    <Compile Include="Role\StatusFlagsBigVector32.cs" />
+    <Compile Include="ConcurrentSmartThreadQueue.cs" />
+    <Compile Include="ServerSockets\BruteforceProtection.cs" />
+    <Compile Include="ServerSockets\LoginController.cs" />
+    <Compile Include="ServerSockets\Packet.cs" />
+    <Compile Include="ServerSockets\PacketRecycle.cs" />
+    <Compile Include="ServerSockets\ReceiveBuffer.cs" />
+    <Compile Include="ServerSockets\SecuritySocket.cs" />
+    <Compile Include="ServerSockets\ServerSocket.cs" />
+    <Compile Include="ServerSockets\SocketThread.cs" />
+    <Compile Include="SharedExtensions.cs" />
+    <Compile Include="ShowChatItems.cs" />
+    <Compile Include="ThreadPoll.cs" />
+    <Compile Include="ThreadSafeRandom.cs" />
+    <Compile Include="TransferCipher.cs" />
+    <Compile Include="UnlimitedArena.cs" />
+    <Compile Include="WindowsAPI\BinaryFile.cs" />
+    <Compile Include="WindowsAPI\IniFile.cs" />
+    <Compile Include="WindowsAPI\Kernel32.cs" />
+    <Compile Include="WindowsAPI\MyString.cs" />
+    <Compile Include="SendGlobalPacket.cs" />
+    <Compile Include="WindowsAPI\ws2_32.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <Compile Include="Game\MsgServer\AttackHandler\Auras.cs" />
+    <Compile Include="Database\NobilityTable.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Panels\AccountsForm.resx">
+      <DependentUpon>AccountsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\Chat.en.resx">
+      <DependentUpon>Chat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\Chat.resx">
+      <DependentUpon>Chat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\Chi.resx">
+      <DependentUpon>Chi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\Controlpanel.resx">
+      <DependentUpon>Controlpanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\JiangHu.resx">
+      <DependentUpon>JiangHu.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GameServer.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
