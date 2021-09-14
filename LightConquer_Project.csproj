@@ -582,6 +582,7 @@
     <Compile Include="Game\MsgTournaments\ITournament.cs" />
     <Compile Include="Game\MsgTournaments\KillerSystem.cs" />
     <Compile Include="Game\MsgTournaments\MsgClanWar.cs" />
+    <Compile Include="Game\MsgTournaments\MsgDBShower.cs" />
     <Compile Include="Game\MsgTournaments\MsgSpeedHunterGame.cs" />
     <Compile Include="Game\MsgTournaments\MsgCheckLine.cs" />
     <Compile Include="Game\MsgTournaments\MsgCouples.cs" />

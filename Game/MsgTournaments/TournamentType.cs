@@ -24,10 +24,10 @@ namespace LightConquer_Project.Game.MsgTournaments
         CouplesPK = 14, // WORK
         KillTheCaptain = 15,
         DragonIsland = 16,
-        SoulShackle = 17, 
+        SoulShackle = 17,
         KillTheDragon = 18,
-        CupRoom= 19,
-        DBShower= 20,
+        CupRoom = 19,
+        DBShower = 20,
         SkillTournament = 21,
         Count = 22,
         QuizShow = 150

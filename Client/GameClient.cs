@@ -416,6 +416,9 @@ namespace LightConquer_Project.Client
                 bool suc;
                 int nextid = Database.Server.ItemsBase[item.ITEM_ID].Level + 5;
                 uint itemid = Database.Server.ItemsBase[item.ITEM_ID].ID;
+                if (Player.Reborn > 1)
+                    continue;
+
                 if (nextid < Player.Level
                     && itemid != 1050000
                     && itemid != 1050001
@@ -842,7 +845,7 @@ namespace LightConquer_Project.Client
 #if NewActionHelperPOP
                 if (Player.Experience >= Database.Server.LevelInfo[Database.DBLevExp.Sort.User][(byte)Player.Level].Experience)
                 {
-                    Project_Terror_v2.Database.ActionHelper.LvlAction.Invoke(stream, this);
+                    LightConquer_Project.Database.ActionHelper.LvlAction.Invoke(stream, this);
                 }
 #else
                 while (Player.Experience >= Database.Server.LevelInfo[Database.DBLevExp.Sort.User][(byte)Player.Level].Experience)
@@ -875,7 +878,7 @@ namespace LightConquer_Project.Client
 #if NewActionHelperPOP
             if (Player.Experience >= Database.Server.LevelInfo[Database.DBLevExp.Sort.User][(byte)Player.Level].Experience)
             {
-                Project_Terror_v2.Database.ActionHelper.LvlAction.Invoke(stream, this);
+                LightConquer_Project.Database.ActionHelper.LvlAction.Invoke(stream, this);
             }
 #else
             while (Player.Experience >= Database.Server.LevelInfo[Database.DBLevExp.Sort.User][(byte)Player.Level].Experience)
