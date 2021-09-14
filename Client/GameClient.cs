@@ -416,6 +416,9 @@ namespace LightConquer_Project.Client
                 bool suc;
                 int nextid = Database.Server.ItemsBase[item.ITEM_ID].Level + 5;
                 uint itemid = Database.Server.ItemsBase[item.ITEM_ID].ID;
+                if (Player.Reborn > 1)
+                    continue;
+
                 if (nextid < Player.Level
                     && itemid != 1050000
                     && itemid != 1050001

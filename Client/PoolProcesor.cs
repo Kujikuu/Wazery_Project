@@ -890,7 +890,7 @@ namespace LightConquer_Project.Client
                         client.Player.ConquerPointsDropStamp = DateTime.FromBinary(0);
                     }
                 }
-                CheckJiangHu(client);
+                //CheckJiangHu(client);
 
                 if (client.Player.Reborn < 2 && !client.Player.ContainFlag(MsgUpdate.Flags.NewbeeAura))
                     client.Player.AddFlag(MsgUpdate.Flags.NewbeeAura, Role.StatusFlagsBigVector32.PermanentFlag, false);
