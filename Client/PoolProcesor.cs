@@ -2824,7 +2824,7 @@ namespace LightConquer_Project.Client
                 if (DateTime.Now > client.LastOnlineStamp.AddMinutes(10))
                 {
                     client.LastOnlineStamp = DateTime.Now;
-                    client.SendSysMesage("You got 1 online point. Total: [" + client.Player.OnlinePoints + "]", Game.MsgServer.MsgMessage.ChatMode.TopLeftSystem, Game.MsgServer.MsgMessage.MsgColor.red);
+                    client.Player.SendGlobalMesage($"{client.Player.Name} - got 1 O-Points for being online for [10 minutes]", Game.MsgServer.MsgMessage.ChatMode.TopLeftSystem, Game.MsgServer.MsgMessage.MsgColor.red);
                     client.Player.OnlinePoints++;
                 }
 

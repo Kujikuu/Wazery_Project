@@ -1459,6 +1459,7 @@ namespace LightConquer_Project.Game.MsgMonster
 
                                     #region DragonBall
                                     if (ID == 1088000 && killer != null)
+                                    {
                                         if (killer.Player.VipLevel == 6 && killer.Player.LootDragonBall)
                                         {
                                             if (killer.Inventory.HaveSpace(1))
@@ -1486,10 +1487,13 @@ namespace LightConquer_Project.Game.MsgMonster
 
                                             }
                                         }
+                                        SendSysMesage($"A DB has dropped from {Family.Name} Killed by {killer.Name}");
+                                    }
                                     #endregion
 
                                     #region mets
                                     if (ID == 1088001 && killer != null)
+                                    {
                                         if (killer.Player.VipLevel == 6 && killer.Player.LootMetero)
                                         {
                                             if (killer.Inventory.HaveSpace(1))
@@ -1506,10 +1510,9 @@ namespace LightConquer_Project.Game.MsgMonster
                                             else
                                                 killer.SendSysMesage("A monster you killed has dropped a Meteors at (" + xx + "," + yy + ")!", MsgMessage.ChatMode.Talk);
                                             killer.Player.AddMapEffect(stream, xx, yy, "zf2-e248");
-
-
-
                                         }
+                                        SendSysMesage($"A DB has dropped from {Family.Name} Killed by {killer.Name}");
+                                    }
                                     #endregion
                                     if (killer.Map.AddGroundItem(ref xx, ref yy) && drop)
                                     {

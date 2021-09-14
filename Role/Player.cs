@@ -386,7 +386,15 @@ namespace LightConquer_Project.Role
         //internal DateTime BlockMovement;
         internal uint ArenaCPS;
         internal int DragonPills = 0;
-
+        public void SendGlobalMesage(string Messaj, Game.MsgServer.MsgMessage.ChatMode ChatType = Game.MsgServer.MsgMessage.ChatMode.TopLeft
+          , Game.MsgServer.MsgMessage.MsgColor color = Game.MsgServer.MsgMessage.MsgColor.red)
+        {
+            using (var rec = new ServerSockets.RecycledPacket())
+            {
+                var stream = rec.GetStream();
+                Program.SendGlobalPackets.Enqueue(new Game.MsgServer.MsgMessage(Messaj, color, ChatType).GetArray(stream));
+            }
+        }
         internal void SolveCaptcha()
         {
             Owner.MobsKilled = 0;
