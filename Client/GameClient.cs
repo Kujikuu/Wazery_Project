@@ -842,7 +842,7 @@ namespace LightConquer_Project.Client
 #if NewActionHelperPOP
                 if (Player.Experience >= Database.Server.LevelInfo[Database.DBLevExp.Sort.User][(byte)Player.Level].Experience)
                 {
-                    Project_Terror_v2.Database.ActionHelper.LvlAction.Invoke(stream, this);
+                    LightConquer_Project.Database.ActionHelper.LvlAction.Invoke(stream, this);
                 }
 #else
                 while (Player.Experience >= Database.Server.LevelInfo[Database.DBLevExp.Sort.User][(byte)Player.Level].Experience)
@@ -875,7 +875,7 @@ namespace LightConquer_Project.Client
 #if NewActionHelperPOP
             if (Player.Experience >= Database.Server.LevelInfo[Database.DBLevExp.Sort.User][(byte)Player.Level].Experience)
             {
-                Project_Terror_v2.Database.ActionHelper.LvlAction.Invoke(stream, this);
+                LightConquer_Project.Database.ActionHelper.LvlAction.Invoke(stream, this);
             }
 #else
             while (Player.Experience >= Database.Server.LevelInfo[Database.DBLevExp.Sort.User][(byte)Player.Level].Experience)

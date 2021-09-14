@@ -89,39 +89,39 @@ namespace LightConquer_Project.Role
             if ((obj.Y >= 0 && obj.Y < Height) == false)
                 return false;
 
-                BlockSet(obj.X, obj.Y).RemoveObject<T>(obj);
+            BlockSet(obj.X, obj.Y).RemoveObject<T>(obj);
 
             return true;
         }
         public IEnumerable<IMapObj> Roles(MapObjectType typ, int X, int Y, Predicate<IMapObj> P = null)
         {
-          
-                for (int x = Math.Max(Block(X) - 1, 0); x <= Block(X) + 1 && x < GetWidthOfBlock(); x++)
-                    for (int y = Math.Max(Block(Y) - 1, 0); y <= Block(Y) + 1 && y < GetHeightOfBlock(); y++)
+
+            for (int x = Math.Max(Block(X) - 1, 0); x <= Block(X) + 1 && x < GetWidthOfBlock(); x++)
+                for (int y = Math.Max(Block(Y) - 1, 0); y <= Block(Y) + 1 && y < GetHeightOfBlock(); y++)
+                {
+                    var list = m_setBlock[x, y].GetObjects(typ);
+                    if (list != null)
                     {
-                        var list = m_setBlock[x, y].GetObjects(typ);
-                        if (list != null)
+                        for (int i = 0; i < list.Count; i++)
                         {
-                            for (int i = 0; i < list.Count; i++)
+                            if (i >= list.Count)
+                                break;
+                            var element = list[i];
+                            if (element != null)
                             {
-                                if (i >= list.Count)
-                                    break;
-                                var element = list[i];
-                                if (element != null)
+                                if (P != null)
                                 {
-                                    if (P != null)
-                                    {
-                                        if (P(element))
-                                            yield return element;
-                                    }
-                                    else if (element != null)
+                                    if (P(element))
                                         yield return element;
                                 }
+                                else if (element != null)
+                                    yield return element;
                             }
                         }
                     }
-            
-           
+                }
+
+
         }
         public int CountRoles(MapObjectType typ, int X, int Y)
         {
@@ -137,7 +137,7 @@ namespace LightConquer_Project.Role
         public IEnumerable<IMapObj> GetAllMapRoles(MapObjectType typ, Predicate<IMapObj> P = null)
         {
             for (int x = 0; x < GetWidthOfBlock(); x++)
-                for (int y = 0; y  < GetHeightOfBlock(); y++)
+                for (int y = 0; y < GetHeightOfBlock(); y++)
                 {
                     var list = m_setBlock[x, y].GetObjects(typ);
                     for (int i = 0; i < list.Count; i++)
@@ -185,7 +185,7 @@ namespace LightConquer_Project.Role
                 }
         }
         public bool TryGetObject<T>(uint UID, MapObjectType typ, int X, int Y, out T obj)
-            where T: IMapObj
+            where T : IMapObj
         {
             for (int x = Math.Max(Block(X) - 1, 0); x <= Block(X) + 1 && x < GetWidthOfBlock(); x++)
                 for (int y = Math.Max(Block(Y) - 1, 0); y <= Block(Y) + 1 && y < GetHeightOfBlock(); y++)
@@ -193,7 +193,7 @@ namespace LightConquer_Project.Role
                     var list = m_setBlock[x, y];
                     if (list.TryGetObject<T>(typ, UID, out obj))
                         return true;
-                      
+
                 }
             obj = default(T);
             return false;
@@ -217,16 +217,16 @@ namespace LightConquer_Project.Role
         private Extensions.MyList<Role.IMapObj>[] Objects;
         public ViewPtr()
         {
-            Objects = new  Extensions.MyList<IMapObj>[(int)MapObjectType.Count];
+            Objects = new Extensions.MyList<IMapObj>[(int)MapObjectType.Count];
             for (int x = 0; x < (int)MapObjectType.Count; x++)
-                Objects[x] = new  Extensions.MyList<IMapObj>();
+                Objects[x] = new Extensions.MyList<IMapObj>();
         }
 
-      
+
         public void AddObject<T>(T obj)
              where T : IMapObj
         {
-         
+
             Objects[(int)obj.ObjType].Add(obj);
         }
 
@@ -301,18 +301,18 @@ namespace LightConquer_Project.Role
     {
         public uint RecordSteedRace = 0;
 
-        public static sbyte[] XDir = new sbyte[] 
-        { 
+        public static sbyte[] XDir = new sbyte[]
+        {
             -1, -2, -2, -1, 1, 2, 2, 1,
-             0, -2, -2, -2, 0, 2, 2, 2, 
+             0, -2, -2, -2, 0, 2, 2, 2,
             -1, -2, -2, -1, 1, 2, 2, 1,
              0, -1, -1, -1, 0, 1, 1, 1,
         };
-        public static sbyte[] YDir = new sbyte[] 
+        public static sbyte[] YDir = new sbyte[]
         {
             2,  1, -1, -2, -2, -1, 1, 2,
-            2,  2,  0, -2, -2, -2, 0, 2, 
-            2,  1, -1, -2, -2, -1, 1, 2, 
+            2,  2,  0, -2, -2, -2, 0, 2,
+            2,  1, -1, -2, -2, -1, 1, 2,
             1,  1,  0, -1, -1, -1, 0, 1
         };
 
@@ -423,14 +423,14 @@ namespace LightConquer_Project.Role
         public void AddMagnolia(ServerSockets.Packet stream, uint Quality)
         {
             bool Location = false;
-            
+
             if (Magnolia != null)
             {
                 if (Magnolia.X == 99)
                     Location = true;
                 RemoveNpc(Magnolia, stream);
             }
-             Magnolia = Game.MsgNpc.Npc.Create();
+            Magnolia = Game.MsgNpc.Npc.Create();
             if (Location)
             {
                 Magnolia.UID = 999900;
@@ -446,13 +446,13 @@ namespace LightConquer_Project.Role
             Magnolia.ObjType = MapObjectType.Npc;
             Magnolia.NpcType = Flags.NpcType.Talker;
             uint mesh = 0;
-            if(Quality% 10 == 7)
+            if (Quality % 10 == 7)
                 mesh = 10;
-            else if(Quality% 10 == 8)
+            else if (Quality % 10 == 8)
                 mesh = 20;
-            if(Quality% 10 == 9)
+            if (Quality % 10 == 9)
                 mesh = 30;
-            if(Quality% 10 == 0)
+            if (Quality % 10 == 0)
                 mesh = 40;
             Magnolia.Mesh = (ushort)(19340 + mesh);
             Magnolia.Map = this.ID;
@@ -478,7 +478,7 @@ namespace LightConquer_Project.Role
                     cells[newx, newy] |= MapFlagType.Item;
                     View.EnterMap<Role.IMapObj>(Item);
 
-                  
+
                     using (var rec = new ServerSockets.RecycledPacket())
                     {
                         var stream = rec.GetStream();
@@ -584,7 +584,7 @@ namespace LightConquer_Project.Role
         {
             if (bounds.Width > X && this.bounds.Height > Y)
             {
-           //     Console.WriteLine(cells[X, Y]);
+                //     Console.WriteLine(cells[X, Y]);
                 return (cells[X, Y] & MapFlagType.Valid) == MapFlagType.Valid;
             }
             return false;
@@ -612,7 +612,7 @@ namespace LightConquer_Project.Role
                 Console.WriteLine("Problem monsters on map " + ID.ToString());
             }
         }
-        public bool SearchNpcInScreen(uint UID, ushort X, ushort Y, out  Game.MsgNpc.Npc obj)
+        public bool SearchNpcInScreen(uint UID, ushort X, ushort Y, out Game.MsgNpc.Npc obj)
         {
             if (View.TryGetObject<Game.MsgNpc.Npc>(UID, MapObjectType.Npc, X, Y, out obj))
             {
@@ -621,7 +621,7 @@ namespace LightConquer_Project.Role
             obj = default(Game.MsgNpc.Npc);
             return false;
         }
-       
+
 
         public uint ID { get; private set; }
         public GameMap(int width, int height, int m_id)
@@ -648,11 +648,11 @@ namespace LightConquer_Project.Role
         public static Dictionary<int, string> MapContents = new Dictionary<int, string>();
         public static bool CheckMap(uint ID)
         {
-/*#if TEST
-            if (!Database.Server.ServerMaps.ContainsKey(ID))
-                Database.Server.ServerMaps.Add(ID, new GameMap(100, 100, ID));
-            return true;
-#endif*/
+            /*#if TEST
+                        if (!Database.Server.ServerMaps.ContainsKey(ID))
+                            Database.Server.ServerMaps.Add(ID, new GameMap(100, 100, ID));
+                        return true;
+            #endif*/
             if (!Database.Server.ServerMaps.ContainsKey(ID))
             {
                 try
@@ -660,7 +660,7 @@ namespace LightConquer_Project.Role
                     LoadMap((int)ID, MapContents[(int)ID]);
                     return true;
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                     Console.WriteLine(e.ToString());
                     Console.WriteLine("MapID = " + ID + " not exist.");
@@ -742,7 +742,7 @@ namespace LightConquer_Project.Role
                     LoadMap(44462, mapFile, 10090);
                     LoadMap(44463, mapFile, 10090);
                 }
-                
+
                 if (folded.Key == 700)
                 {
                     LoadMap(64, mapFile, 700);
@@ -755,7 +755,7 @@ namespace LightConquer_Project.Role
                 if (folded.Key == 3846)
                 {
                     LoadMap(10166, mapFile, 3846);
-                } 
+                }
                 if (folded.Key == 1507)// event maps
                 {
                     LoadMap(9997, mapFile, 1507);
@@ -783,7 +783,7 @@ namespace LightConquer_Project.Role
         public uint MapColor = 0;
 
 
-    
+
 
         public int[,] FloorType;
         public int[,] Altitude;
@@ -791,12 +791,12 @@ namespace LightConquer_Project.Role
         {
             try
             {
-               
+
 
                 GameMap ourInst;
                 using (var rdr = new BinaryReader(new FileStream(Path.Combine(Program.ServerConfig.CO2Folder, mapFile), FileMode.Open)))
                 {
-                   
+
                     rdr.ReadBytes(268);
                     ourInst = new GameMap(rdr.ReadInt32(), rdr.ReadInt32(), id);
                     ourInst.MonstersColletion = new Game.MsgMonster.MobCollection((uint)id);
@@ -813,7 +813,7 @@ namespace LightConquer_Project.Role
                     {
                         for (int x = 0; x < ourInst.bounds.Width; x++)
                         {
-                          
+
                             ourInst.cells[x, y] = (rdr.ReadInt16() == 0) ? MapFlagType.Valid : MapFlagType.None;
                             if (id == 1038)
                             {
@@ -825,7 +825,7 @@ namespace LightConquer_Project.Role
                                 rdr.ReadInt16();
                                 rdr.ReadInt16();
                             }
-                          
+
                         }
                         rdr.ReadInt32();
                     }
@@ -846,7 +846,7 @@ namespace LightConquer_Project.Role
             }
             catch (FileNotFoundException)
             {
-               // Console.WriteLine("\tMap not found: " + id + " - " + mapFile + "");
+                // Console.WriteLine("\tMap not found: " + id + " - " + mapFile + "");
             }
             catch (Exception e)
             {
@@ -994,6 +994,19 @@ namespace LightConquer_Project.Role
             }
         }
 
+        public void GetRandCoord(ref ushort x, ref ushort y, ushort start_x, ushort start_y, ushort max_x, ushort max_y)
+        {
+            lock (SyncRoot)
+            {
+                do
+                {
+                    x = (ushort)Program.GetRandom.Next(20, (ushort)(bounds.Width - 1));
+                    y = (ushort)Program.GetRandom.Next(20, (ushort)(bounds.Height - 1));
+                }
+                while ((cells[x, y] & MapFlagType.Valid) != MapFlagType.Valid && x >= start_x && x <= max_x && y >= start_y && y <= max_y);
+            }
+        }
+
         public bool IsFlagPresent(int x, int y, MapFlagType flag)
         {
             if (x > 0 && y > 0 && x < bounds.Width && y < bounds.Height)
@@ -1037,7 +1050,7 @@ namespace LightConquer_Project.Role
                         {
                             x = ax;
                             y = ay;
-                          
+
                             cells[ax, ay] |= MapFlagType.Item;
 
                             return true;
@@ -1048,7 +1061,7 @@ namespace LightConquer_Project.Role
                 y = 0;
                 return false;
             }
-          
+
             cells[x, y] |= MapFlagType.Item;
             return true;
         }
@@ -1071,7 +1084,7 @@ namespace LightConquer_Project.Role
                             {
                                 x = ax;
                                 y = ay;
-                          
+
                                 cells[ax, ay] |= MapFlagType.Item;
 
                                 return true;
@@ -1083,7 +1096,7 @@ namespace LightConquer_Project.Role
                 y = 0;
                 return false;
             }
-        
+
             cells[x, y] |= MapFlagType.Item;
             return true;
         }
