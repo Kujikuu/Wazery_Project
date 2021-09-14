@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31612.314
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightConquer_Project", "LightConquer_Project.csproj", "{7EA497D7-7FB4-4900-A25A-C4DB528E58A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccServer", "..\# AccServer\AccServer.csproj", "{2986716A-A423-46D7-8121-72C12B15DBC4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccServer", "..\AccServer\AccServer.csproj", "{2986716A-A423-46D7-8121-72C12B15DBC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
