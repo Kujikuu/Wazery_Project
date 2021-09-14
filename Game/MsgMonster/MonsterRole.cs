@@ -564,30 +564,30 @@ namespace LightConquer_Project.Game.MsgMonster
                             if (Role.Core.Rate(1, 10000))
                             {
                                 DropItemID(killer, 720679, stream);
-                                killer.CreateBoxDialog("You killed a Heaven Demon and found a Frost CP Pack (69000CPs)!");
-                                Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " found a Frost CP Pack (69000CPs)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
+                                killer.CreateBoxDialog("You killed a Heaven Demon and found a Frost Gold Pack (69,000,000 Silvers)!");
+                                Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " found a Frost Gold Pack (69,000,000 Silvers)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
                             }
                             else
                             {
                                 if (Role.Core.Rate(10, 9999))
                                 {
                                     DropItemID(killer, 720678, stream);
-                                    killer.CreateBoxDialog("You killed a Heaven Demon and found a Life CP Pack (13500CPs)!");
-                                    Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " found a Life CP Pack (13500CPs)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
+                                    killer.CreateBoxDialog("You killed a Heaven Demon and found a Life Gold Pack (13,500,000 Silvers)!");
+                                    Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " found a Life Gold Pack (13,500,000 Silvers)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
                                 }
                                 else
                                 {
                                     if (Role.Core.Rate(3700, 9989))
                                     {
                                         DropItemID(killer, 720677, stream);
-                                        killer.CreateBoxDialog("You killed a Heaven Demon and found a Blood CP Pack (1000CPs)!");
+                                        killer.CreateBoxDialog("You killed a Heaven Demon and found a Blood Gold Pack (1,000,000 Silvers)!");
                                     }
                                     else
                                     {
                                         if (Role.Core.Rate(1289, 6289))
                                         {
                                             DropItemID(killer, 720676, stream);
-                                            killer.CreateBoxDialog("You killed a Heaven Demon and found a Soul CP Pack (500CPs)!");
+                                            killer.CreateBoxDialog("You killed a Heaven Demon and found a Soul Gold Pack (500,000 Silvers)!");
                                         }
                                         else
                                         {
@@ -595,7 +595,7 @@ namespace LightConquer_Project.Game.MsgMonster
                                             {
                                                 DropItemID(killer, 720675, stream);
 
-                                                killer.CreateBoxDialog("You killed a Heaven Demon and found a Ghost CP Pack (250CPs)!");
+                                                killer.CreateBoxDialog("You killed a Heaven Demon and found a Ghost Gold Pack (250,000 Silvers)!");
                                             }
                                             else
                                             {
@@ -613,8 +613,8 @@ namespace LightConquer_Project.Game.MsgMonster
                             {
                                 DropItemID(killer, 720685, stream);
 
-                                killer.CreateBoxDialog("You killed a Chaos Demon and found a Nimbus CP Pack (138000CPs)!");
-                                Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " found a Nimbus CP Pack (138000CPs)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
+                                killer.CreateBoxDialog("You killed a Chaos Demon and found a Nimbus Gold Pack (138,000,000 Silvers)!");
+                                Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " found a Nimbus Gold Pack (138,000,000 Silvers)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
 
                             }
                             else
@@ -624,8 +624,8 @@ namespace LightConquer_Project.Game.MsgMonster
                                     DropItemID(killer, 720684, stream);
 
 
-                                    killer.CreateBoxDialog("You killed a Chaos Demon and found a Butterfly CP Pack (27000CPs)!");
-                                    Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " found a Butterfly CP Pack (27000CPs)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
+                                    killer.CreateBoxDialog("You killed a Chaos Demon and found a Butterfly Gold Pack (27,000,000 Silvers)!");
+                                    Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " found a Butterfly Gold Pack (27,000,000 Silvers)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
 
                                 }
                                 else
@@ -633,21 +633,21 @@ namespace LightConquer_Project.Game.MsgMonster
                                     if (Role.Core.Rate(3700, 9989))
                                     {
                                         DropItemID(killer, 720683, stream);
-                                        killer.CreateBoxDialog("You killed a Chaos Demon and found a Heart CP Pack (2000CPs)!");
+                                        killer.CreateBoxDialog("You killed a Chaos Demon and found a Heart Gold Pack (2,000,000 Silvers)!");
                                     }
                                     else
                                     {
                                         if (Role.Core.Rate(1289, 6289))
                                         {
                                             DropItemID(killer, 720682, stream);
-                                            killer.CreateBoxDialog("You killed a Chaos Demon and found a Flower CP Pack (1000CPs)!");
+                                            killer.CreateBoxDialog("You killed a Chaos Demon and found a Flower Gold Pack (1,000,000 Silvers)!");
                                         }
                                         else
                                         {
                                             if (Role.Core.Rate(1000, 5000))
                                             {
                                                 DropItemID(killer, 720681, stream);
-                                                killer.CreateBoxDialog("You killed a Chaos Demon and found a Deity CP Pack (500CPs)!");
+                                                killer.CreateBoxDialog("You killed a Chaos Demon and found a Deity Gold Pack (500,000 Silvers)!");
                                             }
                                             else
                                             {
@@ -664,16 +664,16 @@ namespace LightConquer_Project.Game.MsgMonster
                             if (Role.Core.Rate(1, 10000))
                             {
                                 DropItemID(killer, 720691, stream);
-                                killer.CreateBoxDialog("You killed a Sacred Demon and found a Kylin CP Pack (276000CPs)");
-                                Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " found a Kylin CP Pack (276000CPs)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
+                                killer.CreateBoxDialog("You killed a Sacred Demon and found a Kylin Gold Pack (276,000,000 Silvers)");
+                                Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " found a Kylin Gold Pack (276,000,000 Silvers)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
                             }
                             else
                             {
                                 if (Role.Core.Rate(10, 9999))
                                 {
                                     DropItemID(killer, 720690, stream);
-                                    killer.CreateBoxDialog("You killed a Sacred Demon and found a Rainbow CP Pack (54000CPs)!");
-                                    Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " found a Rainbow CP Pack (54000CPs)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
+                                    killer.CreateBoxDialog("You killed a Sacred Demon and found a Rainbow Gold Pack (54,000,000 Silvers)!");
+                                    Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " found a Rainbow Gold Pack (54,000,000 Silvers)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
                                 }
                                 else
                                 {
@@ -681,14 +681,14 @@ namespace LightConquer_Project.Game.MsgMonster
                                     {
                                         DropItemID(killer, 720689, stream);
 
-                                        killer.CreateBoxDialog("You killed a Sacred Demon and found a Shadow CP Pack (4000CPs)!");
+                                        killer.CreateBoxDialog("You killed a Sacred Demon and found a Shadow Gold Pack (4,000,000 Silvers)!");
                                     }
                                     else
                                     {
                                         if (Role.Core.Rate(1289, 6289))
                                         {
                                             DropItemID(killer, 720688, stream);
-                                            killer.CreateBoxDialog("You killed a Sacred Demon and found a Jewel CP Pack (2000CPs)!");
+                                            killer.CreateBoxDialog("You killed a Sacred Demon and found a Jewel Gold Pack (2,000,000 Silvers)!");
                                         }
                                         else
                                         {
@@ -696,7 +696,7 @@ namespace LightConquer_Project.Game.MsgMonster
                                             {
                                                 DropItemID(killer, 720687, stream);
 
-                                                killer.CreateBoxDialog("You killed a Sacred Demon and found a Cloud CP Pack (1000CPs)!");
+                                                killer.CreateBoxDialog("You killed a Sacred Demon and found a Cloud Gold Pack (1,000,000 Silvers)!");
                                             }
                                             else
                                             {
@@ -714,8 +714,8 @@ namespace LightConquer_Project.Game.MsgMonster
                             {
                                 DropItemID(killer, 720697, stream);
 
-                                killer.CreateBoxDialog("You killed an Aurora Demon and found a Pilgrim CP Pack (690000CPs)!");
-                                Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " got a Pilgrim CP Pack (690000CPs)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
+                                killer.CreateBoxDialog("You killed an Aurora Demon and found a Pilgrim Gold Pack (69,000,0000 Silvers)!");
+                                Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " got a Pilgrim Gold Pack (69,000,0000 Silvers)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
 
                             }
                             else
@@ -723,8 +723,8 @@ namespace LightConquer_Project.Game.MsgMonster
                                 if (Role.Core.Rate(10, 9999))
                                 {
                                     DropItemID(killer, 720696, stream);
-                                    killer.CreateBoxDialog("You killed an Aurora Demon and found a Zephyr CP Pack (135000CPs)!");
-                                    Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " found a Zephyr CP Pack (135000CPs)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
+                                    killer.CreateBoxDialog("You killed an Aurora Demon and found a Zephyr Gold Pack (135,000,000 Silvers)!");
+                                    Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " found a Zephyr Gold Pack (135,000,000 Silvers)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
 
                                 }
                                 else
@@ -732,8 +732,8 @@ namespace LightConquer_Project.Game.MsgMonster
                                     if (Role.Core.Rate(3700, 9989))
                                     {
                                         DropItemID(killer, 720695, stream);
-                                        killer.CreateBoxDialog("You killed an Aurora Demon and found an Earth CP Pack (10000CPs)!");
-                                        Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " found an Earth CP Pack (10000CPs)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
+                                        killer.CreateBoxDialog("You killed an Aurora Demon and found an Earth Gold Pack (1,000,0000 Silvers)!");
+                                        Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " found an Earth Gold Pack (1,000,0000 Silvers)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
 
                                     }
                                     else
@@ -741,14 +741,14 @@ namespace LightConquer_Project.Game.MsgMonster
                                         if (Role.Core.Rate(1289, 6289))
                                         {
                                             DropItemID(killer, 720694, stream);
-                                            killer.CreateBoxDialog("You killed an Aurora Demon and found a Moon CP Pack (5000CPs)!");
+                                            killer.CreateBoxDialog("You killed an Aurora Demon and found a Moon Gold Pack (5,000,000 Silvers)!");
                                         }
                                         else
                                         {
                                             if (Role.Core.Rate(1000, 5000))
                                             {
                                                 DropItemID(killer, 720693, stream);
-                                                killer.CreateBoxDialog("You killed an Aurora Demon and found a Fog CP Pack (2500CPs)!");
+                                                killer.CreateBoxDialog("You killed an Aurora Demon and found a Fog Gold Pack (2,500,000 Silvers)!");
                                             }
                                             else
                                             {
@@ -766,8 +766,8 @@ namespace LightConquer_Project.Game.MsgMonster
                             {
                                 DropItemID(killer, 720654, stream);
 
-                                killer.CreateBoxDialog("You killed a Demon and found a Joy CP Pack (1380CPs)!");
-                                Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " found a Joy CP Pack (1380CPs)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
+                                killer.CreateBoxDialog("You killed a Demon and found a Joy Gold Pack (1,380,000 Silvers)!");
+                                Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " found a Joy Gold Pack (1,380,000 Silvers)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
 
                             }
                             else
@@ -776,28 +776,28 @@ namespace LightConquer_Project.Game.MsgMonster
                                 {
                                     DropItemID(killer, 720653, stream);
 
-                                    killer.CreateBoxDialog("You killed a Demon and found a Dream CP Pack (270CPs)!");
+                                    killer.CreateBoxDialog("You killed a Demon and found a Dream Gold Pack (270,000 Silvers)!");
                                 }
                                 else
                                 {
                                     if (Role.Core.Rate(3700, 9989))
                                     {
                                         DropItemID(killer, 720655, stream);
-                                        killer.CreateBoxDialog("You killed a Demon and found a Mammon CP Pack (20CPs)!");
+                                        killer.CreateBoxDialog("You killed a Demon and found a Mammon Gold Pack (20,000 Silvers)!");
                                     }
                                     else
                                     {
                                         if (Role.Core.Rate(1289, 6289))
                                         {
                                             DropItemID(killer, 720656, stream);
-                                            killer.CreateBoxDialog("You killed a Demon and found a Mascot CP Pack (10CPs)!");
+                                            killer.CreateBoxDialog("You killed a Demon and found a Mascot Gold Pack (10,000 Silvers)!");
                                         }
                                         else
                                         {
                                             if (Role.Core.Rate(1000, 5000))
                                             {
                                                 DropItemID(killer, 720657, stream);
-                                                killer.CreateBoxDialog("You killed a Demon and found a Hope CP Pack (5CPs)!");
+                                                killer.CreateBoxDialog("You killed a Demon and found a Hope Gold Pack (5,000 Silvers)!");
                                             }
                                             else
                                             {
@@ -813,9 +813,9 @@ namespace LightConquer_Project.Game.MsgMonster
                         {
                             if (Role.Core.Rate(1, 10000))
                             {
-                                killer.CreateBoxDialog("You killed a Ancient Demon and found a Mystic CP Pack (6900CPs)!");
+                                killer.CreateBoxDialog("You killed a Ancient Demon and found a Mystic Gold Pack (6,900,000 Silvers)!");
                                 DropItemID(killer, 720662, stream);
-                                Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " found a Mystic CP Pack (6900CPs)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
+                                Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " found a Mystic Gold Pack (6,900,000 Silvers)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
 
                             }
                             else
@@ -824,14 +824,14 @@ namespace LightConquer_Project.Game.MsgMonster
                                 {
                                     DropItemID(killer, 720661, stream);
 
-                                    killer.CreateBoxDialog("You killed a Ancient Demon and found a Pure CP Pack (1350CPs)!");
+                                    killer.CreateBoxDialog("You killed a Ancient Demon and found a Pure Gold Pack (1,350,000 Silvers)!");
                                 }
                                 else
                                 {
                                     if (Role.Core.Rate(3700, 9989))
                                     {
                                         DropItemID(killer, 720660, stream);
-                                        killer.CreateBoxDialog("You killed a Ancient Demon and found a Legend CP Pack (100CPs)!");
+                                        killer.CreateBoxDialog("You killed a Ancient Demon and found a Legend Gold Pack (100,000 Silvers)!");
                                     }
                                     else
                                     {
@@ -839,7 +839,7 @@ namespace LightConquer_Project.Game.MsgMonster
                                         {
                                             DropItemID(killer, 720659, stream);
 
-                                            killer.CreateBoxDialog("You killed a Ancient Demon and found a Sweet CP Pack (50CPs)!");
+                                            killer.CreateBoxDialog("You killed a Ancient Demon and found a Sweet Gold Pack (50,000 Silvers)!");
                                         }
                                         else
                                         {
@@ -847,7 +847,7 @@ namespace LightConquer_Project.Game.MsgMonster
                                             {
                                                 DropItemID(killer, 720658, stream);
 
-                                                killer.CreateBoxDialog("You killed a Ancient Demon and found a Festival CP Pack (25CPs)!");
+                                                killer.CreateBoxDialog("You killed a Ancient Demon and found a Festival Gold Pack (25,000 Silvers)!");
                                             }
                                             else
                                             {
@@ -864,8 +864,8 @@ namespace LightConquer_Project.Game.MsgMonster
                             if (Role.Core.Rate(1, 10000))
                             {
                                 DropItemID(killer, 720667, stream);
-                                killer.CreateBoxDialog("You killed a Flood Demon and found a Fantasy CP Pack (13800CPs)!");
-                                Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " found a Fantasy CP Pack (13800CPs)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
+                                killer.CreateBoxDialog("You killed a Flood Demon and found a Fantasy Gold Pack (13,800,000 Silvers)!");
+                                Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " found a Fantasy Gold Pack (13,800,000 Silvers)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
                             }
                             else
                             {
@@ -873,31 +873,23 @@ namespace LightConquer_Project.Game.MsgMonster
                                 {
                                     DropItemID(killer, 720666, stream);
 
-                                    killer.CreateBoxDialog("You killed a Flood Demon and found a Star CP Pack (2700CPs)!");
-                                    Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " found a Star CP Pack (2700CPs)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
+                                    killer.CreateBoxDialog("You killed a Flood Demon and found a Star Gold Pack (2,700,000 Silvers)!");
+                                    Program.SendGlobalPackets.Enqueue(new MsgMessage("" + killer.Player.Name + " found a Star Gold Pack (2,700,000 Silvers)!", MsgMessage.MsgColor.red, MsgMessage.ChatMode.Center).GetArray(stream));
                                 }
                                 else
                                 {
-                                    /*if (Role.Core.Rate(3700, 9989))
-                                    {
-                                        DropItemID(killer, 720665, stream);
-
-                                        killer.CreateBoxDialog("You killed a Flood Demon and found a Cute CP Pack (65CPs)!");
-                                    }
-                                    else
-                                    {*/
                                     if (Role.Core.Rate(1289, 6289))
                                     {
                                         DropItemID(killer, 720664, stream);
 
-                                        killer.CreateBoxDialog("You killed a Flood Demon and found a Flare CP Pack (100CPs)!");
+                                        killer.CreateBoxDialog("You killed a Flood Demon and found a Flare Gold Pack (100,000 Silvers)!");
                                     }
                                     else
                                     {
                                         if (Role.Core.Rate(1000, 5000))
                                         {
                                             DropItemID(killer, 720663, stream);
-                                            killer.CreateBoxDialog("You killed a Flood Demon and found a Violet CP Pack (50CPs)!");
+                                            killer.CreateBoxDialog("You killed a Flood Demon and found a Violet Gold Pack (50,000 Silvers)!");
                                         }
                                         else
                                         {
@@ -905,7 +897,6 @@ namespace LightConquer_Project.Game.MsgMonster
                                             killer.CreateBoxDialog("You killed the Flood Demon and found an Ultra Ball equal to EXP worth 1 and 2/3 EXP Balls!");
                                         }
                                     }
-                                    //}
                                 }
                             }
                         }

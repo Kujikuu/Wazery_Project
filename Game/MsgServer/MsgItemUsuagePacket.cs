@@ -17587,43 +17587,43 @@ namespace LightConquer_Project.Game.MsgServer
                                 break;
                             }
                         #endregion
-                        #region HopeCPPack
-                        case 3001133: //HopeCPPack
+                        #region HopeGoldPack
+                        case 3001133: //HopeGoldPack
                             {
 
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 5;
-                                client.CreateBoxDialog("You have received 5 ConquerPoints.");
+                                client.Player.Money += 5000;
+                                client.CreateBoxDialog("You have received 5,000 Money.");
                                 break;
                             }
                         #endregion
-                        #region MascotCPPack
-                        case 3001134: //MascotCPPack
+                        #region MascotGoldPack
+                        case 3001134: //MascotGoldPack
                             {
 
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 10;
-                                client.CreateBoxDialog("You have received 10 ConquerPoints.");
+                                client.Player.Money += 10000;
+                                client.CreateBoxDialog("You have received 10,000 Money.");
                                 break;
                             }
                         #endregion
-                        #region MammonCPPack
-                        case 3001135: //MammonCPPack
+                        #region MammonGoldPack
+                        case 3001135: //MammonGoldPack
                             {
 
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 20;
-                                client.CreateBoxDialog("You have received 20 ConquerPoints.");
+                                client.Player.Money += 20000;
+                                client.CreateBoxDialog("You have received 20,000 Money.");
                                 break;
                             }
                         #endregion
-                        #region DeityCPPack
-                        case 3001136: //DeityCPPack
+                        #region DeityGoldPack
+                        case 3001136: //DeityGoldPack
                             {
 
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 500;
-                                client.CreateBoxDialog("You have received 500 ConquerPoints.");
+                                client.Player.Money += 500000;
+                                client.CreateBoxDialog("You have received 500,000 Money.");
                                 break;
                             }
                         #endregion
@@ -17687,197 +17687,197 @@ namespace LightConquer_Project.Game.MsgServer
                                 break;
                             }
                         #endregion
-                        #region 6,999CPPack(B)
-                        case 729462: //6,999CPPack(B)
+                        #region 6,999GoldPack(B)
+                        case 729462: //6,999GoldPack(B)
                             {
 
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 client.Player.BoundConquerPoints += 6999;
-                                client.CreateBoxDialog("You have received 6,999 (B)ConquerPoints.");
+                                client.CreateBoxDialog("You have received 6,999 (B)CPs.");
                                 break;
                             }
                         #endregion
-                        #region 4,999CPPack(B)
-                        case 729463: //4,999CPPack(B)
+                        #region 4,999GoldPack(B)
+                        case 729463: //4,999GoldPack(B)
                             {
 
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 client.Player.BoundConquerPoints += 4999;
-                                client.CreateBoxDialog("You have received 4,999 (B)ConquerPoints.");
+                                client.CreateBoxDialog("You have received 4,999 (B)CPs.");
                                 break;
                             }
                         #endregion
-                        #region 2,999CPPack(B)
-                        case 729464: //2,999CPPack(B)
+                        #region 2,999GoldPack(B)
+                        case 729464: //2,999GoldPack(B)
                             {
 
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 client.Player.BoundConquerPoints += 2999;
-                                client.CreateBoxDialog("You have received 2,999 (B)ConquerPoints.");
+                                client.CreateBoxDialog("You have received 2,999 (B)CPs.");
                                 break;
                             }
                         #endregion
-                        #region 599CPPack(B)
-                        case 729465: //599CPPack(B)
+                        #region 599GoldPack(B)
+                        case 729465: //599GoldPack(B)
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 client.Player.BoundConquerPoints += 599;
-                                client.CreateBoxDialog("You have received 599 (B)ConquerPoints.");
+                                client.CreateBoxDialog("You have received 599 (B)CPs.");
                                 break;
                             }
                         #endregion
-                        #region 99CPPack(B)
-                        case 729466: //99CPPack(B)
+                        #region 99GoldPack(B)
+                        case 729466: //99GoldPack(B)
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 client.Player.BoundConquerPoints += 99;
-                                client.CreateBoxDialog("You have received 99 (B)ConquerPoints.");
+                                client.CreateBoxDialog("You have received 99 (B)CPs.");
                                 break;
                             }
                         #endregion
-                        #region 60CPsPack(B)
-                        case 3200522: //60CPsPack(B)
+                        #region 60SilversPack(B)
+                        case 3200522: //60SilversPack(B)
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.BoundConquerPoints += 60;
-                                client.CreateBoxDialog("You have received 60 (B)ConquerPoints.");
+                                client.Player.BoundConquerPoints += 60000;
+                                client.CreateBoxDialog("You have received 60 (B)CPs.");
                                 break;
                             }
                         #endregion
-                        #region 125CPsPack(B)
-                        case 3200523: //125CPsPack(B)
+                        #region 125SilversPack(B)
+                        case 3200523: //125SilversPack(B)
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 client.Player.BoundConquerPoints += 125;
-                                client.CreateBoxDialog("You have received 125 (B)ConquerPoints.");
+                                client.CreateBoxDialog("You have received 125 (B)CPs.");
                                 break;
                             }
                         #endregion
-                        #region 320CPsPack(B)
+                        #region 320SilversPack(B)
 
-                        case 3200524: //320CPsPack(B)
+                        case 3200524: //320SilversPack(B)
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.BoundConquerPoints += 320;
-                                client.CreateBoxDialog("You have received 320 (B)ConquerPoints.");
+                                client.Player.BoundConquerPoints += 320000;
+                                client.CreateBoxDialog("You have received 320 (B)CPs.");
                                 break;
                             }
                         #endregion
-                        #region 530CPsPack(B)
+                        #region 530SilversPack(B)
 
-                        case 3200525: //530CPsPack(B)
+                        case 3200525: //530SilversPack(B)
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.BoundConquerPoints += 530;
-                                client.CreateBoxDialog("You have received 530 (B)ConquerPoints.");
+                                client.Player.BoundConquerPoints += 530000;
+                                client.CreateBoxDialog("You have received 530 (B)CPs.");
                                 break;
                             }
                         #endregion
-                        #region 1075CPsPack(B)
+                        #region 1075SilversPack(B)
 
 
-                        case 3200526: //1075CPsPack(B)
+                        case 3200526: //1075SilversPack(B)
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 client.Player.BoundConquerPoints += 1075;
-                                client.CreateBoxDialog("You have received 1075 (B)ConquerPoints.");
+                                client.CreateBoxDialog("You have received 1075 (B)CPs.");
                                 break;
                             }
                         #endregion
-                        #region 2050CPsPack(B)
+                        #region 2050SilversPack(B)
 
-                        case 3200527: //2050CPsPack(B)
+                        case 3200527: //2050SilversPack(B)
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.BoundConquerPoints += 2050;
-                                client.CreateBoxDialog("You have received 2050 (B)ConquerPoints.");
+                                client.Player.BoundConquerPoints += 2050000;
+                                client.CreateBoxDialog("You have received 2050 (B)CPs.");
                                 break;
                             }
                         #endregion
-                        #region 4200 CPsPack(B)
+                        #region 4200000 SilversPack(B)
 
 
-                        case 3200528: //4200 CPsPack(B)
+                        case 3200528: //4200000 SilversPack(B)
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.BoundConquerPoints += 4200;
-                                client.CreateBoxDialog("You have received 4200 (B)ConquerPoints.");
+                                client.Player.BoundConquerPoints += 4200000;
+                                client.CreateBoxDialog("You have received 4200 (B)CPs.");
                                 break;
                             }
                         #endregion
-                        #region 20 CPsPack(B)
+                        #region 20000 SilversPack(B)
 
 
-                        case 3200700: //20 CPsPack(B)
+                        case 3200700: //20000 SilversPack(B)
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.BoundConquerPoints += 20;
-                                client.CreateBoxDialog("You have received 20 (B)ConquerPoints.");
+                                client.Player.BoundConquerPoints += 20000;
+                                client.CreateBoxDialog("You have received 20 (B)CPs.");
                                 break;
                             }
                         #endregion
-                        #region 300 CPsPack(B)
+                        #region 300000 SilversPack(B)
 
-                        case 3200701: //300 CPsPack(B)
+                        case 3200701: //300000 SilversPack(B)
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.BoundConquerPoints += 300;
-                                client.CreateBoxDialog("You have received 300 (B)ConquerPoints.");
+                                client.Player.BoundConquerPoints += 300000;
+                                client.CreateBoxDialog("You have received 300 (B)CPs.");
                                 break;
                             }
                         #endregion
-                        #region 500 CPsPack(B)
+                        #region 500000 SilversPack(B)
 
-                        case 3200702: //500 CPsPack(B)
+                        case 3200702: //500000 SilversPack(B)
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.BoundConquerPoints += 500;
-                                client.CreateBoxDialog("You have received 500 (B)ConquerPoints.");
+                                client.Player.BoundConquerPoints += 500000;
+                                client.CreateBoxDialog("You have received 500 (B)CPs.");
                                 break;
                             }
                         #endregion
-                        #region 5000 CPsPack(B)
+                        #region 5000000 SilversPack(B)
 
 
-                        case 3200703: //5000 CPsPack(B)
+                        case 3200703: //5000000 SilversPack(B)
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.BoundConquerPoints += 5000;
-                                client.CreateBoxDialog("You have received 5000 (B)ConquerPoints.");
+                                client.Player.BoundConquerPoints += 5000000;
+                                client.CreateBoxDialog("You have received 5000 (B)CPs.");
                                 break;
                             }
                         #endregion
-                        #region 50 CPsPack(B)
+                        #region 50000 SilversPack(B)
 
-                        case 3200704: //50 CPsPack(B)
+                        case 3200704: //50000 SilversPack(B)
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.BoundConquerPoints += 50;
-                                client.CreateBoxDialog("You have received 50 (B)ConquerPoints.");
+                                client.Player.BoundConquerPoints += 50000;
+                                client.CreateBoxDialog("You have received 50 (B)CPs.");
                                 break;
                             }
                         #endregion
-                        #region 600 CPsPack(B)
+                        #region 600000 SilversPack(B)
 
 
-                        case 3200705: //600 CPsPack(B)
+                        case 3200705: //600000 SilversPack(B)
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.BoundConquerPoints += 600;
-                                client.CreateBoxDialog("You have received 600 (B)ConquerPoints.");
+                                client.Player.BoundConquerPoints += 600000;
+                                client.CreateBoxDialog("You have received 600 (B)CPs.");
                                 break;
                             }
                         #endregion
-                        #region 250 GhostCPPack
+                        #region 250 GhostGoldPack
 
-                        case 720675: //250 GhostCPPack
+                        case 720675: //250 GhostGoldPack
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 250 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 250000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 250;
+                                client.Player.Money += 250000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Ghost CP Pack and received 250 CPs!");
+                                client.CreateBoxDialog("You used the Ghost Gold Pack and received 250,000 Silvers!");
                                 break;
                             }
                         #endregion
@@ -17891,187 +17891,184 @@ namespace LightConquer_Project.Game.MsgServer
                                 break;
                             }
                         #endregion
-                        #region SoulCPPack
-                        case 720676: //500 SoulCPPack
+                        #region SoulGoldPack
+                        case 720676: //500 SoulGoldPack
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 500 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 500,000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 500;
+                                client.Player.Money += 500000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Soul CP Pack and received 500 CPs!");
+                                client.CreateBoxDialog("You used the Soul Gold Pack and received 500,000 Silvers!");
                                 break;
                             }
                         #endregion
-                        #region BloodCPPack
+                        #region BloodGoldPack
 
-                        case 720677: //1000 BloodCPPack
+                        case 720677: //1000 BloodGoldPack
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 1000 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 1000000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 1000;
+                                client.Player.Money += 1000000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Blood CP Pack and received 1000 CPs!");
+                                client.CreateBoxDialog("You used the Blood Gold Pack and received 1,000,000 Silvers!");
                                 break;
                             }
                         #endregion
-                        #region LifeCPPack
+                        #region LifeGoldPack
                         case 720678: //13500 
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 13500 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 13500000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 13500;
+                                client.Player.Money += 13500000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Life CP Pack and received 13500 CPs!");
+                                client.CreateBoxDialog("You used the Life Gold Pack and received 13,500,000 Silvers!");
                                 break;
                             }
                         #endregion
-                        #region FrostCPPack
+                        #region FrostGoldPack
 
                         case 720679: //69000 
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 69000 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 69000000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 69000;
+                                client.Player.Money += 69000000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Frost CP Pack and received 69000 CPs!");
+                                client.CreateBoxDialog("You used the Frost Gold Pack and received 69,000,000 Silvers!");
                                 break;
                             }
                         #endregion
-                        #region DeityCPPack
+                        #region DeityGoldPack
 
                         case 720681: //69000 
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 500 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 500000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 500;
+                                client.Player.Money += 500000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Deity CP Pack and received 500 CPs!");
+                                client.CreateBoxDialog("You used the Deity Gold Pack and received 500,000 Silvers!");
                                 break;
                             }
                         #endregion
-                        #region FlowerCPPack
+                        #region FlowerGoldPack
 
 
                         case 720682: //1000 
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 1000 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 1000000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 1000;
+                                client.Player.Money += 1000000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Flower CP Pack and received 1000 CPs!");
+                                client.CreateBoxDialog("You used the Flower Gold Pack and received 1,000,000 Silvers!");
                                 break;
                             }
                         #endregion
-                        #region HeartCPPack
-
-
-
+                        #region HeartGoldPack
                         case 720683: //2000 
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 2000 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 2000000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 2000;
+                                client.Player.Money += 2000000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Heart CP Pack and received 2000 CPs!");
+                                client.CreateBoxDialog("You used the Heart Gold Pack and received 2,000,000 Silvers!");
                                 break;
                             }
                         #endregion
-                        #region ButterflyCPPack
+                        #region ButterflyGoldPack
 
 
                         case 720684: //27000 
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 27000 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 27000000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 27000;
+                                client.Player.Money += 27000000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Butterfly CP Pack and received 27000 CPs!");
+                                client.CreateBoxDialog("You used the Butterfly Gold Pack and received 27,000,000 Silvers!");
                                 break;
                             }
                         #endregion
-                        #region NimbusCPPack
+                        #region NimbusGoldPack
 
 
 
                         case 720685: //138000 
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 138000 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 138000000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 138000;
+                                client.Player.Money += 138000000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Nimbus CP Pack and received 138000 CPs!");
+                                client.CreateBoxDialog("You used the Nimbus Gold Pack and received 138,000,000 Silvers!");
                                 break;
                             }
                         #endregion
-                        #region CloudCPPack
+                        #region CloudGoldPack
 
                         case 720687: //1000 
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 1000 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 1000000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 1000;
+                                client.Player.Money += 1000000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Cloud CP Pack and received 1000 CPs!");
+                                client.CreateBoxDialog("You used the Cloud Gold Pack and received 1,000,000 Silvers!");
                                 break;
                             }
 
                         #endregion
-                        #region JewelCPPack
+                        #region JewelGoldPack
                         case 720688: //2000 
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 2000 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 2000000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 2000;
+                                client.Player.Money += 2000000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Jewel CP Pack and received 2000 CPs!");
+                                client.CreateBoxDialog("You used the Jewel Gold Pack and received 2,000,000 Silvers!");
                                 break;
                             }
                         #endregion
-                        #region ShadowCPPack
+                        #region ShadowGoldPack
                         case 720689: //4000 
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 4000 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 4000000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 4000;
+                                client.Player.Money += 4000000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Shadow CP Pack and received 4000 CPs!");
+                                client.CreateBoxDialog("You used the Shadow Gold Pack and received 4,000,000 Silvers!");
                                 break;
                             }
                         #endregion
-                        #region RainbowCPPack
+                        #region RainbowGoldPack
                         case 720690: //54000 
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 54000 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 54000000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 54000;
+                                client.Player.Money += 54000000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Rainbow CP Pack and received 54000 CPs!");
+                                client.CreateBoxDialog("You used the Rainbow Gold Pack and received 54,000,000 Silvers!");
                                 break;
                             }
                         #endregion
-                        #region KylinCPPack
+                        #region KylinGoldPack
 
                         case 720691: //276000 
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 276000 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 276000000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 276000;
+                                client.Player.Money += 276000000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Kylin CP Pack and received 276000 CPs!");
+                                client.CreateBoxDialog("You used the Kylin Gold Pack and received 276,000,000 Silvers!");
                                 break;
                             }
                         #endregion
@@ -18085,15 +18082,15 @@ namespace LightConquer_Project.Game.MsgServer
                                 break;
                             }
                         #endregion
-                        #region FogCPPack
+                        #region FogGoldPack
                         case 720693: //2500 
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 2500 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 2500000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 2500;
+                                client.Player.Money += 2500000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Fog CP Pack and received 2500 CPs!");
+                                client.CreateBoxDialog("You used the Fog Gold Pack and received 2,500,000 Silvers!");
                                 break;
                             }
                         #endregion
@@ -18101,12 +18098,12 @@ namespace LightConquer_Project.Game.MsgServer
 
                         case 720694: //5000 
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 5000 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 5000000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 5000;
+                                client.Player.Money += 5000000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Moon CP Pack and received 5000 CPs!");
+                                client.CreateBoxDialog("You used the Moon Gold Pack and received 5,000,000 Silvers!");
                                 break;
                             }
                         #endregion
@@ -18114,12 +18111,12 @@ namespace LightConquer_Project.Game.MsgServer
 
                         case 720695: //10000 
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 10000 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 10000000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 10000;
+                                client.Player.Money += 10000000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Earth CP Pack and received 10000 CPs!");
+                                client.CreateBoxDialog("You used the Earth Gold Pack and received 10,000,000 Silvers!");
                                 break;
                             }
                         #endregion
@@ -18128,12 +18125,12 @@ namespace LightConquer_Project.Game.MsgServer
 
                         case 720696: //135000 
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 135000 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 135000000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 135000;
+                                client.Player.Money += 135000000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Zephyr CP Pack and received 135000 CPs!");
+                                client.CreateBoxDialog("You used the Zephyr Gold Pack and received 135,000,000 Silvers!");
                                 break;
                             }
                         #endregion
@@ -18141,12 +18138,12 @@ namespace LightConquer_Project.Game.MsgServer
 
                         case 720697: //690000 
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 690000 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 690000000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 690000;
+                                client.Player.Money += 690000000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Pilgrim CP Pack and received 690000 CPs!");
+                                client.CreateBoxDialog("You used the Pilgrim Gold Pack and received 690,000,000 Silvers!");
                                 break;
                             }
                         #endregion
@@ -18154,12 +18151,12 @@ namespace LightConquer_Project.Game.MsgServer
 
                         case 720653: //270 
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 270 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 270000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 270;
+                                client.Player.Money += 270000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Dream CP Pack and received 270 CPs from Demon Box.");
+                                client.CreateBoxDialog("You used the Dream Gold Pack and received 270,000 Silvers from Demon Box.");
                                 break;
                             }
                         #endregion
@@ -18168,12 +18165,12 @@ namespace LightConquer_Project.Game.MsgServer
 
                         case 720654: //1380 
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 1380 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 1380000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 1380;
+                                client.Player.Money += 1380000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Joy CP Pack and received 1380 CPs from Demon Box.");
+                                client.CreateBoxDialog("You used the Joy Gold Pack and received 1,380,000 Silvers from Demon Box.");
                                 break;
                             }
                         #endregion
@@ -18181,60 +18178,60 @@ namespace LightConquer_Project.Game.MsgServer
 
                         case 720655: //20 
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 20 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 20000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 20;
+                                client.Player.Money += 20000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Mammon CP Pack and received 20 CPs from Demon Box.");
+                                client.CreateBoxDialog("You used the Mammon Gold Pack and received 20,000 Silvers from Demon Box.");
                                 break;
                             }
                         #endregion
                         #region
                         case 720656: //10 
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 10 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 10000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 10;
+                                client.Player.Money += 10000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Mascot CP Pack and received 10 CPs from Demon Box.");
+                                client.CreateBoxDialog("You used the Mascot Gold Pack and received 10,000 Silvers from Demon Box.");
                                 break;
                             }
                         #endregion
                         #region
                         case 720657: //5
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 5 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 5000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 5;
+                                client.Player.Money += 5;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Hope CP Pack and received 5 CPs from Demon Box.");
+                                client.CreateBoxDialog("You used the Hope Gold Pack and received 5,000 Silvers from Demon Box.");
                                 break;
                             }
                         #endregion
                         #region
                         case 720658: //25
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 25 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 25000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 25;
+                                client.Player.Money += 25;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Festival CP Pack and received 25 CPs.");
+                                client.CreateBoxDialog("You used the Festival Gold Pack and received 25,000 Silvers.");
                                 break;
                             }
                         #endregion
                         #region
                         case 720659: //50
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 50 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 50000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 50;
+                                client.Player.Money += 50000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Sweet CP Pack and received 50 CPs.");
+                                client.CreateBoxDialog("You used the Sweet Gold Pack and received 50,000 Silvers.");
                                 break;
                             }
                         #endregion
@@ -18242,24 +18239,24 @@ namespace LightConquer_Project.Game.MsgServer
 
                         case 720660: //100
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 100 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 100000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 100;
+                                client.Player.Money += 100000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Legend CP Pack and received 100 CPs.");
+                                client.CreateBoxDialog("You used the Legend Gold Pack and received 100,000 Silvers.");
                                 break;
                             }
                         #endregion
                         #region
                         case 720661: //1350
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 1350 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 1350000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 1350;
+                                client.Player.Money += 1350000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Pure CP Pack and received 1350 CPs!");
+                                client.CreateBoxDialog("You used the Pure Gold Pack and received 1,350,000 Silvers!");
                                 break;
                             }
                         #endregion
@@ -18267,36 +18264,36 @@ namespace LightConquer_Project.Game.MsgServer
 
                         case 720662: //6900
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 6900 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 6900000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 6900;
+                                client.Player.Money += 6900000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Mystic CP Pack and received 6900 CPs!");
+                                client.CreateBoxDialog("You used the Mystic Gold Pack and received 6,900,000 Silvers!");
                                 break;
                             }
                         #endregion
                         #region
                         case 720663: //50
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 50 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 50000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 50;
+                                client.Player.Money += 50000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Violet CP Pack and received 50 CPs.");
+                                client.CreateBoxDialog("You used the Violet Gold Pack and received 50,000 Silvers.");
                                 break;
                             }
                         #endregion
                         #region
                         case 720664: //100
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 100 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 100000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 100;
+                                client.Player.Money += 100000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Flare CP Pack and received 100 CPs.");
+                                client.CreateBoxDialog("You used the Flare Gold Pack and received 100,000 Silvers.");
                                 break;
                             }
                         #endregion
@@ -18304,12 +18301,12 @@ namespace LightConquer_Project.Game.MsgServer
 
                         case 720666: //2700
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 2700 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 2700000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 2700;
+                                client.Player.Money += 2700000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Star CP Pack and received 2700 CPs!");
+                                client.CreateBoxDialog("You used the Star Gold Pack and received 2,700,000 Silvers!");
                                 break;
                             }
                         #endregion
@@ -18317,12 +18314,12 @@ namespace LightConquer_Project.Game.MsgServer
 
                         case 720667: //13800
                             {
-                                string logs = "[DemonBox]" + client.Player.Name + " get 13800 he have " + client.Player.ConquerPoints + "";
+                                string logs = "[DemonBox]" + client.Player.Name + " get 13800000 he have " + client.Player.Money + "";
                                 Database.ServerDatabase.LoginQueue.Enqueue(logs);
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
-                                client.Player.ConquerPoints += 13800;
+                                client.Player.Money += 13800000;
                                 client.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "eidolon");
-                                client.CreateBoxDialog("You used the Fantasy CP Pack and received 13800 CPs!");
+                                client.CreateBoxDialog("You used the Fantasy Gold Pack and received 13,800,000 Silvers!");
                                 break;
                             }
                         #endregion
