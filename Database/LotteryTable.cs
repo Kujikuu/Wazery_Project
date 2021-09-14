@@ -134,6 +134,15 @@ namespace LightConquer_Project.Database
                 return items[0];
             return items[(byte)Extensions.BaseFunc.RandGet(items.Count, true)];
         }
+        public LotteryItem GenerateLotteryItem(Client.GameClient user, int rank)
+        {
+            int Rank = rank;
+
+            var items = LotteryItems[Rank];
+            if (items.Count == 1)
+                return items[0];
+            return items[(byte)Extensions.BaseFunc.RandGet(items.Count, true)];
+        }
         public Game.MsgServer.MsgGameItem CreateGameItem(LotteryItem Item)
         {
             Game.MsgServer.MsgGameItem GameItem = new Game.MsgServer.MsgGameItem();

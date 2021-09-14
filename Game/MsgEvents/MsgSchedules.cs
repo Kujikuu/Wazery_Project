@@ -273,16 +273,15 @@ namespace LightConquer_Project.Game.MsgTournaments
 
                     }
 
-                    if (Database.Server.ServerMaps[1002].ContainMobID(21060))
+                    if (!Server.ServerMaps[1002].ContainMobID(21060))
                         using (var rec = new ServerSockets.RecycledPacket())
-                            Database.Server.AddMapMonster(rec.GetStream(), Server.ServerMaps[1002], 21060, 450, 340, 1, 1, 1);
+                            Server.AddMapMonster(rec.GetStream(), Server.ServerMaps[1002], 21060, 377, 336, 1, 1, 1);
 
 
                     if (Now64.Minute == 45 && Now64.Second < 2)
 
                     {
                         var Map = Database.Server.ServerMaps[1002];
-
                         if (!Map.ContainMobID(20070))
                         {
                             using (var rec = new ServerSockets.RecycledPacket())
@@ -294,7 +293,6 @@ namespace LightConquer_Project.Game.MsgTournaments
                             }
                             SendInvitation("SnowBashee has spawned and terrify the world!", " \nWould you like to join the fight against it?", 674, 681, 1002, 0, 60, MsgServer.MsgStaticMessage.Messages.None);
                             Console.WriteLine("SnowBashee has spawned at" + DateTime.Now);
-
                         }
                         else
                         {

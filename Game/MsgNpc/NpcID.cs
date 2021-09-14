@@ -931,6 +931,7 @@ namespace LightConquer_Project.Game.MsgNpc
         BigHunt2 = uint.MaxValue - 57,
         BigHunt3 = uint.MaxValue - 58,
         EpicPack = uint.MaxValue - 59,
-        DailyEventQuest = uint.MaxValue - 60
+        DailyEventQuest = uint.MaxValue - 60,
+        SurpriseBox = uint.MaxValue - 61
     }
 }

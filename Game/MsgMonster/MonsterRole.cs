@@ -1321,6 +1321,24 @@ namespace LightConquer_Project.Game.MsgMonster
 
                     if ((Family.Settings & MonsterSettings.DropItemsOnDeath) == MonsterSettings.DropItemsOnDeath)
                     {
+                        ushort rand = (ushort)(killer.Player.MyRandom.Next() % 1000);
+                        byte count = 1;
+                        #region SurpriseBox
+                        if (Common.PercentSuccess(0.1))//0.1
+                        {
+                            Game.MsgNpc.Npc np = Game.MsgNpc.Npc.Create();
+                            np.UID = uint.MaxValue - 61;
+                            np.NpcType = Role.Flags.NpcType.Talker;
+                            np.Mesh = 12290;
+                            np.Map = killer.Player.Map;
+                            np.X = (ushort)(killer.Player.X + 3);
+                            np.Y = (ushort)(killer.Player.Y + 3);
+                            Database.Server.ServerMaps[np.Map].AddNpc(np);
+                            killer.Player.View.Role(false);
+                            killer.SendSysMesage("You have found a Surprisebox check the ground.");
+                            //killer.Player.AddMapEffect(stream, 55, 109, "eddy");
+                        }
+                        #endregion
                         #region GenerateBossFamily
                         //if (Family.MaxHealth > 100000 && Family.MaxHealth < 7000000|| Boss == 1)
                         //{
@@ -1351,8 +1369,7 @@ namespace LightConquer_Project.Game.MsgMonster
                         //}
                         #endregion
                         #region GenerateGold
-                        ushort rand = (ushort)(killer.Player.MyRandom.Next() % 1000);
-                        byte count = 1;
+
                         if (rand > 40 && rand < 60)
                         {
                             ushort xx = X;
