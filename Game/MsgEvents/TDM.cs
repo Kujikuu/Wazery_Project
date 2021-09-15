@@ -47,7 +47,7 @@ namespace LightConquer_Project.Game.MsgEvents
                     ushort x = 0;
                     ushort y = 0;
                     Map.GetRandCoord(ref x, ref y);
-                    client.Teleport(x, y, Map.ID, DinamicID, true, true);
+                    client.Teleport(Map.ID, x, y, DinamicID, true, true);
                     if (client.Player.ContainFlag(MsgServer.MsgUpdate.Flags.Cyclone))
                         client.Player.RemoveFlag(MsgServer.MsgUpdate.Flags.Cyclone);
                     if (client.Player.ContainFlag(MsgServer.MsgUpdate.Flags.Fly))
@@ -79,9 +79,9 @@ namespace LightConquer_Project.Game.MsgEvents
         public void TeleafterRev(GameClient C)
         {
             if (Teams[183425].ContainsKey(C.EntityID))
-                C.Teleport(136, 211, Map.ID, DinamicID);
+                C.Teleport(Map.ID, 136, 211, DinamicID);
             else
-                C.Teleport(187, 207, Map.ID, DinamicID);
+                C.Teleport(Map.ID, 187, 207, DinamicID);
         }
 
         public override void Hit(GameClient Attacker, GameClient Victim)

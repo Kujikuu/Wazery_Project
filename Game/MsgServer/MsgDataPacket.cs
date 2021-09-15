@@ -370,7 +370,7 @@ namespace LightConquer_Project.Game.MsgServer
             {
                 case 105://house
                     {
-                        client.Teleport(200, 95, 1036);
+                        client.Teleport(1036, 200, 95);
                         client.Player.SendString(msg, MsgStringPacket.StringID.Effect, true, "movego");
                         break;
                     }
@@ -668,18 +668,18 @@ namespace LightConquer_Project.Game.MsgServer
 #if Poker
                 case 2://cp room
                     {
-                        client.Teleport(58, 66, 1860);
+                        client.Teleport(1860, 58, 66);
                         break;
                     }
                 case 1://gold room
                     {
-                        client.Teleport(157, 119, 1858);
+                        client.Teleport(1858, 157, 119);
                         break;
                     }
 #endif
                 case 3://one bandit
                     {
-                        client.Teleport(240, 241, 1036);
+                        client.Teleport(1036, 240, 241);
                         break;
                     }
             }
@@ -843,12 +843,12 @@ namespace LightConquer_Project.Game.MsgServer
                     {
                         if (client.Player.Map == 4000 || client.Player.Map == 4003 || client.Player.Map == 4006 || client.Player.Map == 4008 || client.Player.Map == 4009)
                         {
-                            client.Teleport(85, 75, 4020);
+                            client.Teleport(4020, 85, 75);
                             return;
                         }
                         if (client.Player.Map == 3998)
                         {
-                            client.Teleport(106, 383, 3998);
+                            client.Teleport(3998, 106, 383);
                             return;
                         }
                         if (client.Player.Map == 3935 && client.OnInterServer)
@@ -857,7 +857,7 @@ namespace LightConquer_Project.Game.MsgServer
                             {
                                 if (server.ID == client.Player.ServerID)
                                 {
-                                    client.Teleport((ushort)server.X, (ushort)server.Y, (ushort)server.MapID); 
+                                    client.Teleport((ushort)server.MapID, (ushort)server.X, (ushort)server.Y); 
                                     break;
                                 }
                             }
@@ -865,7 +865,7 @@ namespace LightConquer_Project.Game.MsgServer
                         }
                         if (client.Player.OnMyOwnServer == false)
                         {
-                            client.Teleport((ushort)432, 390, 1002);
+                            client.Teleport(1002, (ushort)432, 390);
                             return;
                         }
                         if (Game.MsgTournaments.MsgSchedules.ClanWar.Process == MsgTournaments.ProcesType.Alive)
@@ -883,17 +883,17 @@ namespace LightConquer_Project.Game.MsgServer
                        
                         if (client.Player.Map == 1762 || client.Player.Map == 1927 || client.Player.Map == 1999 || client.Player.Map == 2054 || client.Player.Map == 2055)
                         {
-                            client.Teleport(477, 640, 1000);
+                            client.Teleport(1000, 477, 640);
                             return;
                         }
                         if (client.Player.Map == 1038)// gw map
                         {
                             if (MsgTournaments.MsgSchedules.GuildWar.Proces == MsgTournaments.ProcesType.Dead)
-                                client.Teleport(428, 378, 1002, 0, true, true);
+                                client.Teleport(1002, 428, 378, 0, true, true);
                             else
                             {
                                 var map = Database.Server.ServerMaps[1038];
-                                client.Teleport(27, 73, map.Reborn_Map,0,true, true);
+                                client.Teleport(map.Reborn_Map, 27, 73, 0, true, true);
                             }
                         }
                        
@@ -903,34 +903,34 @@ namespace LightConquer_Project.Game.MsgServer
                             {
                                 if (client.Map.Reborn_Map == 0)
                                 {
-                                    client.Teleport(428, 378, 1002);
+                                    client.Teleport(1002, 428, 378);
                                     return;
                                 }
                                 var map = Database.Server.ServerMaps[client.Map.Reborn_Map];
-                                client.Teleport(map.Reborn_X, map.Reborn_Y, map.Reborn_Map);
+                                client.Teleport(map.Reborn_Map, map.Reborn_X, map.Reborn_Y);
                             }
                             else
                             {
                                 if (client.Map.Reborn_X != 0)
-                                    client.Teleport(client.Map.Reborn_X, client.Map.Reborn_Y, client.Map.Reborn_Map);
+                                    client.Teleport(client.Map.Reborn_Map, client.Map.Reborn_X, client.Map.Reborn_Y);
                                 else
                                 {
                                     var map = Database.Server.ServerMaps[client.Map.Reborn_Map];
                                     if (map.Reborn_X != 0)
-                                        client.Teleport(map.Reborn_X, map.Reborn_Y, map.Reborn_Map);
+                                        client.Teleport(map.Reborn_Map, map.Reborn_X, map.Reborn_Y);
                                     else
                                     {
                                         map = Database.Server.ServerMaps[map.Reborn_Map];
                                         if (map.Reborn_X != 0)
-                                            client.Teleport(map.Reborn_X, map.Reborn_Y, map.Reborn_Map);
+                                            client.Teleport(map.Reborn_Map, map.Reborn_X, map.Reborn_Y);
                                         else
-                                            client.Teleport(428, 378, 1002);
+                                            client.Teleport(1002, 428, 378);
                                     }
                                 }
                             }
                         }
                         if (client.Player.X == 0 || client.Player.Y == 0)//invalid map reborn
-                            client.Teleport(428, 378, 1002);
+                            client.Teleport(1002, 428, 378);
                     }
                 }
             }
@@ -1068,46 +1068,46 @@ namespace LightConquer_Project.Game.MsgServer
                         if (client.Player.Map == 1038)// gw map
                         {
                             if (MsgTournaments.MsgSchedules.GuildWar.Proces == MsgTournaments.ProcesType.Dead)
-                                client.Teleport(428, 378, 1002);
+                                client.Teleport(1002, 428, 378);
                             else
                             {
                                 var map = Database.Server.ServerMaps[1038];
-                                client.Teleport(27, 73, map.Reborn_Map);
+                                client.Teleport(map.Reborn_Map, 27, 73);
                             }
                         }
                         
                         else
                         {
                             if (client.Player.Map == 601)
-                                client.Teleport(428, 378, 1002);
+                                client.Teleport(1002, 428, 378);
                             else
                             {
                                 if (client.Map.Reborn_X != 0)
-                                    client.Teleport(client.Map.Reborn_X, client.Map.Reborn_Y, client.Map.Reborn_Map);
+                                    client.Teleport(client.Map.Reborn_Map, client.Map.Reborn_X, client.Map.Reborn_Y);
                                 else
                                 {
                                     Role.GameMap map;// ;= Database.Server.ServerMaps[client.Map.Reborn_Map];
                                     if (Database.Server.ServerMaps.TryGetValue(client.Map.Reborn_Map, out map))
                                     {
                                         if (map.Reborn_X != 0)
-                                            client.Teleport(map.Reborn_X, map.Reborn_Y, map.Reborn_Map);
+                                            client.Teleport(map.Reborn_Map, map.Reborn_X, map.Reborn_Y);
                                         else
                                         {
                                             map = Database.Server.ServerMaps[map.Reborn_Map];
                                             if (map.Reborn_X != 0)
-                                                client.Teleport(map.Reborn_X, map.Reborn_Y, map.Reborn_Map);
+                                                client.Teleport(map.Reborn_Map, map.Reborn_X, map.Reborn_Y);
                                             else
-                                                client.Teleport(428, 378, 1002);
+                                                client.Teleport(1002, 428, 378);
                                         }
                                     }
                                     else
                                     {
                                         
-                                        client.Teleport(428, 378, 1002);
+                                        client.Teleport(1002, 428, 378);
                                     }
                                 }
                                 if (client.Player.X == 0 || client.Player.Y == 0)//invalid map reborn
-                                    client.Teleport(428, 378, 1002);
+                                    client.Teleport(1002, 428, 378);
                             }
                         }
                     }
@@ -1189,7 +1189,7 @@ namespace LightConquer_Project.Game.MsgServer
                 if (Role.Core.GetDistance(client.Player.X, client.Player.Y, portal.X, portal.Y) < 7)
                 {
                     
-                    client.Teleport(portal.Destiantion_X, portal.Destiantion_Y, portal.Destiantion_MapID);
+                    client.Teleport(portal.Destiantion_MapID, portal.Destiantion_X, portal.Destiantion_Y);
                     client.Send(msg.ActionCreate(data));
                     return;
                 }
@@ -1198,7 +1198,7 @@ namespace LightConquer_Project.Game.MsgServer
             {
                 client.SendSysMesage("Invalid Portal : X = " + Portal_X + ", Y= " + Portal_Y + " Map = " + client.Player.Map + "", MsgMessage.ChatMode.System, MsgMessage.MsgColor.yellow);
             }
-            client.Teleport(310, 288, 1002);
+            client.Teleport(1002, 430, 380);
         }
         [DataAttribute(ActionType.ChangeLookface)]
         public unsafe static void ChangeLookface(Client.GameClient client, ServerSockets.Packet msg, ActionQuery* data)
@@ -1357,7 +1357,7 @@ namespace LightConquer_Project.Game.MsgServer
 
             if (client.Map == null)
             {
-                client.Teleport(310, 288, 1002);
+                client.Teleport(1002, 310, 288);
                 return;
             }
             if (client.Player.Map == 1038)

@@ -940,7 +940,8 @@ namespace LightConquer_Project.Game.MsgServer
                                                         effectdwparam1 = 1;
 
                                                         //client.Player.SendGlobalMesage($"Player {client.Player.Name} has got second socket into his/her ");
-
+                                                        string ItmName = Database.Server.ItemsBase.GetItemName(DataItem.ITEM_ID);
+                                                        client.Player.SendGlobalMesage($"Player {client.Player.Name} has got second socket into his/her {ItmName}", MsgMessage.ChatMode.TopLeft);
                                                         DataItem.Send(client, stream).Update(LoseItem, Role.Instance.AddMode.REMOVE, stream);
                                                     }
                                                 }
@@ -961,6 +962,8 @@ namespace LightConquer_Project.Game.MsgServer
                                                             DataItem.Send(client, stream).Update(LoseItem, Role.Instance.AddMode.REMOVE, stream);
                                                             if (DataItem.Position != 0)
                                                                 client.Equipment.QueryEquipment(client.Equipment.Alternante);
+                                                            string ItmName = Database.Server.ItemsBase.GetItemName(DataItem.ITEM_ID);
+                                                            client.Player.SendGlobalMesage($"Player {client.Player.Name} has got second socket into his/her {ItmName}", MsgMessage.ChatMode.TopLeft);
                                                         }
                                                         else
                                                         {
@@ -1006,7 +1009,8 @@ namespace LightConquer_Project.Game.MsgServer
                                                     DataItem.Send(client, stream);
                                                     if (DataItem.Position != 0)
                                                         client.Equipment.QueryEquipment(client.Equipment.Alternante);
-
+                                                    string ItmName = Database.Server.ItemsBase.GetItemName(DataItem.ITEM_ID);
+                                                    client.Player.SendGlobalMesage($"Player {client.Player.Name} has got second socket into his/her {ItmName}", MsgMessage.ChatMode.TopLeft);
                                                     while (LoseItems.Count > 0)
                                                         client.Inventory.Update(LoseItems.Dequeue(), Role.Instance.AddMode.REMOVE, stream);
                                                 }
@@ -1046,7 +1050,8 @@ namespace LightConquer_Project.Game.MsgServer
                                                     DataItem.Send(client, stream);
                                                     if (DataItem.Position != 0)
                                                         client.Equipment.QueryEquipment(client.Equipment.Alternante);
-
+                                                    string ItmName = Database.Server.ItemsBase.GetItemName(DataItem.ITEM_ID);
+                                                    client.Player.SendGlobalMesage($"Player {client.Player.Name} has got second socket into his/her {ItmName}", MsgMessage.ChatMode.TopLeft);
                                                     while (LoseItems.Count > 0)
                                                         client.Inventory.Update(LoseItems.Dequeue(), Role.Instance.AddMode.REMOVE, stream);
                                                 }
@@ -1086,7 +1091,8 @@ namespace LightConquer_Project.Game.MsgServer
                                                     DataItem.Send(client, stream);
                                                     if (DataItem.Position != 0)
                                                         client.Equipment.QueryEquipment(client.Equipment.Alternante);
-
+                                                    string ItmName = Database.Server.ItemsBase.GetItemName(DataItem.ITEM_ID);
+                                                    client.Player.SendGlobalMesage($"Player {client.Player.Name} has got second socket into his/her {ItmName}", MsgMessage.ChatMode.TopLeft);
                                                     while (LoseItems.Count > 0)
                                                         client.Inventory.Update(LoseItems.Dequeue(), Role.Instance.AddMode.REMOVE, stream);
                                                 }
@@ -2792,7 +2798,7 @@ namespace LightConquer_Project.Game.MsgServer
                             }
                             ushort x = 0, y = 0;
                             Database.Server.ServerMaps[10166].GetRandCoord(ref x, ref y);
-                            client.Teleport(x, y, 10166);
+                            client.Teleport(10166, x, y);
                             client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                             break;
                         }
@@ -10849,7 +10855,7 @@ namespace LightConquer_Project.Game.MsgServer
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 if (!Program.BlockTeleportMap.Contains(client.Player.Map) || UnlimitedArenaRooms.Maps.ContainsValue(client.Player.DynamicID))
-                                    client.Teleport(428, 378, 1002);
+                                    client.Teleport(1002, 428, 378);
 
                                 break;
                             }
@@ -10859,7 +10865,7 @@ namespace LightConquer_Project.Game.MsgServer
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 if (!Program.BlockTeleportMap.Contains(client.Player.Map) || UnlimitedArenaRooms.Maps.ContainsValue(client.Player.DynamicID))
-                                    client.Teleport(500, 650, 1000);
+                                    client.Teleport(1000, 500, 650);
 
                                 break;
                             }
@@ -10869,7 +10875,7 @@ namespace LightConquer_Project.Game.MsgServer
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 if (!Program.BlockTeleportMap.Contains(client.Player.Map) || UnlimitedArenaRooms.Maps.ContainsValue(client.Player.DynamicID))
-                                    client.Teleport(565, 562, 1020);
+                                    client.Teleport(1020, 565, 562);
 
                                 break;
                             }
@@ -10879,7 +10885,7 @@ namespace LightConquer_Project.Game.MsgServer
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 if (!Program.BlockTeleportMap.Contains(client.Player.Map) || UnlimitedArenaRooms.Maps.ContainsValue(client.Player.DynamicID))
-                                    client.Teleport(188, 264, 1011);
+                                    client.Teleport(1011, 188, 264);
                                 break;
                             }
                         #endregion
@@ -10888,7 +10894,7 @@ namespace LightConquer_Project.Game.MsgServer
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 if (!Program.BlockTeleportMap.Contains(client.Player.Map) || UnlimitedArenaRooms.Maps.ContainsValue(client.Player.DynamicID))
-                                    client.Teleport(717, 571, 1015);
+                                    client.Teleport(1015, 717, 571);
                                 break;
                             }
                         #endregion
@@ -10897,7 +10903,7 @@ namespace LightConquer_Project.Game.MsgServer
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 if (!Program.BlockTeleportMap.Contains(client.Player.Map) || UnlimitedArenaRooms.Maps.ContainsValue(client.Player.DynamicID))
-                                    client.Teleport(535, 558, 1217);
+                                    client.Teleport(1217, 535, 558);
                                 break;
                             }
                         #endregion
@@ -10906,11 +10912,11 @@ namespace LightConquer_Project.Game.MsgServer
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 if (!Program.BlockTeleportMap.Contains(client.Player.Map))
-                                    client.Teleport(428, 378, 1002);
+                                    client.Teleport(1002, 428, 378);
 
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 if (!Program.BlockTeleportMap.Contains(client.Player.Map))
-                                    client.Teleport(405, 655, 1002);
+                                    client.Teleport(1002, 405, 655);
                                 break;
                             }
                         #endregion
@@ -10920,7 +10926,7 @@ namespace LightConquer_Project.Game.MsgServer
 
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 if (!Program.BlockTeleportMap.Contains(client.Player.Map))
-                                    client.Teleport(65, 252, 1002);
+                                    client.Teleport(1002, 65, 252);
                                 break;
                             }
                         #endregion
@@ -10929,7 +10935,7 @@ namespace LightConquer_Project.Game.MsgServer
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 if (!Program.BlockTeleportMap.Contains(client.Player.Map))
-                                    client.Teleport(443, 372, 1002);
+                                    client.Teleport(1002, 443, 372);
                                 break;
                             }
                         #endregion
@@ -10938,7 +10944,7 @@ namespace LightConquer_Project.Game.MsgServer
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 if (!Program.BlockTeleportMap.Contains(client.Player.Map))
-                                    client.Teleport(537, 767, 1011);
+                                    client.Teleport(1011, 537, 767);
                                 break;
                             }
                         #endregion
@@ -10947,7 +10953,7 @@ namespace LightConquer_Project.Game.MsgServer
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 if (!Program.BlockTeleportMap.Contains(client.Player.Map))
-                                    client.Teleport(734, 448, 1011);
+                                    client.Teleport(1011, 734, 448);
                                 break;
                             }
                         #endregion
@@ -10956,7 +10962,7 @@ namespace LightConquer_Project.Game.MsgServer
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 if (!Program.BlockTeleportMap.Contains(client.Player.Map))
-                                    client.Teleport(64, 426, 1011);
+                                    client.Teleport(1011, 64, 426);
                                 break;
                             }
                         #endregion
@@ -10965,7 +10971,7 @@ namespace LightConquer_Project.Game.MsgServer
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 if (!Program.BlockTeleportMap.Contains(client.Player.Map))
-                                    client.Teleport(819, 602, 1020);
+                                    client.Teleport(1020, 819, 602);
                                 break;
                             }
                         #endregion
@@ -10974,7 +10980,7 @@ namespace LightConquer_Project.Game.MsgServer
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 if (!Program.BlockTeleportMap.Contains(client.Player.Map))
-                                    client.Teleport(492, 726, 1020);
+                                    client.Teleport(1020, 492, 726);
                                 break;
                             }
                         #endregion
@@ -10983,7 +10989,7 @@ namespace LightConquer_Project.Game.MsgServer
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 if (!Program.BlockTeleportMap.Contains(client.Player.Map))
-                                    client.Teleport(105, 396, 1020);
+                                    client.Teleport(1020, 105, 396);
                                 break;
                             }
                         #endregion
@@ -10992,7 +10998,7 @@ namespace LightConquer_Project.Game.MsgServer
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 if (!Program.BlockTeleportMap.Contains(client.Player.Map))
-                                    client.Teleport(226, 201, 1000);
+                                    client.Teleport(1000, 226, 201);
                                 break;
                             }
                         #endregion
@@ -11001,7 +11007,7 @@ namespace LightConquer_Project.Game.MsgServer
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 if (!Program.BlockTeleportMap.Contains(client.Player.Map))
-                                    client.Teleport(797, 547, 1000);
+                                    client.Teleport(1000, 797, 547);
                                 break;
                             }
                         #endregion
@@ -11010,7 +11016,7 @@ namespace LightConquer_Project.Game.MsgServer
                             {
                                 client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                 if (!Program.BlockTeleportMap.Contains(client.Player.Map))
-                                    client.Teleport(476, 365, 1001);
+                                    client.Teleport(1001, 476, 365);
                                 break;
                             }
                         #endregion
@@ -11501,7 +11507,7 @@ namespace LightConquer_Project.Game.MsgServer
 #else
                                     client.Player.MessageBox("Do you want to speak with the F5 Grotto Miner now?", new Action<Client.GameClient>(p =>
                                     {
-                                        p.Teleport(540, 573, 2055);
+                                        p.Teleport(2055, 540, 573);
                                         p.CreateBoxDialog("You were send to the F5 Grotto Miner.");
                                     }
                                        ), null, 0);
@@ -12600,7 +12606,7 @@ namespace LightConquer_Project.Game.MsgServer
                                 client.Inventory.Remove(729981, 1, stream);
                                 client.Inventory.Remove(729980, 1, stream);
                                 client.Inventory.Remove(729979, 1, stream);
-                                client.Teleport(535, 477, 1768);
+                                client.Teleport(1768, 535, 477);
                                 ActionQuery action = new ActionQuery();
                                 action.ObjId = client.Player.UID;
                                 action.Type = ActionType.CountDown;
@@ -12638,7 +12644,7 @@ namespace LightConquer_Project.Game.MsgServer
                                     client.CreateBoxDialog("I will pass that exam! For the students, passing this exam means a guaranteed position and great credit to their family.");
 #endif
 
-                                    client.Teleport(554, 600, 1020);
+                                    client.Teleport(1020, 554, 600);
                                     break;
                                 }
                                 else
@@ -14012,7 +14018,7 @@ namespace LightConquer_Project.Game.MsgServer
                                 var map = Database.Server.ServerMaps[1013];
                                 var dinamic = map.GenerateDynamicID();
                                 Database.Server.AddMapMonster(stream, map, 14333, 30, 30, 18, 18, 13, dinamic, false);
-                                client.Teleport(50, 50, 1013, dinamic);
+                                client.Teleport(1013, 50, 50, dinamic);
 #if Arabic
                                  client.CreateBoxDialog("You`ve~taken~the~toxin~and~found~yourself~in~a~strange~place.");
 #else
@@ -19144,19 +19150,19 @@ namespace LightConquer_Project.Game.MsgServer
                                     switch (rand)
                                     {
                                         case 0:
-                                            client.Teleport(43, 340, 3998);
+                                            client.Teleport(3998, 43, 340);
                                             break;
                                         case 1:
-                                            client.Teleport(57, 347, 3998);
+                                            client.Teleport(3998, 57, 347);
                                             break;
                                         case 2:
-                                            client.Teleport(54, 365, 3998);
+                                            client.Teleport(3998, 54, 365);
                                             break;
                                         case 3:
-                                            client.Teleport(25, 353, 3998);
+                                            client.Teleport(3998, 25, 353);
                                             break;
                                         default:
-                                            client.Teleport(33, 364, 3998);
+                                            client.Teleport(3998, 33, 364);
                                             break;
                                     }
                                     client.Player.SendString(stream, MsgStringPacket.StringID.Effect, true, "movego");
@@ -20688,14 +20694,14 @@ namespace LightConquer_Project.Game.MsgServer
                                     if (Role.Core.GetDistance(269, 215, client.Player.X, client.Player.Y) <= 2)
                                     {
                                         client.CreateBoxDialog("This~is~Ghost~City.~You~should~be~able~to~find~Mo~Mo~near~(145,134).");
-                                        client.Teleport(151, 102, 1780);
+                                        client.Teleport(1780, 151, 102);
                                         client.Player.SendString(stream, MsgStringPacket.StringID.Effect, true, "soul-1");
                                         client.Player.SendString(stream, MsgStringPacket.StringID.Effect, true, "zf2-e236");
                                     }
                                     else if (Role.Core.GetDistance(298, 205, client.Player.X, client.Player.Y) <= 2)
                                     {
                                         client.CreateBoxDialog("This~is~Ghost~City.~You~should~be~able~to~find~Mo~Mo~near~(145,134).");
-                                        client.Teleport(151, 102, 1780);
+                                        client.Teleport(1780, 151, 102);
                                         client.Player.SendString(stream, MsgStringPacket.StringID.Effect, true, "soul-1");
                                         client.Player.SendString(stream, MsgStringPacket.StringID.Effect, true, "zf2-e236");
 
@@ -20703,7 +20709,7 @@ namespace LightConquer_Project.Game.MsgServer
                                     else if (Role.Core.GetDistance(357, 304, client.Player.X, client.Player.Y) <= 2)
                                     {
                                         client.CreateBoxDialog("This~is~Ghost~City.~You~should~be~able~to~find~Mo~Mo~near~(145,134).");
-                                        client.Teleport(151, 102, 1780);
+                                        client.Teleport(1780, 151, 102);
                                         client.Player.SendString(stream, MsgStringPacket.StringID.Effect, true, "soul-1");
                                         client.Player.SendString(stream, MsgStringPacket.StringID.Effect, true, "zf2-e236");
                                     }
@@ -20717,14 +20723,14 @@ namespace LightConquer_Project.Game.MsgServer
                                     if (Role.Core.GetDistance(269, 215, client.Player.X, client.Player.Y) <= 2)
                                     {
                                         client.CreateBoxDialog("This~is~Ghost~City.~You~should~be~able~to~find~Mo~Mo~near~(145,134).");
-                                        client.Teleport(151, 102, 1779);
+                                        client.Teleport(1779, 151, 102);
                                         client.Player.SendString(stream, MsgStringPacket.StringID.Effect, true, "soul-1");
                                         client.Player.SendString(stream, MsgStringPacket.StringID.Effect, true, "zf2-e236");
                                     }
                                     else if (Role.Core.GetDistance(298, 205, client.Player.X, client.Player.Y) <= 2)
                                     {
                                         client.CreateBoxDialog("This~is~Ghost~City.~You~should~be~able~to~find~Mo~Mo~near~(145,134).");
-                                        client.Teleport(151, 102, 1779);
+                                        client.Teleport(1779, 151, 102);
                                         client.Player.SendString(stream, MsgStringPacket.StringID.Effect, true, "soul-1");
                                         client.Player.SendString(stream, MsgStringPacket.StringID.Effect, true, "zf2-e236");
 
@@ -20732,7 +20738,7 @@ namespace LightConquer_Project.Game.MsgServer
                                     else if (Role.Core.GetDistance(357, 304, client.Player.X, client.Player.Y) <= 2)
                                     {
                                         client.CreateBoxDialog("This~is~Ghost~City.~You~should~be~able~to~find~Mo~Mo~near~(145,134).");
-                                        client.Teleport(151, 102, 1779);
+                                        client.Teleport(1779, 151, 102);
                                         client.Player.SendString(stream, MsgStringPacket.StringID.Effect, true, "soul-1");
                                         client.Player.SendString(stream, MsgStringPacket.StringID.Effect, true, "zf2-e236");
                                     }
@@ -24352,7 +24358,7 @@ namespace LightConquer_Project.Game.MsgServer
                             {
                                 if (client.Player.Map == 1794)
                                 {
-                                    client.Teleport(557, 649, 1000);
+                                    client.Teleport(1000, 557, 649);
                                     client.Inventory.Remove(721806, 1, stream);
                                     client.SendSysMesage("You`ve come back to Desert City. Now take the Posion Fang to the Kunlun Wanderer (490,618).");
                                 }

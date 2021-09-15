@@ -100,7 +100,7 @@ namespace LightConquer_Project.Game.MsgServer
                                 if (user.Player.DynamicID != 0) return;
                                 if (Database.Server.ClientAgates[user.Player.UID][ItemUID].ContainsKey(Index))
                                 {
-                                    user.Teleport((ushort)Database.Server.ClientAgates[user.Player.UID][ItemUID][Index].Item2, (ushort)Database.Server.ClientAgates[user.Player.UID][ItemUID][Index].Item3, Database.Server.ClientAgates[user.Player.UID][ItemUID][Index].Item1);
+                                    user.Teleport(Database.Server.ClientAgates[user.Player.UID][ItemUID][Index].Item1, (ushort)Database.Server.ClientAgates[user.Player.UID][ItemUID][Index].Item2, (ushort)Database.Server.ClientAgates[user.Player.UID][ItemUID][Index].Item3);
                                     Item.Durability -= 1;
                                     user.Send(stream.CreateSuperFlag(Item, Database.Server.ClientAgates[user.Player.UID][ItemUID]));
                                 }

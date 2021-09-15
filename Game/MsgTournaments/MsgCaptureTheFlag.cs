@@ -99,7 +99,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                     foreach (var user in Database.Server.GamePoll.Values)
                         user.Player.MessageBox("", new Action<Client.GameClient>(p =>
                         {
-                            p.Teleport(354, 338, 1002);
+                            p.Teleport(1002, 354, 338);
                         }), null
                         , 60, MsgServer.MsgStaticMessage.Messages.CapturetheFlag);
                 }
@@ -142,7 +142,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                 foreach (var user in Database.Server.GamePoll.Values)
                 {
                     if(user.Player.Map == MapID)
-                        user.Teleport(428, 378, 1002);
+                        user.Teleport(1002, 428, 378);
                 }
             }
         }
@@ -202,7 +202,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                 stream.CaptureTheFlagUpdateFinalize();
                 user.Send(stream);
 
-                user.Teleport(478, 373, MapID);
+                user.Teleport(MapID, 478, 373);
                 return true;
             }
             return false;

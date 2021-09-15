@@ -110,7 +110,7 @@ layer 2
                 case 0:
                     {
                         var DBmap = Database.Server.ServerMaps[4000];
-                        user.Teleport(x, y, DBmap.ID, DBmap.GenerateDynamicID());
+                        user.Teleport(DBmap.ID, x, y, DBmap.GenerateDynamicID());
                         if (user.Team != null)
                         {
                             foreach (var members in user.Team.Temates)
@@ -121,7 +121,7 @@ layer 2
                                     {
                                         if (Role.Core.GetDistance(user.Player.X, user.Player.Y, members.client.Player.X, members.client.Player.Y) < 18)
                                         {
-                                            members.client.Teleport((ushort)(x - new Random().Next(1, 6)), (ushort)(y - new Random().Next(1, 6)), DBmap.ID, DBmap.GenerateDynamicID());
+                                            members.client.Teleport(DBmap.ID, (ushort)(x - new Random().Next(1, 6)), (ushort)(y - new Random().Next(1, 6)), DBmap.GenerateDynamicID());
                                         }
                                     }
                                 }
@@ -147,13 +147,13 @@ layer 2
                                     {
                                         if (Role.Core.GetDistance(user.Player.X, user.Player.Y, members.client.Player.X, members.client.Player.Y) < 18)
                                         {
-                                            members.client.Teleport((ushort)(x - new Random().Next(1, 6)), (ushort)(y - new Random().Next(1, 6)), DBmap.ID, Dyn);
+                                            members.client.Teleport(DBmap.ID, (ushort)(x - new Random().Next(1, 6)), (ushort)(y - new Random().Next(1, 6)), Dyn);
                                         }
                                     }
                                 }
                             }
                         }
-                        user.Teleport(x, y, DBmap.ID, Dyn);
+                        user.Teleport(DBmap.ID, x, y, Dyn);
                         if (user.Player.TOMChallengeToday == 0)
                             user.SendSysMesage("You've already arrived (Common) in Tower of Mystery " + (layer + 1).ToString() + "F when an aggresive devil, WingedLord(common), was sealed. Be careful!", MsgMessage.ChatMode.System);
                         else
@@ -174,13 +174,13 @@ layer 2
                                     {
                                         if (Role.Core.GetDistance(user.Player.X, user.Player.Y, members.client.Player.X, members.client.Player.Y) < 18)
                                         {
-                                            members.client.Teleport((ushort)(x - new Random().Next(1, 6)), (ushort)(y - new Random().Next(1, 6)), DBmap.ID, Dyn);
+                                            members.client.Teleport(DBmap.ID, (ushort)(x - new Random().Next(1, 6)), (ushort)(y - new Random().Next(1, 6)), Dyn);
                                         }
                                     }
                                 }
                             }
                         }
-                        user.Teleport(x, y, DBmap.ID, Dyn);
+                        user.Teleport(DBmap.ID, x, y, Dyn);
                         if (user.Player.TOMChallengeToday == 0)
                             user.SendSysMesage("You've already arrived (Common) in Tower of Mystery " + (layer + 1).ToString() + "F when an aggresive devil, WaterTerror(common), was sealed. Be careful!", MsgMessage.ChatMode.System);
                         else
@@ -202,13 +202,13 @@ layer 2
                                     {
                                         if (Role.Core.GetDistance(user.Player.X, user.Player.Y, members.client.Player.X, members.client.Player.Y) < 18)
                                         {
-                                            members.client.Teleport((ushort)(x - new Random().Next(1, 6)), (ushort)(y - new Random().Next(1, 6)), DBmap.ID, Dyn);
+                                            members.client.Teleport(DBmap.ID, (ushort)(x - new Random().Next(1, 6)), (ushort)(y - new Random().Next(1, 6)), Dyn);
                                         }
                                     }
                                 }
                             }
                         }
-                        user.Teleport(x, y, DBmap.ID, Dyn);
+                        user.Teleport(DBmap.ID, x, y, Dyn);
                         if (user.Player.TOMChallengeToday == 0)
                             user.SendSysMesage("You've already arrived (Common) in Tower of Mystery " + (layer + 1).ToString() + "F when an aggresive devil, RuthlessAsura(common), was sealed. Be careful!", MsgMessage.ChatMode.System);
                         else
@@ -229,13 +229,13 @@ layer 2
                                     {
                                         if (Role.Core.GetDistance(user.Player.X, user.Player.Y, members.client.Player.X, members.client.Player.Y) < 18)
                                         {
-                                            members.client.Teleport((ushort)(x - new Random().Next(1, 6)), (ushort)(y - new Random().Next(1, 6)), DBmap.ID, Dyn);
+                                            members.client.Teleport(DBmap.ID, (ushort)(x - new Random().Next(1, 6)), (ushort)(y - new Random().Next(1, 6)), Dyn);
                                         }
                                     }
                                 }
                             }
                         }
-                        user.Teleport(x, y, DBmap.ID, Dyn);
+                        user.Teleport(DBmap.ID, x, y, Dyn);
                         if (user.Player.TOMChallengeToday == 0)
                             user.SendSysMesage("You've already arrived (Common) in Tower of Mystery " + (layer + 1).ToString() + "F when an aggresive devil, SoulStrangler(common), was sealed. Be careful!", MsgMessage.ChatMode.System);
                         else
@@ -256,13 +256,13 @@ layer 2
                                     {
                                         if (Role.Core.GetDistance(user.Player.X, user.Player.Y, members.client.Player.X, members.client.Player.Y) < 18)
                                         {
-                                            members.client.Teleport((ushort)(x - new Random().Next(1, 6)), (ushort)(y - new Random().Next(1, 6)), DBmap.ID, Dyn);
+                                            members.client.Teleport(DBmap.ID, (ushort)(x - new Random().Next(1, 6)), (ushort)(y - new Random().Next(1, 6)), Dyn);
                                         }
                                     }
                                 }
                             }
                         }
-                        user.Teleport(x, y, DBmap.ID, Dyn);
+                        user.Teleport(DBmap.ID, x, y, Dyn);
                         if (user.Player.TOMChallengeToday == 0)
                             user.SendSysMesage("You've already arrived (Common) in Tower of Mystery " + (layer + 1).ToString() + "F when an aggresive devil, DarkGlutton(common), was sealed. Be careful!", MsgMessage.ChatMode.System);
                         else
@@ -283,13 +283,13 @@ layer 2
                                     {
                                         if (Role.Core.GetDistance(user.Player.X, user.Player.Y, members.client.Player.X, members.client.Player.Y) < 18)
                                         {
-                                            members.client.Teleport((ushort)(x - new Random().Next(1, 6)), (ushort)(y - new Random().Next(1, 6)), DBmap.ID, Dyn);
+                                            members.client.Teleport(DBmap.ID, (ushort)(x - new Random().Next(1, 6)), (ushort)(y - new Random().Next(1, 6)), Dyn);
                                         }
                                     }
                                 }
                             }
                         }
-                        user.Teleport(x, y, DBmap.ID, Dyn);
+                        user.Teleport(DBmap.ID, x, y, Dyn);
                         if (user.Player.TOMChallengeToday == 0)
                             user.SendSysMesage("You've already arrived (Common) in Tower of Mystery " + (layer + 1).ToString() + "F when an aggresive devil, AlienDragon(common), was sealed. Be careful!", MsgMessage.ChatMode.System);
                         else
@@ -310,13 +310,13 @@ layer 2
                                     {
                                         if (Role.Core.GetDistance(user.Player.X, user.Player.Y, members.client.Player.X, members.client.Player.Y) < 18)
                                         {
-                                            members.client.Teleport((ushort)(x - new Random().Next(1, 6)), (ushort)(y - new Random().Next(1, 6)), DBmap.ID, Dyn);
+                                            members.client.Teleport(DBmap.ID, (ushort)(x - new Random().Next(1, 6)), (ushort)(y - new Random().Next(1, 6)), Dyn);
                                         }
                                     }
                                 }
                             }
                         }
-                        user.Teleport(x, y, DBmap.ID, Dyn);
+                        user.Teleport(DBmap.ID, x, y, Dyn);
                         if (user.Player.TOMChallengeToday == 0)
                             user.SendSysMesage("You've already arrived (Common) in Tower of Mystery " + (layer + 1).ToString() + "F when an aggresive devil, ShadowSpider(common), was sealed. Be careful!", MsgMessage.ChatMode.System);
                         else
@@ -337,13 +337,13 @@ layer 2
                                     {
                                         if (Role.Core.GetDistance(user.Player.X, user.Player.Y, members.client.Player.X, members.client.Player.Y) < 18)
                                         {
-                                            members.client.Teleport((ushort)(x - new Random().Next(1, 6)), (ushort)(y - new Random().Next(1, 6)), DBmap.ID, Dyn);
+                                            members.client.Teleport(DBmap.ID, (ushort)(x - new Random().Next(1, 6)), (ushort)(y - new Random().Next(1, 6)), Dyn);
                                         }
                                     }
                                 }
                             }
                         }
-                        user.Teleport(x, y, DBmap.ID, Dyn);
+                        user.Teleport(DBmap.ID, x, y, Dyn);
                         if (user.Player.TOMChallengeToday == 0)
                             user.SendSysMesage("You've already arrived (Common) in Tower of Mystery " + (layer + 1).ToString() + "F when an aggresive devil, FlameGiant(common), was sealed. Be careful!", MsgMessage.ChatMode.System);
                         else

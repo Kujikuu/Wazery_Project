@@ -58,7 +58,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                 ushort x = 0;
                 ushort y = 0;
                 Map.GetRandCoord(ref x, ref y);
-                user.Teleport(x, y, MapID);
+                user.Teleport(MapID, x, y);
                 return true;
             }
             return false;
@@ -119,7 +119,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                         ushort x = 0;
                         ushort y = 0;
                         Map2.GetRandCoord(ref x, ref y);
-                        user.Teleport(x, y, 3954);
+                        user.Teleport(3954, x, y);
                     }
                     if (!Map2.ContainMobID(20060))
                     {

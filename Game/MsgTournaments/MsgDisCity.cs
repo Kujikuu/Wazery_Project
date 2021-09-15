@@ -95,7 +95,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                     {
                         if (user.Player.Map == Map3.ID)
                         {
-                            user.Teleport(151, 278, Map4.ID);
+                            user.Teleport(Map4.ID, 151, 278);
 
                             MsgSchedules.SendSysMesage("All Players of Dis City Stage 3 has teleported to Stage 4!", MsgServer.MsgMessage.ChatMode.Center, MsgServer.MsgMessage.MsgColor.red);
 
@@ -109,7 +109,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                     {
                         if (user.Player.Map == Map3.ID || user.Player.Map == Map4.ID || user.Player.Map == Map2.ID || user.Player.Map == Map1.ID)
                         {
-                            user.Teleport(532, 485, 1020);
+                            user.Teleport(1020, 532, 485);
                             MsgSchedules.SendSysMesage("DisCity has ended. All Players of Dis City has teleported to ApeCity.", MsgServer.MsgMessage.ChatMode.Center, MsgServer.MsgMessage.MsgColor.red);
                         }
                     }
@@ -136,7 +136,7 @@ namespace LightConquer_Project.Game.MsgTournaments
             ushort x = 0;
             ushort y = 0;
             Map1.GetRandCoord(ref x, ref y);
-            client.Teleport(x, y, Map1.ID);
+            client.Teleport(Map1.ID, x, y);
 
                 if (!RewardPlayers.Contains(client.Player.UID))
                 {
@@ -157,7 +157,7 @@ namespace LightConquer_Project.Game.MsgTournaments
             {
                 PlayersMap2 += 1;
                 MsgSchedules.SendSysMesage("No." + PlayersMap2.ToString() + " Knight " + client.Player.Name + " " + ((client.Player.MyGuild != null) ? "of (" + client.Player.MyGuild.GuildName + ")".ToString() : "") + " has fought through HellGate and entered HellHall.", MsgServer.MsgMessage.ChatMode.TopLeftSystem, MsgServer.MsgMessage.MsgColor.white);
-                client.Teleport(214, 336, Map2.ID);
+                client.Teleport(Map2.ID, 214, 336);
                 client.GainExpBall(3 * 600, true, Role.Flags.ExperienceEffect.angelwing);
                 client.Player.KillersDisCity = 0;
             }
@@ -169,7 +169,7 @@ namespace LightConquer_Project.Game.MsgTournaments
             MsgSchedules.SendSysMesage("No." + PlayersMap2.ToString() + " Knight " + client.Player.Name + " " + ((client.Player.MyGuild != null) ? "of (" + client.Player.MyGuild.GuildName + ")".ToString() : "") + "has entered the left flank of HellCloister!", MsgServer.MsgMessage.ChatMode.TopLeftSystem, MsgServer.MsgMessage.MsgColor.white);
 
 
-            client.Teleport(300, 650, Map3.ID);
+            client.Teleport(Map3.ID, 300, 650);
             client.GainExpBall(4 * 600, true, Role.Flags.ExperienceEffect.angelwing);
             client.Player.KillersDisCity = 0;
         }

@@ -50,7 +50,7 @@ namespace LightConquer_Project.Game.MsgTournaments
             if (Process == ProcesType.Idle)
             {
                 user.Player.SpeedHunterGamePoints = 0;
-                user.Teleport(196, 214, 1081);
+                user.Teleport(1081, 196, 214);
                 return true;
             }
             return false;
@@ -74,7 +74,7 @@ namespace LightConquer_Project.Game.MsgTournaments
 
                         , new Action<Client.GameClient>(p =>
                     {
-                        p.Teleport(192, 223, 1036);
+                        p.Teleport(1036, 192, 223);
                     }), null, 60);
                 }
             }
@@ -127,7 +127,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                 }
             }
 
-            client.Teleport(300, 278, 1002);
+            client.Teleport(1002, 300, 278);
         }
 
         public void CheckUp()

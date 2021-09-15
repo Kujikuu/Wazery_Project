@@ -189,7 +189,7 @@ namespace LightConquer_Project.Game
                 ushort x = 0;
                 ushort y = 0;
                 Map.GetRandCoord(ref x, ref y);
-                C.Teleport(x, y, Map.ID, DinamicID);
+                C.Teleport(Map.ID, x, y, DinamicID);
                 //using (var rec = new ServerSockets.RecycledPacket())
                 //{
                 //    var stream = rec.GetStream();
@@ -345,7 +345,7 @@ namespace LightConquer_Project.Game
             foreach (GameClient C in PlayerList.Values.ToList())
             {
                 ChangePKMode(C, PKMode.Capture);
-                C.Teleport(C.Player.PMapX, C.Player.PMapY, C.Player.PMap, 0, true, true);
+                C.Teleport(C.Player.PMap, C.Player.PMapX, C.Player.PMapY, 0, true, true);
                 C.Dueler = 0;
                 C.Hits = 0;
                 C.Shots = 0;
@@ -403,7 +403,7 @@ namespace LightConquer_Project.Game
                 if (Database.Server.GamePoll.ContainsKey((C.Dueler)))
                     Reward(Database.Server.GamePoll[C.Dueler], C);
                 ChangePKMode(C, PKMode.Capture);
-                C.Teleport(C.Player.PMapX, C.Player.PMapY, C.Player.PMap);
+                C.Teleport(C.Player.PMap, C.Player.PMapX, C.Player.PMapY);
                 Finish();
             }
             else
@@ -430,7 +430,7 @@ namespace LightConquer_Project.Game
                                 Reward(C2, C);
                         Finish();
                     }
-                    C.Teleport(C.Player.PMapX, C.Player.PMapY, C.Player.PMap);
+                    C.Teleport(C.Player.PMap, C.Player.PMapX, C.Player.PMapY);
                 }
             }
         }

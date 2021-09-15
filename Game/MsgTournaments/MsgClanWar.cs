@@ -121,7 +121,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                 ushort x = 0;
                 ushort y = 0;
                 Map.GetRandCoord(ref x, ref y);
-                user.Teleport(x, y, Map.ID, DinamycID);
+                user.Teleport(Map.ID, x, y, DinamycID);
             }
             internal void UpdateScore(Role.Player client, uint Damage)
             {
@@ -347,7 +347,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                         }
                     }
                     if (Type == CityType.Bird)
-                        user.Teleport(RequestX, RequestY, RequestMap);
+                        user.Teleport(RequestMap, RequestX, RequestY);
                     //}
                 }
             }

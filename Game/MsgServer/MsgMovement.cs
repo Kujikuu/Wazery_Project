@@ -96,7 +96,7 @@ namespace LightConquer_Project.Game.MsgServer
 #endif
                 if (client.Map == null)
                 {
-                    client.Teleport(310, 288, 1002);
+                    client.Teleport(1002, 310, 288);
                     return;
                 }
                 if (client.Player.Map == 1038)
@@ -142,7 +142,7 @@ namespace LightConquer_Project.Game.MsgServer
 #endif
                 if (client.Map == null)
                 {
-                    client.Teleport(310, 288, 1002);
+                    client.Teleport(1002, 310, 288);
                     return;
                 }
                 if (client.Player.Map == 1038)

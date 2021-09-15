@@ -432,13 +432,13 @@ namespace LightConquer_Project.Game.MsgServer
                     case "leave":
                         {
                             if (UnlimitedArenaRooms.Maps.ContainsValue(client.Player.DynamicID))
-                                client.Teleport(428, 378, 1002);
+                                client.Teleport(1002, 428, 378);
                             break;
                         }
                     case "stuck":
                         {
                             if (client.Player.Map == 1002)
-                                client.Teleport(428, 378, 1002);
+                                client.Teleport(1002, 428, 378);
                             break;
                         }
                     case "allieschat":
@@ -678,8 +678,8 @@ namespace LightConquer_Project.Game.MsgServer
                                     && e.Player.UID != client.Player.UID))
                                 {
                                     member.Player.MessageBox("Your guild leader has summoned you to " + client.Map.Name + "! Would you like to go?",
-                                        new Action<Client.GameClient>(user => user.Teleport((ushort)(client.Player.X + Role.Core.Random.Next(0, 5)),
-                                            (ushort)(client.Player.Y + Role.Core.Random.Next(0, 5)), client.Player.Map, client.Player.DynamicID)),
+                                        new Action<Client.GameClient>(user => user.Teleport(client.Player.Map,
+                                            (ushort)(client.Player.X + Role.Core.Random.Next(0, 5)), (ushort)(client.Player.Y + Role.Core.Random.Next(0, 5)), client.Player.DynamicID)),
                                         null, 60);
                                 }
                                 using (var rec = new ServerSockets.RecycledPacket())
@@ -939,15 +939,15 @@ namespace LightConquer_Project.Game.MsgServer
                             {
                                 switch (data[1].ToLower())
                                 {
-                                    case "tc": client.Teleport(428, 378, 1002); break;
-                                    case "pc": client.Teleport(195, 260, 1011); break;
+                                    case "tc": client.Teleport(1002, 428, 378); break;
+                                    case "pc": client.Teleport(1011, 195, 260); break;
                                     case "ac":
-                                    case "am": client.Teleport(566, 563, 1020); break;
-                                    case "dc": client.Teleport(500, 645, 1000); break;
-                                    case "bi": client.Teleport(723, 573, 1015); break;
-                                    case "pka": client.Teleport(050, 050, 1005); break;
-                                    case "ma": client.Teleport(211, 196, 1036); break;
-                                    case "ja": client.Teleport(100, 100, 6000); break;
+                                    case "am": client.Teleport(1020, 566, 563); break;
+                                    case "dc": client.Teleport(1000, 500, 645); break;
+                                    case "bi": client.Teleport(1015, 723, 573); break;
+                                    case "pka": client.Teleport(1005, 050, 050); break;
+                                    case "ma": client.Teleport(1036, 211, 196); break;
+                                    case "ja": client.Teleport(6000, 100, 100); break;
                                 }
                                 break;
                             }
@@ -1001,7 +1001,7 @@ namespace LightConquer_Project.Game.MsgServer
                                     client.SendSysMesage("Invlid DinamicID !");
                                     break;
                                 }
-                                client.Teleport(X, Y, (ushort)mapid, DinamicID);
+                                client.Teleport((ushort)mapid, X, Y, DinamicID);
 
                                 break;
                             }
@@ -1011,7 +1011,7 @@ namespace LightConquer_Project.Game.MsgServer
                                 {
                                     if (user.Player.Name.ToLower().Contains(data[1].ToLower()))
                                     {
-                                        client.Teleport(user.Player.X, user.Player.Y, user.Player.Map, user.Player.DynamicID);
+                                        client.Teleport(user.Player.Map, user.Player.X, user.Player.Y, user.Player.DynamicID);
                                         break;
                                     }
                                 }
@@ -1024,7 +1024,7 @@ namespace LightConquer_Project.Game.MsgServer
                                 {
                                     if (user.Player.Name.ToLower() == data[1].ToLower())
                                     {
-                                        user.Teleport(client.Player.X, client.Player.Y, client.Player.Map);
+                                        user.Teleport(client.Player.Map, client.Player.X, client.Player.Y);
                                         break;
                                     }
                                 }
@@ -1142,7 +1142,7 @@ namespace LightConquer_Project.Game.MsgServer
                             {
                                 if (client.Player.UID != client.Player.UID)
                                 {
-                                    user.Teleport(client.Player.X, client.Player.Y, client.Player.Map);
+                                    user.Teleport(client.Player.Map, client.Player.X, client.Player.Y);
                                     break;
                                 }
                             }
@@ -1426,7 +1426,7 @@ namespace LightConquer_Project.Game.MsgServer
                                 {
                                     if (user.BanCount == 0)
                                     {
-                                        user.Teleport(036, 079, 6002);
+                                        user.Teleport(6002, 036, 079);
                                     }
                                     else
                                     {
@@ -1517,15 +1517,15 @@ namespace LightConquer_Project.Game.MsgServer
                         {
                             switch (data[1].ToLower())
                             {
-                                case "tc": client.Teleport(428, 378, 1002); break;
-                                case "pc": client.Teleport(195, 260, 1011); break;
+                                case "tc": client.Teleport(1002, 428, 378); break;
+                                case "pc": client.Teleport(1011, 195, 260); break;
                                 case "ac":
-                                case "am": client.Teleport(566, 563, 1020); break;
-                                case "dc": client.Teleport(500, 645, 1000); break;
-                                case "bi": client.Teleport(723, 573, 1015); break;
-                                case "pka": client.Teleport(050, 050, 1005); break;
-                                case "ma": client.Teleport(211, 196, 1036); break;
-                                case "ja": client.Teleport(100, 100, 6000); break;
+                                case "am": client.Teleport(1020, 566, 563); break;
+                                case "dc": client.Teleport(1000, 500, 645); break;
+                                case "bi": client.Teleport(1015, 723, 573); break;
+                                case "pka": client.Teleport(1005, 050, 050); break;
+                                case "ma": client.Teleport(1036, 211, 196); break;
+                                case "ja": client.Teleport(6000, 100, 100); break;
                             }
                             break;
                         }
@@ -1535,7 +1535,7 @@ namespace LightConquer_Project.Game.MsgServer
                             {
                                 if (user.Player.Name.ToLower().Contains(data[1].ToLower()))
                                 {
-                                    client.Teleport(user.Player.X, user.Player.Y, user.Player.Map, user.Player.DynamicID);
+                                    client.Teleport(user.Player.Map, user.Player.X, user.Player.Y, user.Player.DynamicID);
                                     break;
                                 }
                             }
@@ -1549,7 +1549,7 @@ namespace LightConquer_Project.Game.MsgServer
                             {
                                 if (user.Player.Name.ToLower() == data[1].ToLower())
                                 {
-                                    user.Teleport(client.Player.X, client.Player.Y, client.Player.Map);
+                                    user.Teleport(client.Player.Map, client.Player.X, client.Player.Y);
                                     break;
                                 }
                             }
@@ -1852,7 +1852,7 @@ namespace LightConquer_Project.Game.MsgServer
                                 client.SendSysMesage("Invlid DinamicID !");
                                 break;
                             }
-                            client.Teleport(X, Y, mapid, DinamicID);
+                            client.Teleport(mapid, X, Y, DinamicID);
 
                             break;
                         }

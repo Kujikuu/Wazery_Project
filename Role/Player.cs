@@ -2003,7 +2003,7 @@ namespace LightConquer_Project.Role
                         {
                             MyKillerName = killer.Name;
                             MyKillerUID = killer.UID;
-                            Owner.Teleport(39, 79, 6000,0, true);
+                            Owner.Teleport(6000, 39, 79, 0, true);
 
                             using (var rec = new ServerSockets.RecycledPacket())
                             {

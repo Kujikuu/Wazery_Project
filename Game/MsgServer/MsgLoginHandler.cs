@@ -289,7 +289,7 @@ namespace LightConquer_Project.Game.MsgServer
                         client.Inventory.Remove(722122, 1, packet);
 
                     if (client.Player.Map == 1616)
-                        client.Teleport(430, 380, 1002);
+                        client.Teleport(1002, 430, 380);
 
 
                     if(client.Player.Reborn < 2)

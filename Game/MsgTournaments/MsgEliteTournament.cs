@@ -67,7 +67,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                 {
                     foreach (var client in Database.Server.GamePoll.Values)
                     {
-                        client.Player.MessageBox("", new Action<Client.GameClient>(p => p.Teleport(302, 152, 1002, 0)), null, 60, MsgServer.MsgStaticMessage.Messages.ElitePKTournament);
+                        client.Player.MessageBox("", new Action<Client.GameClient>(p => p.Teleport(1002, 302, 152, 0)), null, 60, MsgServer.MsgStaticMessage.Messages.ElitePKTournament);
                     }
                 }
             }
@@ -587,7 +587,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                 ushort x = 0;
                 ushort y = 0;
                 Map.GetRandCoord(ref x, ref y);
-                user.Teleport(x, y, 700, DinamicID);
+                user.Teleport(700, x, y, DinamicID);
                 user.Player.ProtectJumpAttack(10);
                 user.Player.SetPkMode(Role.Flags.PKMode.PK);
 
@@ -784,7 +784,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                         ushort x = 0;
                         ushort y = 0;
                         elitepkgroup.Map.GetRandCoord(ref x, ref y);
-                        user.Teleport(x, y, MsgEliteGroup.WaitingAreaID, elitepkgroup.DinamycID);
+                        user.Teleport(MsgEliteGroup.WaitingAreaID, x, y, elitepkgroup.DinamycID);
                         user.Player.RestorePkMode();
                         user.ElitePkMatch = null;
                         Console.WriteLine("name = " + user.Player.Name + " has teleported to X=" + x + " Y=" + y + "");
@@ -899,7 +899,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                             client.Send(stream.ElitePKWatchFinalize());
 
                             client.ElitePkWatchingGroup = this;
-                            client.Teleport((ushort)Program.GetRandom.Next(35, 70), (ushort)Program.GetRandom.Next(35, 70), 700, DinamicID);
+                            client.Teleport(700, (ushort)Program.GetRandom.Next(35, 70), (ushort)Program.GetRandom.Next(35, 70), DinamicID);
                             UpdateScore();
                             UpdateWatchers();
 
@@ -1107,7 +1107,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                 ushort x = 0;
                 ushort y = 0;
                 Map.GetRandCoord(ref x, ref y);
-                client.Teleport(x, y, WaitingAreaID, DinamycID);
+                client.Teleport(WaitingAreaID, x, y, DinamycID);
 
                 using (var rec = new ServerSockets.RecycledPacket())
                 {

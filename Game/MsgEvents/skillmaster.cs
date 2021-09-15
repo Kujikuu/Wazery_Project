@@ -45,7 +45,7 @@ namespace LightConquer_Project.Game.MsgEvents
                     ushort x = 0;
                     ushort y = 0;
                     Map.GetRandCoord(ref x, ref y);
-                    client.Teleport(x, y, Map.ID, DinamicID, true, true);
+                    client.Teleport(Map.ID, x, y, DinamicID, true, true);
                     if (client.Player.ContainFlag(MsgServer.MsgUpdate.Flags.Cyclone))
                         client.Player.RemoveFlag(MsgServer.MsgUpdate.Flags.Cyclone);
                     if (client.Player.ContainFlag(MsgServer.MsgUpdate.Flags.Fly))
@@ -77,7 +77,7 @@ namespace LightConquer_Project.Game.MsgEvents
                                     client.Player.PMap = client.Player.Map;
                                     client.Player.PMapX = client.Player.X;
                                     client.Player.PMapY = client.Player.Y;
-                                    client.Teleport(50, 50, 1616);
+                                    client.Teleport(1616, 50, 50);
                                     PlayerList.Add(client.Player.UID, client);
                                     PlayerScores.Add(client.Player.UID, 1000);
                                     //client.EventBase = Program.Events[0];
@@ -144,7 +144,7 @@ namespace LightConquer_Project.Game.MsgEvents
             }
 
 
-            C.Teleport((ushort)X, (ushort)Y, Map.ID, DinamicID, true, true);
+            C.Teleport(Map.ID, (ushort)X, (ushort)Y, DinamicID, true, true);
         }
 
         public override void Hit(GameClient Attacker, GameClient Victim)

@@ -30,7 +30,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                 StartTimer = DateTime.Now;
                 foreach (var client in Database.Server.GamePoll.Values)
                 {
-                    client.Player.MessageBox("", new Action<Client.GameClient>(p => p.Teleport(312, 194, 1002, 0)), null, 60, MsgServer.MsgStaticMessage.Messages.Couple);
+                    client.Player.MessageBox("", new Action<Client.GameClient>(p => p.Teleport(1002, 312, 194, 0)), null, 60, MsgServer.MsgStaticMessage.Messages.Couple);
 
                 }
                 if (Map == null)
@@ -65,8 +65,8 @@ namespace LightConquer_Project.Game.MsgTournaments
                 var teammates2 = user.Team.GetMembers().ToList();
                 if (teammates2[0].Player.Spouse == teammates2[1].Player.Name)
                 {
-                    teammates2[0].Teleport(x, y, Map.ID, DinamicMap);
-                    teammates2[1].Teleport(x, y, Map.ID, DinamicMap);
+                    teammates2[0].Teleport(Map.ID, x, y, DinamicMap);
+                    teammates2[1].Teleport(Map.ID, x, y, DinamicMap);
                 }
                 return true;
             }
@@ -97,7 +97,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                 {
                     foreach (var user in MapPlayers())
                     {
-                        user.Teleport(428, 378, 1002);
+                        user.Teleport(1002, 428, 378);
                     }
                     MsgSchedules.SendSysMesage("Couple PK Tournament has ended. All Players of Tournament has teleported to TwinCity.", MsgServer.MsgMessage.ChatMode.Center, MsgServer.MsgMessage.MsgColor.red);
                     Process = ProcesType.Dead;
@@ -137,7 +137,7 @@ namespace LightConquer_Project.Game.MsgTournaments
 
                         winner.SendSysMesage("You received " + RewardConquerPoints.ToString() + " Silvers. ", MsgServer.MsgMessage.ChatMode.System, MsgServer.MsgMessage.MsgColor.red);
                         foreach (var player in MapPlayers())
-                            player.Teleport(428, 378, 1002, 0);
+                            player.Teleport(1002, 428, 378, 0);
                         Winner1 = winner.Player.Name;
                         Winner2 = winner.Player.Spouse;
 
@@ -157,7 +157,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                     if (user.Player.Alive == false)
                     {
                         if (user.Player.DeadStamp.AddSeconds(4) < Timer)
-                            user.Teleport(428, 378, 1002);
+                            user.Teleport(1002, 428, 378);
                     }
                 }
             }

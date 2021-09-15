@@ -26,7 +26,7 @@ namespace LightConquer_Project.Game.MsgServer
                                    // {
                                    //     p.Team.TeleportTeam(2090, 32, 30, dinamicid, c => Role.Core.GetDistance(p.Player.X, p.Player.Y, c.Player.X, c.Player.Y) <= 18);
                                    // }
-                                   p.Teleport(32, 30, 2090);
+                                   p.Teleport(2090, 32, 30);
 
                                 }), null, 0);
                         }

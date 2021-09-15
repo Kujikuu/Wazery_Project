@@ -399,7 +399,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                     client.ArenaWatchingGroup = this;
 
 
-                    client.Teleport((ushort)Program.GetRandom.Next(35, 70), (ushort)Program.GetRandom.Next(35, 70), 700, dinamicID);
+                    client.Teleport(700, (ushort)Program.GetRandom.Next(35, 70), (ushort)Program.GetRandom.Next(35, 70), dinamicID);
 
                     if (Watchers.TryAdd(client.Player.UID, client))
                     {
@@ -805,7 +805,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                         ushort x = 0;
                         ushort y = 0;
                         map.GetRandCoord(ref x, ref y);
-                        user.Teleport(x, y, 700, dinamicID);
+                        user.Teleport(700, x, y, dinamicID);
                         user.Player.ProtectJumpAttack(10);
 
                         if (user.Player.MyJiangHu != null)

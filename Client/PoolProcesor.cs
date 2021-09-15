@@ -914,7 +914,7 @@ namespace LightConquer_Project.Client
                 {
                     if (!client.Map.ValidLocation(client.Player.X, client.Player.Y))
                     {
-                        client.Teleport(64, 56, 601);
+                        client.Teleport(601, 64, 56);
                     }
                 }
                 if (client.Player.Map == 44463)
@@ -986,7 +986,7 @@ namespace LightConquer_Project.Client
                                 {
                                     ushort x = 0; ushort y = 0;
                                     client.Map.GetRandCoord(ref x, ref y);
-                                    client.Teleport(x, y, client.EventBase.Map.ID, client.EventBase.DinamicID);
+                                    client.Teleport(client.EventBase.Map.ID, x, y, client.EventBase.DinamicID);
                                 }
                         }
                     }
@@ -1038,7 +1038,7 @@ namespace LightConquer_Project.Client
                                 client.Inventory.Remove(729988, 1, stream);
                                 client.Inventory.Remove(729989, 1, stream);
                             }
-                            client.Teleport(55, 55, 1004);
+                            client.Teleport(1004, 55, 55);
                         }
                     }
                 }
@@ -1051,7 +1051,7 @@ namespace LightConquer_Project.Client
                 {
                     if (Role.Core.GetDistance(client.Player.X, client.Player.Y, 471, 844) <= 5 && client.Inventory.Contain(721799, 1))
                     {
-                        client.Teleport(80, 39, 1792);
+                        client.Teleport(1792, 80, 39);
 
                     }
                     else if (Role.Core.GetDistance(client.Player.X, client.Player.Y, 643, 622) < 18)
@@ -1075,7 +1075,7 @@ namespace LightConquer_Project.Client
                         client.Player.MessageBox("You followed the track of the Elder Power and found him on a road leading to the tomb tunnel. Hit the road now?",
                                   new Action<Client.GameClient>(p =>
                                   {
-                                      p.Teleport(134, 93, 10089);
+                                      p.Teleport(10089, 134, 93);
                                       p.Player.QuestGUI.SendAutoPatcher("There are too many devil claws here. Try your best to break through and find the Elder Power.", 10089, 28, 89, 0);
                                       p.SendSysMesage("There are too many devil claws here. Try your best to break through and find the Elder Power.");
                                   }), null);
@@ -1086,7 +1086,7 @@ namespace LightConquer_Project.Client
                     if (Role.Core.GetDistance(361, 314, client.Player.X, client.Player.Y) <= 2)
                     {
                         client.Player.MessageBox("The Elder Power is seriously injured. Are you sure you want to leave him alone?",
-                             new Action<Client.GameClient>(p => p.Teleport(334, 625, 1002)), null);
+                             new Action<Client.GameClient>(p => p.Teleport(1002, 334, 625)), null);
                     }
                 }
                 else if (client.Player.Map == 44460)
@@ -1094,7 +1094,7 @@ namespace LightConquer_Project.Client
                     if (Role.Core.GetDistance(361, 314, client.Player.X, client.Player.Y) <= 2)
                     {
                         client.Player.MessageBox("The Elder Power is seriously injured. Are you sure you want to leave him alone?",
-                             new Action<Client.GameClient>(p => p.Teleport(334, 625, 1002)), null);
+                             new Action<Client.GameClient>(p => p.Teleport(1002, 334, 625)), null);
                     }
                 }
                 else if (client.Player.Map == 44461)
@@ -1102,7 +1102,7 @@ namespace LightConquer_Project.Client
                     if (Role.Core.GetDistance(361, 314, client.Player.X, client.Player.Y) <= 2)
                     {
                         client.Player.MessageBox("The Elder Power is seriously injured. Are you sure you want to leave him alone?",
-                             new Action<Client.GameClient>(p => p.Teleport(334, 625, 1002)), null);
+                             new Action<Client.GameClient>(p => p.Teleport(1002, 334, 625)), null);
                     }
                 }
                 else if (client.Player.Map == 44462)
@@ -1110,7 +1110,7 @@ namespace LightConquer_Project.Client
                     if (Role.Core.GetDistance(361, 314, client.Player.X, client.Player.Y) <= 2)
                     {
                         client.Player.MessageBox("The Elder Power is seriously injured. Are you sure you want to leave him alone?",
-                             new Action<Client.GameClient>(p => p.Teleport(334, 625, 1002)), null);
+                             new Action<Client.GameClient>(p => p.Teleport(1002, 334, 625)), null);
                     }
                 }
                 else if (client.Player.Map == 44463)
@@ -1118,14 +1118,14 @@ namespace LightConquer_Project.Client
                     if (Role.Core.GetDistance(361, 314, client.Player.X, client.Player.Y) <= 2)
                     {
                         client.Player.MessageBox("The Elder Power is seriously injured. Are you sure you want to leave him alone?",
-                             new Action<Client.GameClient>(p => p.Teleport(334, 625, 1002)), null);
+                             new Action<Client.GameClient>(p => p.Teleport(1002, 334, 625)), null);
                     }
                     if (Role.Core.GetDistance(58, 164, client.Player.X, client.Player.Y) <= 2)
                     {
                         client.Player.MessageBox("You`re very close to the tunnel exit. Exit the tunnel now?",
                              new Action<Client.GameClient>(p =>
                              {
-                                 p.Teleport(253, 406, 1002);
+                                 p.Teleport(1002, 253, 406);
 
                                  p.Player.QuestGUI.FinishQuest(3801);
                                  var ActiveQuest = Database.QuestInfo.GetFinishQuest((uint)20032, p.Player.Class, 3802);
@@ -1176,7 +1176,7 @@ namespace LightConquer_Project.Client
                     if (Role.Core.GetDistance(136, 89, client.Player.X, client.Player.Y) <= 2)
                     {
                         client.Player.MessageBox("The tomb tunnel is in front of you and the Elder Power must be there now. Enter the tunnel now?",
-                             new Action<Client.GameClient>(p => p.Teleport(334, 625, 1002)), null);
+                             new Action<Client.GameClient>(p => p.Teleport(1002, 334, 625)), null);
                     }
                     if (Role.Core.GetDistance(28, 89, client.Player.X, client.Player.Y) <= 2)
                     {
@@ -1185,7 +1185,7 @@ namespace LightConquer_Project.Client
                         client.Player.MessageBox("You haven`t found the Elder Power. Are you sure you want to return to Wind Plain now?",
                                 new Action<Client.GameClient>(p =>
                                 {
-                                    p.Teleport(359, 312, 10090);
+                                    p.Teleport(10090, 359, 312);
                                     p.Player.QuestGUI.SendAutoPatcher("You found the Elder Power sitting in the tomb tunnel. It seems he has been seriously injured.", 10090, 350, 285, (uint)Game.MsgNpc.NpcID.ElderPower2);
                                     p.SendSysMesage("You found the Elder Power sitting in the tomb tunnel. It seems he has been seriously injured.");
                                 }), null);
@@ -1207,14 +1207,14 @@ namespace LightConquer_Project.Client
                     if (Role.Core.GetDistance(192, 151, client.Player.X, client.Player.Y) <= 2)
                     {
                         client.Player.MessageBox("Your school camp was suddenly attacked by the devil force and is in critical condition. Are you sure you want to leave now?",
-                                  new Action<Client.GameClient>(p => p.Teleport(334, 625, 1002)), null);
+                                  new Action<Client.GameClient>(p => p.Teleport(1002, 334, 625)), null);
                     }
                 }
                 else if (client.Player.Map == 1787)
                 {
                     if (Role.Core.GetDistance(83, 75, client.Player.X, client.Player.Y) <= 2)
                     {
-                        client.Teleport(126, 73, 1786);
+                        client.Teleport(1786, 126, 73);
                         client.CreateBoxDialog("You arrived at Dungeon 2F.");
                     }
                 }
@@ -1222,12 +1222,12 @@ namespace LightConquer_Project.Client
                 {
                     if (Role.Core.GetDistance(122, 67, client.Player.X, client.Player.Y) <= 2)
                     {
-                        client.Teleport(105, 108, 1785);
+                        client.Teleport(1785, 105, 108);
                         client.CreateBoxDialog("You arrived at Dungeon 1F.");
                     }
                     else if (Role.Core.GetDistance(43, 65, client.Player.X, client.Player.Y) <= 2)
                     {
-                        client.Teleport(87, 74, 1787);
+                        client.Teleport(1787, 87, 74);
                         client.CreateBoxDialog("You arrived at Dungeon 3F.");
                     }
                 }
@@ -1239,7 +1239,7 @@ namespace LightConquer_Project.Client
                         {
                             if (client.Inventory.Contain(721788, 1))
                             {
-                                client.Teleport(126, 73, 1786);
+                                client.Teleport(1786, 126, 73);
                                 client.CreateBoxDialog("You arrived at Dungeon 2F.");
                             }
                             else
@@ -1278,7 +1278,7 @@ namespace LightConquer_Project.Client
                                     {
                                         if (client.Inventory.HaveSpace(1))
                                         {
-                                            client.Teleport(94, 333, 1001);
+                                            client.Teleport(1001, 94, 333);
                                             using (var rec = new ServerSockets.RecycledPacket())
                                             {
                                                 var msg = rec.GetStream();
@@ -1344,38 +1344,38 @@ namespace LightConquer_Project.Client
                 {
                     if (Role.Core.GetDistance(client.Player.X, client.Player.Y, 40, 66) <= 2)
                         client.Player.MessageBox("Do you want to leave the Tower of Mystery?.",
-                                  new Action<Client.GameClient>(p => p.Teleport(83, 74, 4020)), null);
+                                  new Action<Client.GameClient>(p => p.Teleport(4020, 83, 74)), null);
                 }
                 else if (client.Player.Map == 4003)
                 {
                     if (Role.Core.GetDistance(client.Player.X, client.Player.Y, 42, 64) <= 2)
                         client.Player.MessageBox("Do you want to leave the Tower of Mystery?.",
-                                  new Action<Client.GameClient>(p => p.Teleport(83, 74, 4020)), null);
+                                  new Action<Client.GameClient>(p => p.Teleport(4020, 83, 74)), null);
                 }
                 else if (client.Player.Map == 4006)
                 {
                     if (Role.Core.GetDistance(client.Player.X, client.Player.Y, 44, 62) <= 2)
                         client.Player.MessageBox("Do you want to leave the Tower of Mystery?.",
-                                  new Action<Client.GameClient>(p => p.Teleport(83, 74, 4020)), null);
+                                  new Action<Client.GameClient>(p => p.Teleport(4020, 83, 74)), null);
                 }
                 else if (client.Player.Map == 4008)
                 {
                     if (Role.Core.GetDistance(client.Player.X, client.Player.Y, 46, 68) <= 2)
                         client.Player.MessageBox("Do you want to leave the Tower of Mystery?.",
-                                  new Action<Client.GameClient>(p => p.Teleport(83, 74, 4020)), null);
+                                  new Action<Client.GameClient>(p => p.Teleport(4020, 83, 74)), null);
                 }
                 else if (client.Player.Map == 4009)
                 {
                     if (Role.Core.GetDistance(client.Player.X, client.Player.Y, 46, 44) <= 2)
                         client.Player.MessageBox("Do you want to leave the Tower of Mystery?.",
-                                  new Action<Client.GameClient>(p => p.Teleport(83, 74, 4020)), null);
+                                  new Action<Client.GameClient>(p => p.Teleport(4020, 83, 74)), null);
                 }
 
                 if (client.Player.Map == 4020)
                 {
                     if (Role.Core.GetDistance(73, 98, client.Player.X, client.Player.Y) <= 2)
                     {
-                        client.Teleport(78, 349, 3998);
+                        client.Teleport(3998, 78, 349);
                         using (var rec = new ServerSockets.RecycledPacket())
                         {
                             var msg = rec.GetStream();
@@ -1440,7 +1440,7 @@ namespace LightConquer_Project.Client
                                     client.Player.MessageBox("You felt something strange under the ground. Maybe, the Chief`s Hunting Amulet can clear your confusion.",
                                        new Action<Client.GameClient>(p =>
                                        {
-                                           p.Teleport(78, 349, 3998);
+                                           p.Teleport(3998, 78, 349);
                                            using (var rec = new ServerSockets.RecycledPacket())
                                            {
                                                var pstream = rec.GetStream();
@@ -1465,7 +1465,7 @@ namespace LightConquer_Project.Client
                         {
                             if (client.Player.QuestGUI.CheckObjectives(522, 3))
                             {
-                                client.Teleport(63, 102, 1784);
+                                client.Teleport(1784, 63, 102);
                                 client.CreateBoxDialog("You arrived at the Hut.");
                                 client.Player.QuestGUI.FinishQuest(522);
                                 var ActiveQuest = Database.QuestInfo.GetFinishQuest((uint)Game.MsgNpc.NpcID.TimeDoor, client.Player.Class, 523);
@@ -1482,7 +1482,7 @@ namespace LightConquer_Project.Client
                         }
                         else if (client.Player.QuestGUI.CheckQuest(522, MsgQuestList.QuestListItem.QuestStatus.Finished))
                         {
-                            client.Teleport(63, 102, 1784);
+                            client.Teleport(1784, 63, 102);
                             client.CreateBoxDialog("You arrived at the Hut.");
                         }
                         else
@@ -1500,7 +1500,7 @@ namespace LightConquer_Project.Client
                         {
                             if (client.Player.QuestGUI.CheckObjectives(522, 3))
                             {
-                                client.Teleport(63, 102, 1784);
+                                client.Teleport(1784, 63, 102);
                                 client.CreateBoxDialog("You arrived at the Hut.");
                                 client.Player.QuestGUI.FinishQuest(522);
                                 var ActiveQuest = Database.QuestInfo.GetFinishQuest((uint)Game.MsgNpc.NpcID.TimeDoor, client.Player.Class, 523);
@@ -1517,7 +1517,7 @@ namespace LightConquer_Project.Client
                         }
                         else if (client.Player.QuestGUI.CheckQuest(522, MsgQuestList.QuestListItem.QuestStatus.Finished))
                         {
-                            client.Teleport(63, 102, 1784);
+                            client.Teleport(1784, 63, 102);
                             client.CreateBoxDialog("You arrived at the Hut.");
                         }
                         else
@@ -1535,7 +1535,7 @@ namespace LightConquer_Project.Client
                         {
                             if (client.Player.QuestGUI.CheckObjectives(522, 3))
                             {
-                                client.Teleport(63, 102, 1784);
+                                client.Teleport(1784, 63, 102);
                                 client.CreateBoxDialog("You arrived at the Hut.");
                                 client.Player.QuestGUI.FinishQuest(522);
                                 var ActiveQuest = Database.QuestInfo.GetFinishQuest((uint)Game.MsgNpc.NpcID.TimeDoor, client.Player.Class, 523);
@@ -1553,7 +1553,7 @@ namespace LightConquer_Project.Client
                         }
                         else if (client.Player.QuestGUI.CheckQuest(522, MsgQuestList.QuestListItem.QuestStatus.Finished))
                         {
-                            client.Teleport(63, 102, 1784);
+                            client.Teleport(1784, 63, 102);
                             client.CreateBoxDialog("You arrived at the Hut.");
                         }
                         else
@@ -1793,7 +1793,7 @@ namespace LightConquer_Project.Client
                         if (client.Player.QuestGUI.CheckQuest(1352, MsgQuestList.QuestListItem.QuestStatus.Accepted))
                         {
 
-                            client.Player.MessageBox("Do you want to jump off the cliff to prove your courge?", new Action<Client.GameClient>(user => user.Teleport(375, 48, 1011, 0)), null, 99999);
+                            client.Player.MessageBox("Do you want to jump off the cliff to prove your courge?", new Action<Client.GameClient>(user => user.Teleport(1011, 375, 48, 0)), null, 99999);
 
 
                         }
@@ -1850,7 +1850,7 @@ namespace LightConquer_Project.Client
                                 var msg = rec.GetStream();
                                 client.Player.QuestGUI.IncreaseQuestObjectives(msg, 1338, 1);
                             }
-                            client.Teleport(566, 570, 1020);
+                            client.Teleport(1020, 566, 570);
 
                             client.CreateBoxDialog("You~chanted~the~spell!~You~arrived~the~Love~Canyon!");
 
@@ -1954,7 +1954,7 @@ namespace LightConquer_Project.Client
                         if (client.Player.MonkMiseryTransforming == 1)
                         {
                             client.Player.MonkMiseryTransforming = 0;
-                            client.Teleport(client.Player.X, client.Player.Y, 3831);
+                            client.Teleport(3831, client.Player.X, client.Player.Y);
                             using (var rec = new ServerSockets.RecycledPacket())
                             {
                                 var stream = rec.GetStream();
@@ -2499,7 +2499,7 @@ namespace LightConquer_Project.Client
                         {
                             ushort x = 0; ushort y = 0;
                             client.Map.GetRandCoord(ref x, ref y);
-                            client.Teleport(x, y, 1005, 0);
+                            client.Teleport(1005, x, y, 0);
                         }
                     }
                     if (client.Player.StampArenaScore.AddSeconds(3) < timer)
@@ -2530,7 +2530,7 @@ namespace LightConquer_Project.Client
 
                 if (client.Player.X == 0 || client.Player.Y == 0)
                 {
-                    client.Teleport(300, 278, 1002);
+                    client.Teleport(1002, 300, 278);
                 }
                 if (client.Player.HeavenBlessing > 0)
                 {

@@ -218,30 +218,30 @@ namespace LightConquer_Project.Database
                             default:
                                 {
 
-                                    client.Teleport(428, 378, 1002);
+                                    client.Teleport(1002, 428, 378);
                                     break;
                                 }
                             case 1000:
                                 {
 
-                                    client.Teleport(500, 650, 1000);
+                                    client.Teleport(1000, 500, 650);
                                     break;
                                 }
                             case 1020:
                                 {
 
-                                    client.Teleport(565, 562, 1020);
+                                    client.Teleport(1020, 565, 562);
                                     break;
                                 }
                             case 1011:
                                 {
 
-                                    client.Teleport(188, 264, 1011);
+                                    client.Teleport(1011, 188, 264);
                                     break;
                                 }
                             case 1015:
                                 {
-                                    client.Teleport(717, 571, 1015);
+                                    client.Teleport(1015, 717, 571);
                                     break;
                                 }
                         }

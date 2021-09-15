@@ -393,7 +393,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                     SendScore();
 
                     client.TeamArenaWatchingGroup = this;
-                    client.Teleport((ushort)Program.GetRandom.Next(35, 70), (ushort)Program.GetRandom.Next(35, 70), 700, dinamicID);
+                    client.Teleport(700, (ushort)Program.GetRandom.Next(35, 70), (ushort)Program.GetRandom.Next(35, 70), dinamicID);
                 }
             }
             public unsafe void DoLeaveWatching(Client.GameClient client)
@@ -767,7 +767,7 @@ namespace LightConquer_Project.Game.MsgTournaments
 
                             foreach (var user in team.GetMembers())
                             {
-                                user.Teleport(x, y, 700, dinamicID);
+                                user.Teleport(700, x, y, dinamicID);
                                 user.Player.SetPkMode(Role.Flags.PKMode.Team);
                                 user.Player.ProtectJumpAttack(10);
                             }

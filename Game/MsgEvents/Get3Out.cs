@@ -41,7 +41,7 @@ namespace LightConquer_Project.Game.MsgEvents
                                     client.Player.PMap = client.Player.Map;
                                     client.Player.PMapX = client.Player.X;
                                     client.Player.PMapY = client.Player.Y;
-                                    client.Teleport(53, 65, 1616);
+                                    client.Teleport(1616, 53, 65);
                                     PlayerList.Add(client.Player.UID, client);
                                     PlayerScores.Add(client.Player.UID, 3);
                                     //client.EventBase = Program.Events[0];

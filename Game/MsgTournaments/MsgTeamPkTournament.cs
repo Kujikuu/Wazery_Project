@@ -36,7 +36,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                 Proces = ProcesType.Idle;
                 foreach (var client in Database.Server.GamePoll.Values)
                 {
-                    client.Player.MessageBox("", new Action<Client.GameClient>(p => p.Teleport(314, 146, 1002, 0)), null, 60, MsgServer.MsgStaticMessage.Messages.SkillTeamPKTournament);
+                    client.Player.MessageBox("", new Action<Client.GameClient>(p => p.Teleport(1002, 314, 146, 0)), null, 60, MsgServer.MsgStaticMessage.Messages.SkillTeamPKTournament);
                 }//The Skill Team PK Tournament will start at 22:00. Prepare yourself and sign up for it as a team!
             }
         }
@@ -282,7 +282,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                 Proces = ProcesType.Idle;
                 foreach (var client in Database.Server.GamePoll.Values)
                 {
-                    client.Player.MessageBox("", new Action<Client.GameClient>(p => p.Teleport(290, 147, 1002, 0)), null, 60, MsgServer.MsgStaticMessage.Messages.TeamPKTournament);
+                    client.Player.MessageBox("", new Action<Client.GameClient>(p => p.Teleport(1002, 290, 147, 0)), null, 60, MsgServer.MsgStaticMessage.Messages.TeamPKTournament);
                 }
             }
         }
@@ -827,7 +827,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                         ushort x = 0;
                         ushort y = 0;
                         Map.GetRandCoord(ref x, ref y);
-                        user.Teleport(x, y, 700, DinamicID);
+                        user.Teleport(700, x, y, DinamicID);
                         user.Player.ProtectJumpAttack(10);
 
                         user.Player.InTeamPk = true;
@@ -1023,7 +1023,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                                 ushort x = 0;
                                 ushort y = 0;
                                 elitepkgroup.Map.GetRandCoord(ref x, ref y);
-                                user.Teleport(x, y, MsgEliteGroup.WaitingAreaID, elitepkgroup.DinamycID);
+                                user.Teleport(MsgEliteGroup.WaitingAreaID, x, y, elitepkgroup.DinamycID);
                                 user.Player.RestorePkMode();
 
 #if TEST
@@ -1133,7 +1133,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                         client.Send(stream.ElitePKWatchFinalize());
 
                         client.TeamElitePkWatchingGroup = this;
-                        client.Teleport((ushort)Program.GetRandom.Next(35, 70), (ushort)Program.GetRandom.Next(35, 70), 700, DinamicID);
+                        client.Teleport(700, (ushort)Program.GetRandom.Next(35, 70), (ushort)Program.GetRandom.Next(35, 70), DinamicID);
                         UpdateScore();
                         UpdateWatchers();
 
@@ -1343,7 +1343,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                 ushort x = 0;
                 ushort y = 0;
                 Map.GetRandCoord(ref x, ref y);
-                client.Teleport(x, y, WaitingAreaID, DinamycID);
+                client.Teleport(WaitingAreaID, x, y, DinamycID);
 
                 using (var rec = new ServerSockets.RecycledPacket())
                 {

@@ -37,7 +37,7 @@ namespace LightConquer_Project.Game.MsgEvents
                 ushort x = 0;
                 ushort y = 0;
                 Map.GetRandCoord(ref x, ref y);
-                client.Teleport(x, y, Map.ID, DinamicID, true, true);
+                client.Teleport(Map.ID, x, y, DinamicID, true, true);
                 client.Player.RemoveFlag(MsgServer.MsgUpdate.Flags.Cyclone);
                 client.Player.RemoveFlag(MsgServer.MsgUpdate.Flags.Fly);
                 client.Player.RemoveFlag(MsgServer.MsgUpdate.Flags.Superman);

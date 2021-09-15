@@ -163,7 +163,7 @@ namespace LightConquer_Project.Game.MsgTournaments
             ushort x = 0;
             ushort y = 0;
             BaseMap.GetRandCoord(ref x, ref y);
-            user.Teleport(x, y, 1002);
+            user.Teleport(1002, x, y);
 
             SendMapColor(stream, user);
 

@@ -160,43 +160,43 @@ namespace LightConquer_Project.Game.MsgServer
             switch (Location)
             {
                 case VIPTeleportLocations.TwinCity:
-                case VIPTeleportLocations.TCSquare: user.Teleport(428, 378,1002); break;
-                case VIPTeleportLocations.WPFarm: user.Teleport(378, 162, 1002); break;
-                case VIPTeleportLocations.WPBridge: user.Teleport(598, 678, 1002); break;
-                case VIPTeleportLocations.WPAltar: user.Teleport(564, 793, 1002); break;
-                case VIPTeleportLocations.WPApparation: user.Teleport(340, 650, 1002); break;
-                case VIPTeleportLocations.WPPoltergiest: user.Teleport(230, 388, 1002); break;
-                case VIPTeleportLocations.WPTurtledove: user.Teleport(627, 474, 1002); break;
+                case VIPTeleportLocations.TCSquare: user.Teleport(1002, 428, 378); break;
+                case VIPTeleportLocations.WPFarm: user.Teleport(1002, 378, 162); break;
+                case VIPTeleportLocations.WPBridge: user.Teleport(1002, 598, 678); break;
+                case VIPTeleportLocations.WPAltar: user.Teleport(1002, 564, 793); break;
+                case VIPTeleportLocations.WPApparation: user.Teleport(1002, 340, 650); break;
+                case VIPTeleportLocations.WPPoltergiest: user.Teleport(1002, 230, 388); break;
+                case VIPTeleportLocations.WPTurtledove: user.Teleport(1002, 627, 474); break;
 
                 case VIPTeleportLocations.PhoenixCastle:
-                case VIPTeleportLocations.PCSqaure: user.Teleport(188, 264, 1011); break;
-                case VIPTeleportLocations.MFWaterCave: user.Teleport(380, 31, 1011); break;
-                case VIPTeleportLocations.MFVillage: user.Teleport(785, 472, 1011); break;
-                case VIPTeleportLocations.MFLake: user.Teleport(369, 568, 1011); break;
-                case VIPTeleportLocations.MFMineCave: user.Teleport(924, 560, 1011); break;
-                case VIPTeleportLocations.MFBridge: user.Teleport(648, 567, 1011); break;
-                case VIPTeleportLocations.MFToApeCity: user.Teleport(475, 841, 1011); break;
+                case VIPTeleportLocations.PCSqaure: user.Teleport(1011, 188, 264); break;
+                case VIPTeleportLocations.MFWaterCave: user.Teleport(1011, 380, 31); break;
+                case VIPTeleportLocations.MFVillage: user.Teleport(1011, 785, 472); break;
+                case VIPTeleportLocations.MFLake: user.Teleport(1011, 369, 568); break;
+                case VIPTeleportLocations.MFMineCave: user.Teleport(1011, 924, 560); break;
+                case VIPTeleportLocations.MFBridge: user.Teleport(1011, 648, 567); break;
+                case VIPTeleportLocations.MFToApeCity: user.Teleport(1011, 475, 841); break;
 
                 case VIPTeleportLocations.ApeCity:
-                case VIPTeleportLocations.ACSquare: user.Teleport(  565, 562,1020); break;
-                case VIPTeleportLocations.ACSouth: user.Teleport(699, 640, 1020); break;
-                case VIPTeleportLocations.ACEast: user.Teleport(624, 337, 1020); break;
-                case VIPTeleportLocations.ACNorth: user.Teleport(200, 224, 1020); break;
-                case VIPTeleportLocations.ACWest: user.Teleport(322, 621, 1020); break;
+                case VIPTeleportLocations.ACSquare: user.Teleport(1020, 565, 562); break;
+                case VIPTeleportLocations.ACSouth: user.Teleport(1020, 699, 640); break;
+                case VIPTeleportLocations.ACEast: user.Teleport(1020, 624, 337); break;
+                case VIPTeleportLocations.ACNorth: user.Teleport(1020, 200, 224); break;
+                case VIPTeleportLocations.ACWest: user.Teleport(1020, 322, 621); break;
 
                 case VIPTeleportLocations.DesertCity:
-                case VIPTeleportLocations.DCSquare: user.Teleport(  500, 650,1000); break;
-                case VIPTeleportLocations.DCSouth: user.Teleport(758, 750, 1000); break;
-                case VIPTeleportLocations.DCVillage: user.Teleport(480, 271, 1000); break;
-                case VIPTeleportLocations.DCMoonSpring: user.Teleport(291, 450, 1000); break;
-                case VIPTeleportLocations.DCAncientMaze: user.Teleport(87, 321, 1000); break;
+                case VIPTeleportLocations.DCSquare: user.Teleport(1000, 500, 650); break;
+                case VIPTeleportLocations.DCSouth: user.Teleport(1000, 758, 750); break;
+                case VIPTeleportLocations.DCVillage: user.Teleport(1000, 480, 271); break;
+                case VIPTeleportLocations.DCMoonSpring: user.Teleport(1000, 291, 450); break;
+                case VIPTeleportLocations.DCAncientMaze: user.Teleport(1000, 87, 321); break;
 
                 case VIPTeleportLocations.BirdIland:
-                case VIPTeleportLocations.BISquare: user.Teleport(  717, 571,1015); break;
-                case VIPTeleportLocations.BICenter: user.Teleport(585, 593, 1015); break;
-                case VIPTeleportLocations.BISouthWest: user.Teleport(562, 786, 1015); break;
-                case VIPTeleportLocations.BINorthWest: user.Teleport(125, 323, 1015); break;
-                case VIPTeleportLocations.BINorthEast: user.Teleport(125, 323, 1015); break;
+                case VIPTeleportLocations.BISquare: user.Teleport(1015, 717, 571); break;
+                case VIPTeleportLocations.BICenter: user.Teleport(1015, 585, 593); break;
+                case VIPTeleportLocations.BISouthWest: user.Teleport(1015, 562, 786); break;
+                case VIPTeleportLocations.BINorthWest: user.Teleport(1015, 125, 323); break;
+                case VIPTeleportLocations.BINorthEast: user.Teleport(1015, 125, 323); break;
             }
         }
 

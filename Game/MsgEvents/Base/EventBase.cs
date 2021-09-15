@@ -153,7 +153,7 @@ namespace LightConquer_Project.Game.MsgEvents
                                     client.Player.PMap = client.Player.Map;
                                     client.Player.PMapX = client.Player.X;
                                     client.Player.PMapY = client.Player.Y;
-                                    client.Teleport(53, 65, 1616);
+                                    client.Teleport(1616, 53, 65);
                                     PlayerList.Add(client.Player.UID, client);
                                     PlayerScores.Add(client.Player.UID, 0);
                                     //client.EventBase = Program.Events[0];
@@ -203,7 +203,7 @@ namespace LightConquer_Project.Game.MsgEvents
                 client.EventBase = null;
                 client.Player.Revive(stream);
 
-                client.Teleport(428, 378, 1002, 0, true, true);
+                client.Teleport(1002, 428, 378, 0, true, true);
                 //client.TeleportCallBack();
 
                 if (client.Player.ContainFlag(MsgServer.MsgUpdate.Flags.Backfire))
@@ -231,7 +231,7 @@ namespace LightConquer_Project.Game.MsgEvents
                 ushort x = 0;
                 ushort y = 0;
                 Map.GetRandCoord(ref x, ref y);
-                client.Teleport(x, y, Map.ID, DinamicID, true, true);
+                client.Teleport(Map.ID, x, y, DinamicID, true, true);
                 if (client.Player.ContainFlag(MsgServer.MsgUpdate.Flags.Cyclone))
                     client.Player.RemoveFlag(MsgServer.MsgUpdate.Flags.Cyclone);
                 if (client.Player.ContainFlag(MsgServer.MsgUpdate.Flags.Fly))
@@ -340,7 +340,7 @@ namespace LightConquer_Project.Game.MsgEvents
 
         public virtual void TeleAfterRev(GameClient client)
         {
-            client.Teleport(0, 0, Map.ID, DinamicID);
+            client.Teleport(Map.ID, 0, 0, DinamicID);
         }
 
         /// <summary>
@@ -566,11 +566,11 @@ namespace LightConquer_Project.Game.MsgEvents
                     foreach (GameClient client in PlayerList.Values)
                     {
                         if (client.Player.PMapX <= 0 || client.Player.PMapX >= 1400 || client.Player.PMapY <= 0 || client.Player.PMapY >= 3000)
-                            client.Teleport(300, 280, 1002, 0, true, true);
+                            client.Teleport(1002, 300, 280, 0, true, true);
                         else if (client.Player.PMap == 1038 || client.Player.PMap == 1616 || client.Player.PMap == 700 || Program.EventsMaps.Contains(client.Player.Map))
-                            client.Teleport(300, 280, 1002, 0, true, true);
+                            client.Teleport(1002, 300, 280, 0, true, true);
                         else
-                                    client.Teleport(client.Player.PMapX, client.Player.PMapY, client.Player.PMap, 0, true, true);
+                                    client.Teleport(client.Player.PMap, client.Player.PMapX, client.Player.PMapY, 0, true, true);
                         client.EventBase = null;
                     }
                     PlayerList.Clear();
@@ -710,7 +710,7 @@ namespace LightConquer_Project.Game.MsgEvents
                 {
                     ushort x = 0; ushort y = 0;
                     client.Map.GetRandCoord(ref x, ref y);
-                    client.Teleport(x, y, Map.ID, DinamicID);
+                    client.Teleport(Map.ID, x, y, DinamicID);
                     client.Player.Revive(stream);
                 }
             }

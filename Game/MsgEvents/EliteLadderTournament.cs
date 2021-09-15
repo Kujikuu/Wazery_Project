@@ -36,7 +36,7 @@ namespace LightConquer_Project.Game.MsgEvents
                     Map.Value.Remove(C.EntityID);
                     Broadcast(PlayerList[Map.Value[0]].Name + " has defeated " + C.Name + " in the Ladder Tournament and moved on to the next stage!", BroadCastLoc.World);
 
-                    PlayerList[Map.Value[0]].Teleport(54, 64,1616);
+                    PlayerList[Map.Value[0]].Teleport(1616, 54, 64);
                     WinnerList.Add(PlayerList[Map.Value[0]].Player.Name);
                     mapsPairs.Remove(Map.Key);
                     //DMaps.DeleteDynamicMap(Map.Key, true);
@@ -79,7 +79,7 @@ namespace LightConquer_Project.Game.MsgEvents
                         //ushort x = 0;
                         //ushort y = 0;
                         Map.GetRandCoord(ref X, ref Y);
-                        C.Teleport(X, Y, _mapEvent, DinamicID, true, true);
+                        C.Teleport(_mapEvent, X, Y, DinamicID, true, true);
                         _count++;
                     }
                 }
@@ -89,7 +89,7 @@ namespace LightConquer_Project.Game.MsgEvents
                     //ushort x = 0;
                     //ushort y = 0;
                     Map.GetRandCoord(ref X, ref Y);
-                    C.Teleport(X, Y, _mapEvent, DinamicID, true, true);
+                    C.Teleport(_mapEvent, X, Y, DinamicID, true, true);
                     _count = 0;
                     _mapEvent++;
                     number = number - 2;

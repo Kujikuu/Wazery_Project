@@ -46,7 +46,7 @@ namespace LightConquer_Project.Game.MsgEvents
                     if (TeamOne.Count <= TeamTwo.Count)
                     {
                         TeamOne.Add(c.EntityID, c);
-                        c.Teleport((ushort)(125 + (ushort)Program.Rnd.Next(3)), (ushort)(165 + (ushort)Program.Rnd.Next(3)), Map.ID, DinamicID, true, true);
+                        c.Teleport(Map.ID, (ushort)(125 + (ushort)Program.Rnd.Next(3)), (ushort)(165 + (ushort)Program.Rnd.Next(3)), DinamicID, true, true);
                         c.Player.AddSpecialGarment(stream, 187825);
                         c.SendSysMesage($"Welcome to {EventTitle} you're a member of the Glaze!");
 
@@ -54,7 +54,7 @@ namespace LightConquer_Project.Game.MsgEvents
                     else
                     {
                         TeamTwo.Add(c.EntityID, c);
-                        c.Teleport((ushort)(113 + (ushort)Program.Rnd.Next(3)), (ushort)(79 + (ushort)Program.Rnd.Next(3)), Map.ID, DinamicID, true, true);
+                        c.Teleport(Map.ID, (ushort)(113 + (ushort)Program.Rnd.Next(3)), (ushort)(79 + (ushort)Program.Rnd.Next(3)), DinamicID, true, true);
                         c.Player.AddSpecialGarment(stream, 187835);
                         c.SendSysMesage($"Welcome to {EventTitle} you're a member of the Glory!");
 

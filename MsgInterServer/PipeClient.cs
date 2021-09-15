@@ -561,7 +561,7 @@ namespace LightConquer_Project.MsgInterServer
                     pipe.NewUserID = 0;
                     pipe.Disconnect();
                     pipe.Owner.PipeClient = null;
-                    pipe.Owner.Teleport(pipe.Owner.Player.X, pipe.Owner.Player.Y, pipe.Owner.Player.Map);
+                    pipe.Owner.Teleport(pipe.Owner.Player.Map, pipe.Owner.Player.X, pipe.Owner.Player.Y);
                     pipe.Owner.Player.SetPkMode(Role.Flags.PKMode.Capture);
 
 

@@ -84,7 +84,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                     if (client.Player.Map == 1860 || client.Player.Map == 1858 || client.Player.Map == 1038)
                         continue;
                     client.Send(packet);
-                    client.Player.MessageBox(Message, new Action<Client.GameClient>(user => user.Teleport(X, Y, map, DinamicID)), null, Secounds, messaj);
+                    client.Player.MessageBox(Message, new Action<Client.GameClient>(user => user.Teleport(map, X, Y, DinamicID)), null, Secounds, messaj);
                 }
             }
         }

@@ -325,7 +325,7 @@ namespace LightConquer_Project.Role.Instance
             if(client.Team == null)
             {
                 Add(stream, client);
-                client.Teleport(player.X, player.Y, player.Map);
+                client.Teleport(player.Map, player.X, player.Y);
             }
         }
        public unsafe void Add(ServerSockets.Packet stream, Client.GameClient client)
@@ -447,11 +447,11 @@ namespace LightConquer_Project.Role.Instance
                {
                    if (pr(member.client))
                    {
-                       member.client.Teleport(x, y, map, dinamic);
+                       member.client.Teleport(map, x, y, dinamic);
                    }
                }
                else
-                   member.client.Teleport(x, y, map, dinamic);
+                   member.client.Teleport(map, x, y, dinamic);
            }
        }
        public bool IsTeamMember(uint UID)

@@ -242,7 +242,7 @@ namespace LightConquer_Project.Game.MsgTournaments
 
                     foreach (var client in Database.Server.GamePoll.Values)
                     {
-                        client.Player.MessageBox("", new Action<Client.GameClient>(p => p.Teleport(324, 196, 1002, 0)), null, 60, MsgServer.MsgStaticMessage.Messages.MonthlyPk);
+                        client.Player.MessageBox("", new Action<Client.GameClient>(p => p.Teleport(1002, 324, 196, 0)), null, 60, MsgServer.MsgStaticMessage.Messages.MonthlyPk);
 
                     }
                 }
@@ -307,7 +307,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                     LastFlag = aura;
                     Winner = client.Player.UID;
                     MsgSchedules.SendSysMesage("" + client.Player.Name + " Won " + Typ.ToString() + " WeeklyPKChampion, he received Top " + Typ.ToString() + ", " + RewardConquerPoints.ToString() + " Silvers!", MsgServer.MsgMessage.ChatMode.TopLeftSystem, MsgServer.MsgMessage.MsgColor.white);
-                    client.Teleport(428, 378, 1002, 0);
+                    client.Teleport(1002, 428, 378, 0);
                 }
             }
         }

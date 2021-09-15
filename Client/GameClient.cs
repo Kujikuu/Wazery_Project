@@ -1625,14 +1625,14 @@ namespace LightConquer_Project.Client
         }
         public void Pullback()
         {
-            Teleport(Player.X, Player.Y, Player.Map, Player.DynamicID);
+            Teleport(Player.Map, Player.X, Player.Y, Player.DynamicID);
         }
 
         public void TeleportCallBack()
         {
-            Teleport(Player.PMapX, Player.PMapY, Player.PMap, Player.PDinamycID);
+            Teleport(Player.PMap, Player.PMapX, Player.PMapY, Player.PDinamycID);
         }
-        public void Teleport(ushort x, ushort y, uint MapID, uint DinamycID = 0, bool revive = true, bool CanTeleport = false)
+        public void Teleport(uint MapID, ushort x, ushort y, uint DinamycID = 0, bool revive = true, bool CanTeleport = false)
         {
             if (MapID == 700)
             {
@@ -1901,7 +1901,7 @@ namespace LightConquer_Project.Client
                     {
                         if (Role.Core.IsBoy(Player.Body))
                         {
-                            Player.ObjInteraction.Teleport(x, y, MapID, DinamycID);
+                            Player.ObjInteraction.Teleport(MapID, x, y, DinamycID);
                         }
                     }
                     if (Player.Map == 1038 || Player.Map == 3868 ||Game.MsgTournaments.MsgSchedules.CurrentTournament.InTournament(this))

@@ -745,13 +745,13 @@ namespace LightConquer_Project.MsgInterServer
                             {
                                 if (server.ID == user.Player.ServerID)
                                 {
-                                    user.Teleport((ushort)server.X, (ushort)server.Y, (ushort)server.MapID);
+                                    user.Teleport((ushort)server.MapID, (ushort)server.X, (ushort)server.Y);
                                 }
                             }
                         }
                         else
                         {
-                            user.Teleport(432, 390, 1002);
+                            user.Teleport(1002, 432, 390);
                         }
                         break;
                     }
@@ -761,7 +761,7 @@ namespace LightConquer_Project.MsgInterServer
             {
                 if (server.ServerInfo.ID == user.Player.ServerID)
                 {
-                    user.Teleport((ushort)server.ServerInfo.X, (ushort)server.ServerInfo.Y, (ushort)server.ServerInfo.MapID);
+                    user.Teleport((ushort)server.ServerInfo.MapID, (ushort)server.ServerInfo.X, (ushort)server.ServerInfo.Y);
                     break;
                 }
             }
