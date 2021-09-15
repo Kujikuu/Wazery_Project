@@ -890,7 +890,7 @@ namespace LightConquer_Project.Client
                         client.Player.ConquerPointsDropStamp = DateTime.FromBinary(0);
                     }
                 }
-                CheckJiangHu(client);
+                //CheckJiangHu(client);
 
                 if (client.Player.Reborn < 2 && !client.Player.ContainFlag(MsgUpdate.Flags.NewbeeAura))
                     client.Player.AddFlag(MsgUpdate.Flags.NewbeeAura, Role.StatusFlagsBigVector32.PermanentFlag, false);
@@ -2824,7 +2824,7 @@ namespace LightConquer_Project.Client
                 if (DateTime.Now > client.LastOnlineStamp.AddMinutes(10))
                 {
                     client.LastOnlineStamp = DateTime.Now;
-                    client.SendSysMesage("You got 1 online point. Total: [" + client.Player.OnlinePoints + "]", Game.MsgServer.MsgMessage.ChatMode.TopLeftSystem, Game.MsgServer.MsgMessage.MsgColor.red);
+                    client.Player.SendGlobalMesage($"{client.Player.Name} - got 1 O-Points for being online for [10 minutes]", Game.MsgServer.MsgMessage.ChatMode.TopLeftSystem, Game.MsgServer.MsgMessage.MsgColor.red);
                     client.Player.OnlinePoints++;
                 }
 

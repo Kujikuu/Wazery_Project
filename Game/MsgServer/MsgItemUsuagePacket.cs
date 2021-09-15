@@ -939,7 +939,7 @@ namespace LightConquer_Project.Game.MsgServer
 
                                                         effectdwparam1 = 1;
 
-
+                                                        //client.Player.SendGlobalMesage($"Player {client.Player.Name} has got second socket into his/her ");
 
                                                         DataItem.Send(client, stream).Update(LoseItem, Role.Instance.AddMode.REMOVE, stream);
                                                     }
@@ -2603,7 +2603,7 @@ namespace LightConquer_Project.Game.MsgServer
                     else
                     {
                         client.Player.LastNewbieUsed = DateTime.Now;
-                        Program.SendGlobalPackets.Enqueue(new MsgMessage($"{client.Player.Name} is looking for strong players to help him/her out leveling, please contact him/her!", MsgMessage.MsgColor.white, MsgMessage.ChatMode.TopLeftSystem).GetArray(stream));
+                        client.Player.SendGlobalMesage($"{client.Player.Name} is looking for strong players to help him/her out leveling, please contact him/her!", MsgMessage.ChatMode.TopLeft);
                         foreach (var player in Database.Server.GamePoll.Values)
                         {
 
