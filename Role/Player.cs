@@ -43,7 +43,7 @@ namespace LightConquer_Project.Role
             InnerPower1000 = 1u << 3,
             FourVipTokens = 1u << 4,
             ConquerPoints225 = 1u << 5,
-            InnerPower1500 = 1u<< 6,
+            InnerPower1500 = 1u << 6,
             InnerPower5000 = 1u << 7,
             OneMount2 = 1u << 8,
             OneRareAccesory = 1u << 9,
@@ -59,7 +59,7 @@ namespace LightConquer_Project.Role
             GoldPrize = 1u << 19,
             InnerPower10000 = 1u << 20
         }
-        
+
         public LightConquer_Project.Role.Instance.Chi.ChiAttributeType selectedAttribute;
         public string SelectedGate = "";
         public int SelectedPhase = 0;
@@ -164,8 +164,8 @@ namespace LightConquer_Project.Role
             EpicTrojanEvilArrayPoints = 0;
             EpicTrojanAbysalStage = 0;
             EpicTrijanKillGhostReaver = 0;
-          ChangeEpicTrojan = ChangeArrayEpicTrojan = ChangeMr_MirrorEpicTrojan =ChangeGeneralPakEpicTrojan = 0;
-           CanChangeEpicMaterial = CanChangeArrayEpicMaterial =CanChangeMr_MirrorEpicMaterial = CanChangGeneralPakMaterial = 1;
+            ChangeEpicTrojan = ChangeArrayEpicTrojan = ChangeMr_MirrorEpicTrojan = ChangeGeneralPakEpicTrojan = 0;
+            CanChangeEpicMaterial = CanChangeArrayEpicMaterial = CanChangeMr_MirrorEpicMaterial = CanChangGeneralPakMaterial = 1;
         }
         public string SaveEpicTrojan()
         {
@@ -213,7 +213,7 @@ namespace LightConquer_Project.Role
         public int DefeatedArenaGuardians = 0;
 
         public DateTime JoinPowerArenaStamp = new DateTime();
-       
+
 
         public DateTime JoinPrizeNpcOctopus = new DateTime();
 
@@ -256,7 +256,7 @@ namespace LightConquer_Project.Role
                 Owner.CreateBoxDialog("You need to have 200k CPs for transfer ! ");
         }
         public string TransferToServer = "";
-        
+
         public uint InitTransfer = 0;
         public bool CheckTransfer = false;
         public bool OnTransfer = false;
@@ -265,9 +265,9 @@ namespace LightConquer_Project.Role
         public void AddExtraAtributes(ServerSockets.Packet stream, ushort value)
         {
 
-                ExtraAtributes += value;
-                Atributes += value;
-                SendUpdate(stream, Atributes, MsgUpdate.DataType.Atributes);
+            ExtraAtributes += value;
+            Atributes += value;
+            SendUpdate(stream, Atributes, MsgUpdate.DataType.Atributes);
         }
 
         public uint BuyItemS = 0;
@@ -294,7 +294,7 @@ namespace LightConquer_Project.Role
         public byte BuyKingdomDeeds = 0;
         public uint KingDomDeeds = 0;
 
-        
+
         public void UpdateKingdomTreasury(uint points)
         {
             if (InUnion)
@@ -308,7 +308,7 @@ namespace LightConquer_Project.Role
         {
             get { return ServerID == Database.GroupServerList.MyServerInfo.ID; }
         }
-     
+
         public ushort ServerID = 0;
 
         public ushort SetLocationType = 0;
@@ -339,7 +339,7 @@ namespace LightConquer_Project.Role
         public void UpdateInventorySash(ServerSockets.Packet stream)
         {
             SendUpdate(stream, MaxInventorySashCount, MsgUpdate.DataType.InventorySashMax);
-            SendUpdate(stream, InventorySashCount , MsgUpdate.DataType.InventorySash);
+            SendUpdate(stream, InventorySashCount, MsgUpdate.DataType.InventorySash);
         }
         public DateTime StampSecorSpells = new DateTime();
         public DateTime StampBloodyScytle = new DateTime();
@@ -386,6 +386,12 @@ namespace LightConquer_Project.Role
         //internal DateTime BlockMovement;
         internal uint ArenaCPS;
         internal int DragonPills = 0;
+
+        public void SendMsgBox(string Message, int Seconds, MsgStaticMessage.Messages Type)
+        {
+            MessageBox(Message, null, null, Seconds, Type);
+        }
+
         public void SendGlobalMesage(string Messaj, Game.MsgServer.MsgMessage.ChatMode ChatType = Game.MsgServer.MsgMessage.ChatMode.TopLeft
           , Game.MsgServer.MsgMessage.MsgColor color = Game.MsgServer.MsgMessage.MsgColor.red)
         {
@@ -408,7 +414,7 @@ namespace LightConquer_Project.Role
 
         public uint QuestCaptureType = 0;
         public Random MyRandom = new Random(Program.GetRandom.Next());
-        public  bool Rate(int value)
+        public bool Rate(int value)
         {
             return value > MyRandom.Next() % 100;
         }
@@ -451,8 +457,8 @@ namespace LightConquer_Project.Role
 
                 SendUpdate(stream, (uint)MainFlag, MsgUpdate.DataType.MainFlag);
                 Owner.CreateBoxDialog("You have successfully changed your branch to Chaser(Ranged).");
-          
-              
+
+
             }
             else
             {
@@ -530,7 +536,7 @@ namespace LightConquer_Project.Role
                     title.dwparam1 = 100;
                     title.ActionID = MsgTitleStorage.Action.FullLoad;
                     Owner.Send(stream.CreateTitleStorage(title));
-                   // SpecialTitles.Add(_title);
+                    // SpecialTitles.Add(_title);
                 }
             }
         }
@@ -595,7 +601,7 @@ namespace LightConquer_Project.Role
                     SpecialTitleID = SpecialTitleScore = 0;
                 else if (SpecialWingID / 10000 == (uint)type)
                     SpecialWingID = 0;
-             
+
             }
 
         }
@@ -622,7 +628,7 @@ namespace LightConquer_Project.Role
 #else
             Owner.SendSysMesage("Your attack will increase during the next 30 minutes.", MsgMessage.ChatMode.System);
 #endif
-          
+
         }
 
         public bool OnDefensePotion = false;
@@ -637,14 +643,14 @@ namespace LightConquer_Project.Role
 #else
             Owner.SendSysMesage("Your defense will increase during the next 30 minutes.", MsgMessage.ChatMode.System);
 #endif
-         
+
         }
 
 
         public bool WaveofBlood = false;
         public DateTime WaveofBloodStamp = new DateTime();
 
-        public bool AllowDynamic { get; set; } 
+        public bool AllowDynamic { get; set; }
         public uint DailyMagnoliaChance = 0;
         public uint DailyMagnoliaItemId = 0;
 
@@ -660,20 +666,20 @@ namespace LightConquer_Project.Role
         uint _ChampionPoints;
         public uint ChampionPoints
         {
-         
+
             get
             {
                 return _ChampionPoints;
             }
             set
             {
-                
+
                 _ChampionPoints = value;
                 if (_ChampionPoints > HistoryChampionPoints)
                     HistoryChampionPoints = value;
             }
         }
-      
+
         public void AddChampionPoints(uint value, bool settodayvalue = true)
         {
             if (settodayvalue)
@@ -739,8 +745,8 @@ namespace LightConquer_Project.Role
         public uint DragonWarHits = 0;
         public uint DragonWarScore = 0;
         public uint SpeedHunterGameScore = 0;
-        
-      
+
+
 
         public uint TeamDeathMacthKills = 0;
         public uint TournamentKills = 0;
@@ -751,7 +757,7 @@ namespace LightConquer_Project.Role
         {
             SpecialGarment = 0;
             GarmentId = 0;
-         //   Owner.Send(stream.ItemUsageCreate(MsgItemUsuagePacket.ItemUsuageID.Unequip, uint.MaxValue - 1, (ushort)Flags.ConquerItem.Garment, 0, 0, 0, 0));
+            //   Owner.Send(stream.ItemUsageCreate(MsgItemUsuagePacket.ItemUsuageID.Unequip, uint.MaxValue - 1, (ushort)Flags.ConquerItem.Garment, 0, 0, 0, 0));
 
             MsgGameItem item;
             if (Owner.Equipment.TryGetEquip(Flags.ConquerItem.Garment, out item))
@@ -768,8 +774,8 @@ namespace LightConquer_Project.Role
             SpecialGarment = ID;
             GarmentId = SpecialGarment;
 
-        
-            Owner.Send(stream.ItemUsageCreate(MsgItemUsuagePacket.ItemUsuageID.Equip,uint.MaxValue -1,(ushort)Flags.ConquerItem.Garment, 0, 0, 0, 0));
+
+            Owner.Send(stream.ItemUsageCreate(MsgItemUsuagePacket.ItemUsuageID.Equip, uint.MaxValue - 1, (ushort)Flags.ConquerItem.Garment, 0, 0, 0, 0));
 
             Game.MsgServer.MsgGameItem item = new MsgGameItem();
             item.ITEM_ID = ID;
@@ -818,7 +824,7 @@ namespace LightConquer_Project.Role
 
             View.SendView(stream, true);
         }
-        public void SendPowerTaoist(Client.GameClient user , ServerSockets.Packet stream)
+        public void SendPowerTaoist(Client.GameClient user, ServerSockets.Packet stream)
         {
             if (TaoistPower > 0)
             {
@@ -854,8 +860,8 @@ namespace LightConquer_Project.Role
         }
 
         public uint AparenceType = 0;
-       // public ServerSockets.Packet MyStream = ServerSockets.PacketRecycle.Take();
-       // public ServerSockets.Packet MyStream2 =  ServerSockets.PacketRecycle.Take();
+        // public ServerSockets.Packet MyStream = ServerSockets.PacketRecycle.Take();
+        // public ServerSockets.Packet MyStream2 =  ServerSockets.PacketRecycle.Take();
 
         public unsafe void memcpy(void* dest, void* src, Int32 size)
         {
@@ -986,7 +992,7 @@ namespace LightConquer_Project.Role
         //}
 
 
-        
+
 
         public uint MyKillerUID;
         public string MyKillerName;
@@ -1084,7 +1090,7 @@ namespace LightConquer_Project.Role
                 using (var rec = new ServerSockets.RecycledPacket())
                 {
                     var stream = rec.GetStream();
-                    SendUpdate(stream,guildBP, Game.MsgServer.MsgUpdate.DataType.GuildBattlePower);
+                    SendUpdate(stream, guildBP, Game.MsgServer.MsgUpdate.DataType.GuildBattlePower);
                 }
             }
         }
@@ -1139,9 +1145,9 @@ namespace LightConquer_Project.Role
 
         public Role.Instance.Nobility Nobility;
         Role.Instance.Nobility.NobilityRank _NobilityRank;
-        public  Role.Instance.Nobility.NobilityRank NobilityRank
+        public Role.Instance.Nobility.NobilityRank NobilityRank
         {
-            get{return _NobilityRank;}
+            get { return _NobilityRank; }
             set
             {
                 _NobilityRank = value;
@@ -1182,7 +1188,7 @@ namespace LightConquer_Project.Role
 
             if (KingDomExploits >= 23000)
                 SetExploitsRank(Role.Flags.ExploitsRank.GeneralinChief);
-            else if(KingDomExploits >= 15000)
+            else if (KingDomExploits >= 15000)
                 SetExploitsRank(Role.Flags.ExploitsRank.FlyingCavalryGeneral);
             else if (KingDomExploits >= 10000)
                 SetExploitsRank(Role.Flags.ExploitsRank.ChariotsandCavalryGeneral);
@@ -1214,7 +1220,7 @@ namespace LightConquer_Project.Role
             using (var rec = new ServerSockets.RecycledPacket())
             {
                 var stream = rec.GetStream();
-                SendUpdate(stream, (long)rank, MsgUpdate.DataType.ExploitsRank,true);
+                SendUpdate(stream, (long)rank, MsgUpdate.DataType.ExploitsRank, true);
             }
         }
 
@@ -1254,7 +1260,7 @@ namespace LightConquer_Project.Role
                 IncreaseStatusAura(UseAura, Aura);
             }
         }
-       
+
         public Game.MsgServer.MsgUpdate.Flags UseAura = Game.MsgServer.MsgUpdate.Flags.Normal;
         public Database.MagicType.Magic Aura;
         private int AuraTimer = 0;
@@ -1345,7 +1351,7 @@ namespace LightConquer_Project.Role
         public byte PoisonLevehHu = 0;
 
         public bool ActivateCounterKill = false;
-   
+
         public Action<Client.GameClient> MessageOK;
         public Action<Client.GameClient> MessageCancel;
         public Extensions.Time32 StartMessageBox = new Extensions.Time32();
@@ -1392,7 +1398,7 @@ namespace LightConquer_Project.Role
             if (ContainFlag(Game.MsgServer.MsgUpdate.Flags.MagicDefender))
             {
                 RemoveFlag(Game.MsgServer.MsgUpdate.Flags.MagicDefender);
-                SendUpdate(stream,Game.MsgServer.MsgUpdate.Flags.MagicDefender, 0
+                SendUpdate(stream, Game.MsgServer.MsgUpdate.Flags.MagicDefender, 0
    , 0, 0, Game.MsgServer.MsgUpdate.DataType.AzureShield, true);
             }
         }
@@ -1442,7 +1448,7 @@ namespace LightConquer_Project.Role
                 using (var rec = new ServerSockets.RecycledPacket())
                 {
                     var stream = rec.GetStream();
-                    SendUpdate(stream,Game.MsgServer.MsgUpdate.Flags.AzureShield, 60
+                    SendUpdate(stream, Game.MsgServer.MsgUpdate.Flags.AzureShield, 60
                         , value, AzureShieldLevel, Game.MsgServer.MsgUpdate.DataType.AzureShield, true);
                 }
             }
@@ -1485,13 +1491,13 @@ namespace LightConquer_Project.Role
                 BitVector.TryRemove((int)Flag);
             AddFlag(Flag, Seconds, RemoveOnDead, StampSeconds);
         }
-        public bool AddFlag(Game.MsgServer.MsgUpdate.Flags Flag, int Seconds, bool RemoveOnDead,int StampSeconds =0, uint showamount = 0, uint amount =0)
+        public bool AddFlag(Game.MsgServer.MsgUpdate.Flags Flag, int Seconds, bool RemoveOnDead, int StampSeconds = 0, uint showamount = 0, uint amount = 0)
         {
             if (!BitVector.ContainFlag((int)Flag))
             {
-                
+
                 BitVector.TryAdd((int)Flag, Seconds, RemoveOnDead, StampSeconds);
-              
+
                 UpdateFlagOffset();
                 if ((int)Flag >= 52 && (int)Flag <= 60)
                 {
@@ -1499,7 +1505,7 @@ namespace LightConquer_Project.Role
                     {
                         var stream = rec.GetStream();
 
-                        View.SendView(stream.GameUpdateCreate(UID, (Game.MsgServer.MsgGameUpdate.DataType)Flag, true, showamount, (uint)Seconds, amount),true);
+                        View.SendView(stream.GameUpdateCreate(UID, (Game.MsgServer.MsgGameUpdate.DataType)Flag, true, showamount, (uint)Seconds, amount), true);
 
                     }
                 }
@@ -1518,7 +1524,7 @@ namespace LightConquer_Project.Role
                     using (var rec = new ServerSockets.RecycledPacket())
                     {
                         var stream = rec.GetStream();
-                        Owner.IncreaseExperience(stream,Owner.ExpOblivion);
+                        Owner.IncreaseExperience(stream, Owner.ExpOblivion);
                     }
                     Owner.ExpOblivion = 0;
                 }
@@ -1632,19 +1638,19 @@ namespace LightConquer_Project.Role
             if (this.ContainFlag(MsgUpdate.Flags.RedName)
                 || this.ContainFlag(MsgUpdate.Flags.BlackName)
                 || this.ContainFlag(MsgUpdate.Flags.FlashingName))
-                GetPkPkPoints = false ;
-         
+                GetPkPkPoints = false;
+
             using (var rec = new ServerSockets.RecycledPacket())
             {
                 var stream = rec.GetStream();
-                
+
                 foreach (var clone in MyClones.GetValues())
                 {
                     clone.RemoveThat(this.Owner);
                 }
                 MyClones.Clear();
 
-              
+
 
                 if (!Program.FreePkMap.Contains(Map))
                 {
@@ -1664,12 +1670,12 @@ namespace LightConquer_Project.Role
                     {
                         killer.TournamentKills += 1;
                     }
-                    
 
-               
-                
-                    
-                 
+
+
+
+
+
                     if (Program.MapCounterHits.Contains(Map))
                     {
                         killer.ArenaKills += 1;
@@ -1684,9 +1690,9 @@ namespace LightConquer_Project.Role
                                 killer.MyJiangHu.Kill(killer.Owner, this.Owner);
                         }
                     }
-                  
+
                 }
-              
+
                 if (BlackSpot)
                 {
                     BlackSpot = false;
@@ -1700,7 +1706,7 @@ namespace LightConquer_Project.Role
                 HitPoints = 0;
                 ClearFlags();
                 AddFlag(Game.MsgServer.MsgUpdate.Flags.Dead, StatusFlagsBigVector32.PermanentFlag, true);
-              
+
 
 
                 if (Map == 700)
@@ -1757,7 +1763,7 @@ namespace LightConquer_Project.Role
                     }
 
                 }
-               if (Owner.PerfectionStatus.StraightLife > 0)
+                if (Owner.PerfectionStatus.StraightLife > 0)
                 {
                     if (Role.Core.Rate(Owner.PerfectionStatus.StraightLife))
                     {
@@ -1910,7 +1916,7 @@ namespace LightConquer_Project.Role
         }
         public void DropItem(Game.MsgServer.MsgGameItem item, ushort x, ushort y, ServerSockets.Packet stream)
         {
-            Game.MsgFloorItem.MsgItem DropItem = new Game.MsgFloorItem.MsgItem(item, x, y, Game.MsgFloorItem.MsgItem.ItemType.Item, 0, DynamicID, Map, UID, false,Owner.Map);
+            Game.MsgFloorItem.MsgItem DropItem = new Game.MsgFloorItem.MsgItem(item, x, y, Game.MsgFloorItem.MsgItem.ItemType.Item, 0, DynamicID, Map, UID, false, Owner.Map);
 
             if (Owner.Map.EnqueueItem(DropItem))
             {
@@ -1944,9 +1950,9 @@ namespace LightConquer_Project.Role
                         }
                         else
                             Owner.LoseDeadExperience(killer.Owner);
-                       
+
                         //ckeck blessing
-                       
+
                         //check guild lose experience 
                         /*if (MyGuild != null && MyGuildMember != null)
                         {
@@ -1965,8 +1971,8 @@ namespace LightConquer_Project.Role
                                 Owner.SendSysMesage("" + lose_found.ToString() + " of experience was compensated by guild fund.", Game.MsgServer.MsgMessage.ChatMode.System, Game.MsgServer.MsgMessage.MsgColor.white);
                             }
                         }*/
-                      
-                     if(GetPkPkPoints)
+
+                        if (GetPkPkPoints)
                         {
                             if (killer.MyGuild != null)
                             {
@@ -2012,9 +2018,9 @@ namespace LightConquer_Project.Role
                             }
                         }
                     }
-                  
+
                 }
-                
+
             }
         }
         public unsafe void Revive(ServerSockets.Packet stream)
@@ -2028,10 +2034,10 @@ namespace LightConquer_Project.Role
 
             if (!Owner.MySpells.ClientSpells.ContainsKey((ushort)Role.Flags.SpellID.TwistofWar))
                 XPCount = 0;
-            SendUpdate(stream,XPCount, MsgUpdate.DataType.XPCircle);
+            SendUpdate(stream, XPCount, MsgUpdate.DataType.XPCircle);
 
             Stamina = 100;
-            SendUpdate(stream,Stamina, MsgUpdate.DataType.Stamina);
+            SendUpdate(stream, Stamina, MsgUpdate.DataType.Stamina);
 
 
             Send(stream.MapStatusCreate(Map, Map, (uint)Owner.Map.TypeStatus));
@@ -2043,7 +2049,7 @@ namespace LightConquer_Project.Role
         public Extensions.Time32 CastPrayActionsStamp = new Extensions.Time32();
 
         public Game.MsgServer.MsgUpdate.Flags UseXPSpell;
-        public void OpenXpSkill(Game.MsgServer.MsgUpdate.Flags flag, int Timer,int StampExec= 0)
+        public void OpenXpSkill(Game.MsgServer.MsgUpdate.Flags flag, int Timer, int StampExec = 0)
         {
             if (OnAutoHunt)
                 return;
@@ -2051,7 +2057,7 @@ namespace LightConquer_Project.Role
             using (var rec = new ServerSockets.RecycledPacket())
             {
                 var stream = rec.GetStream();
-                SendUpdate(stream,XPCount, Game.MsgServer.MsgUpdate.DataType.XPCircle);
+                SendUpdate(stream, XPCount, Game.MsgServer.MsgUpdate.DataType.XPCircle);
             }
             Game.MsgServer.MsgUpdate.Flags UseSpell = OnXPSkill();
             if (UseSpell == Game.MsgServer.MsgUpdate.Flags.Normal)
@@ -2070,7 +2076,7 @@ namespace LightConquer_Project.Role
                 }
                 else
                 {
-                    if(flag == MsgUpdate.Flags.Cyclone || flag == MsgUpdate.Flags.Superman || flag == MsgUpdate.Flags.SuperCyclone)
+                    if (flag == MsgUpdate.Flags.Cyclone || flag == MsgUpdate.Flags.Superman || flag == MsgUpdate.Flags.SuperCyclone)
                         UpdateFlag(flag, Timer, true, 20);
                     else
                         UpdateFlag(flag, Timer, true, 60);
@@ -2209,7 +2215,7 @@ namespace LightConquer_Project.Role
                     using (var rec = new ServerSockets.RecycledPacket())
                     {
                         var stream = rec.GetStream();
-                        SendUpdate(stream,value, Game.MsgServer.MsgUpdate.DataType.Class);
+                        SendUpdate(stream, value, Game.MsgServer.MsgUpdate.DataType.Class);
                     }
                     if (MyGuildMember != null)
                         MyGuildMember.Class = value;
@@ -2641,7 +2647,7 @@ namespace LightConquer_Project.Role
                                     Owner.MySpells.Add(stream, (ushort)Role.Flags.SpellID.PeaceofStomper);
                                 if (!Owner.MySpells.ClientSpells.ContainsKey((ushort)Role.Flags.SpellID.ChillingSnow))
                                     Owner.MySpells.Add(stream, (ushort)Role.Flags.SpellID.ChillingSnow);
-                                
+
                             }
                         }
                         if (_level < 100 && value >= 100)
@@ -2902,14 +2908,14 @@ namespace LightConquer_Project.Role
                     Owner.Socket.Disconnect();
                 }
                 if (Owner.FullLoading)
-                {            
+                {
                     if (value > _cps)
                     {
                         uint get_cps = value - _cps;
                         if (get_cps > 59)
                         {
                             string logs = "[CallStack]" + Name + " get " + get_cps + " he have ConquerPoints : " + _cps + "";
-                          //  logs += Environment.StackTrace;
+                            //  logs += Environment.StackTrace;
                             Database.ServerDatabase.LoginQueue.Enqueue(logs);
                         }
                     }
@@ -2919,7 +2925,7 @@ namespace LightConquer_Project.Role
                         if (lost_cps > 59)
                         {
                             string logs = "[CallStack]" + Name + " lost " + lost_cps + " he have ConquerPoints :" + _cps + "";
-                           // logs += Environment.StackTrace;
+                            // logs += Environment.StackTrace;
                             Database.ServerDatabase.LoginQueue.Enqueue(logs);
                         }
                     }
@@ -2927,7 +2933,7 @@ namespace LightConquer_Project.Role
                 _cps = value;
                 if (Owner.FullLoading)
                 {
-                   
+
                     using (var rec = new ServerSockets.RecycledPacket())
                     {
                         var stream = rec.GetStream();
@@ -3004,7 +3010,7 @@ namespace LightConquer_Project.Role
                     using (var rec = new ServerSockets.RecycledPacket())
                     {
                         var stream = rec.GetStream();
-                        SendUpdate(stream,value, Game.MsgServer.MsgUpdate.DataType.Mana);
+                        SendUpdate(stream, value, Game.MsgServer.MsgUpdate.DataType.Mana);
                     }
                 }
             }
@@ -3034,7 +3040,7 @@ namespace LightConquer_Project.Role
                 using (var rec = new ServerSockets.RecycledPacket())
                 {
                     var stream = rec.GetStream();
-                    SendUpdate(stream,PKPoints, Game.MsgServer.MsgUpdate.DataType.PKPoints);
+                    SendUpdate(stream, PKPoints, Game.MsgServer.MsgUpdate.DataType.PKPoints);
                 }
             }
         }
@@ -3079,7 +3085,7 @@ namespace LightConquer_Project.Role
                     using (var rec = new ServerSockets.RecycledPacket())
                     {
                         var stream = rec.GetStream();
-                        SendUpdate(stream,Mesh, Game.MsgServer.MsgUpdate.DataType.Mesh);
+                        SendUpdate(stream, Mesh, Game.MsgServer.MsgUpdate.DataType.Mesh);
                     }
                 }
             }
@@ -3114,7 +3120,7 @@ namespace LightConquer_Project.Role
         public unsafe ushort X
         {
             get { return xx; }
-            set { Px = X; xx = value;  }
+            set { Px = X; xx = value; }
         }
         public unsafe ushort Y
         {
@@ -3143,7 +3149,7 @@ namespace LightConquer_Project.Role
         }
         public bool InView(ushort X2, ushort Y2, byte distance)
         {
-      //      Console.WriteLine(Name + " " + OldGetDistance(X2, Y2) + " " + GetMyDistance(X2, Y2));
+            //      Console.WriteLine(Name + " " + OldGetDistance(X2, Y2) + " " + GetMyDistance(X2, Y2));
             return ((OldGetDistance(X2, Y2) > distance) && GetMyDistance(X2, Y2) <= distance);
         }
 
@@ -3164,7 +3170,7 @@ namespace LightConquer_Project.Role
         public uint RateExp = 2;
 
         public uint ExpProtection = 0;
-        public void CreateExpProtection(ServerSockets.Packet stream, uint Time, bool uppdate =true)
+        public void CreateExpProtection(ServerSockets.Packet stream, uint Time, bool uppdate = true)
         {
             if (uppdate)
                 ExpProtection = Time;
@@ -3175,8 +3181,8 @@ namespace LightConquer_Project.Role
         }
         public unsafe void CreateExtraExpPacket(ServerSockets.Packet stream)
         {
-            Game.MsgServer.MsgUpdate update = new Game.MsgServer.MsgUpdate(stream,UID,1);
-            stream = update.Append(stream,Game.MsgServer.MsgUpdate.DataType.DoubleExpTimer, new uint[5] { 0, DExpTime, 0, (uint)(RateExp * 100),0});
+            Game.MsgServer.MsgUpdate update = new Game.MsgServer.MsgUpdate(stream, UID, 1);
+            stream = update.Append(stream, Game.MsgServer.MsgUpdate.DataType.DoubleExpTimer, new uint[5] { 0, DExpTime, 0, (uint)(RateExp * 100), 0 });
             stream = update.GetArray(stream);
             Owner.Send(stream);
         }
@@ -3200,12 +3206,12 @@ namespace LightConquer_Project.Role
             }
 #endif
 
-         
+
             bool None = HeavenBlessing == 0;
             HeavenBlessTime = HeavenBlessTime.AddSeconds(Time);
 
             HeavenBlessing += Time;
-            CreateHeavenBlessPacket(stream,None);
+            CreateHeavenBlessPacket(stream, None);
 
             if (MyMentor != null)
             {
@@ -3219,7 +3225,7 @@ namespace LightConquer_Project.Role
                     }
                 }
             }
-           
+
         }
         public void CreateHeavenBlessPacket(ServerSockets.Packet stream, bool ResetOnlineTraining)
         {
@@ -3261,7 +3267,7 @@ namespace LightConquer_Project.Role
                     using (var rec = new ServerSockets.RecycledPacket())
                     {
                         var stream = rec.GetStream();
-                        SendUpdate(stream,Mesh, Game.MsgServer.MsgUpdate.DataType.Mesh, true);
+                        SendUpdate(stream, Mesh, Game.MsgServer.MsgUpdate.DataType.Mesh, true);
                     }
                 }
             }
@@ -3281,7 +3287,7 @@ namespace LightConquer_Project.Role
                     using (var rec = new ServerSockets.RecycledPacket())
                     {
                         var stream = rec.GetStream();
-                        SendUpdate(stream,Mesh, Game.MsgServer.MsgUpdate.DataType.Mesh, true);
+                        SendUpdate(stream, Mesh, Game.MsgServer.MsgUpdate.DataType.Mesh, true);
                     }
                 }
             }
@@ -3294,7 +3300,7 @@ namespace LightConquer_Project.Role
         {
             get
             {
-              //  if (_mesh != 0)
+                //  if (_mesh != 0)
                 //    return _mesh;
                 //2471671003                     10000000
                 return (uint)(TransformationID * 10000000 + Face * 10000 + Body);
@@ -3313,7 +3319,7 @@ namespace LightConquer_Project.Role
                 View.SendView(stream, false);
             }
         }
-        
+
         public unsafe void SendUpdate(ServerSockets.Packet stream, Game.MsgServer.MsgUpdate.Flags Flag, uint Time, uint Dmg, uint Level, Game.MsgServer.MsgUpdate.DataType datatype, bool scren = false)
         {
             Game.MsgServer.MsgUpdate packet = new Game.MsgServer.MsgUpdate(stream, UID, 1);
@@ -3347,11 +3353,11 @@ namespace LightConquer_Project.Role
                     View.SendView(stream, false);
             }
         }
-        public unsafe void UpdateVip(ServerSockets.Packet stream )
+        public unsafe void UpdateVip(ServerSockets.Packet stream)
         {
             SendUpdate(stream, VipLevel, MsgUpdate.DataType.VIPLevel, false);
             if (VipLevel == 6)
-            {             
+            {
                 Owner.Send(stream.VipStatusCreate(MsgVipStatus.VipFlags.FullVip));
             }
             else
@@ -3445,7 +3451,7 @@ namespace LightConquer_Project.Role
             packet.X = x;
             packet.Y = y;
             packet.Strings = effect;
-           View.SendView(stream.StringPacketCreate(packet),true);
+            View.SendView(stream.StringPacketCreate(packet), true);
 
             /*stream.InitWriter();
 
@@ -3490,7 +3496,7 @@ namespace LightConquer_Project.Role
                 stream.Write((ushort)GuildRank);
             else
                 stream.ZeroFill(2);
-      
+
             stream.Write((uint)0);//unknow
 
 
@@ -3566,13 +3572,13 @@ namespace LightConquer_Project.Role
             stream.Write((uint)ClanRank);
 
 
-  
-          
+
+
 
             stream.Write((uint)0);//unknow
-           stream.Write((ushort)MyTitle);
+            stream.Write((ushort)MyTitle);
 
- 
+
             stream.Write((byte)0);
             stream.Write((byte)0);
             stream.Write((byte)0);
@@ -3614,7 +3620,7 @@ namespace LightConquer_Project.Role
             stream.Write(JiangHuTalent);
             stream.Write(JiangHuActive);
 
-      //      stream.Write((ushort)2);
+            //      stream.Write((ushort)2);
             stream.Write((byte)0);
             if (OnMyOwnServer == false)
                 stream.Write(ServerID);
@@ -3656,7 +3662,7 @@ namespace LightConquer_Project.Role
             else
             {
                 if (InUnion)
-                    stream.Write(Name,string.Empty, ClanName, string.Empty, string.Empty, string.Empty, MyUnion.Name);
+                    stream.Write(Name, string.Empty, ClanName, string.Empty, string.Empty, string.Empty, MyUnion.Name);
                 else
                     stream.Write(Name, string.Empty, ClanName, string.Empty, string.Empty, string.Empty, string.Empty);
             }
@@ -3672,5 +3678,5 @@ namespace LightConquer_Project.Role
         public bool RedTeam = false;
         public bool BlueTeam = false;
     }
-  
+
 }

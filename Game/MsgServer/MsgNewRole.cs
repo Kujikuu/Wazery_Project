@@ -263,7 +263,8 @@ namespace LightConquer_Project.Game.MsgServer
                         client.Inventory.Add(stream, 722122);//NewbieToken
                         client.Send(new MsgServer.MsgMessage("ANSWER_OK", MsgMessage.MsgColor.red, MsgMessage.ChatMode.PopUP).GetArray(stream));
 
-                        Program.SendGlobalPackets.Enqueue(new MsgMessage($"{client.Player.Name} has created a new character, Please welcome him!", MsgMessage.MsgColor.white, MsgMessage.ChatMode.TopLeftSystem).GetArray(stream));
+                        client.Player.SendGlobalMesage($"{client.Player.Name} has created a new character, Please welcome him!", MsgMessage.ChatMode.TopLeft);
+                        //Program.SendGlobalPackets.Enqueue(new MsgMessage(, MsgMessage.MsgColor.white, MsgMessage.ChatMode.TopLeft).GetArray(stream));
 
                         client.Status.MaxHitpoints = client.CalculateHitPoint();
                         client.Player.HitPoints = (int)client.Status.MaxHitpoints;

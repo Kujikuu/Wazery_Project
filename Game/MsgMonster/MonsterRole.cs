@@ -1511,7 +1511,7 @@ namespace LightConquer_Project.Game.MsgMonster
                                                 killer.SendSysMesage("A monster you killed has dropped a Meteors at (" + xx + "," + yy + ")!", MsgMessage.ChatMode.Talk);
                                             killer.Player.AddMapEffect(stream, xx, yy, "zf2-e248");
                                         }
-                                        SendSysMesage($"A DB has dropped from {Family.Name} Killed by {killer.Name}");
+                                        SendSysMesage($"A Meteor has dropped from {Family.Name} Killed by {killer.Name}");
                                     }
                                     #endregion
                                     if (killer.Map.AddGroundItem(ref xx, ref yy) && drop)

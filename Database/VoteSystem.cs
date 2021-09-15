@@ -87,7 +87,7 @@ namespace LightConquer_Project.Database
                         client.Player.DExpTime = 3600;
                         client.Player.CreateExtraExpPacket(stream);
                     }
-                    client.SendSysMesage("" + client.Player.Name + " has been voted for LightConquer and he will gain X15EXP and +1 Vote Point!", ChatMode.TopLeftSystem);
+                    client.SendSysMesage("" + client.Player.Name + " has been voted and he will gain X15EXP and +1 Vote Point!", ChatMode.TopLeft);
 
                     client.Player.StartVote = false;
                 }

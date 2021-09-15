@@ -42,7 +42,7 @@ namespace LightConquer_Project.Game.MsgServer
                     client.Send(packet.HeroInfo(client.Player));
 
 
-                    MsgChiInfo.MsgHandleChi.SendInfo(client, MsgChiInfo.Action.Upgrade, client, 142);
+                    //MsgChiInfo.MsgHandleChi.SendInfo(client, MsgChiInfo.Action.Upgrade, client, 142);
 
 
                     client.Send(packet.FlowerCreate(Role.Core.IsBoy(client.Player.Body) ? MsgFlower.FlowerAction.Flower : MsgFlower.FlowerAction.FlowerSender
