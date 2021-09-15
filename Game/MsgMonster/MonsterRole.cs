@@ -1487,7 +1487,7 @@ namespace LightConquer_Project.Game.MsgMonster
 
                                             }
                                         }
-                                        SendSysMesage($"A DB has dropped from {Family.Name} Killed by {killer.Name}");
+                                        SendSysMesage($"A DragonBall has dropped from {Family.Name} Killed by ~{killer.Name}~");
                                     }
                                     #endregion
 
