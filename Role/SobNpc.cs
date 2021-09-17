@@ -211,6 +211,7 @@ namespace LightConquer_Project.Role
                 Game.MsgServer.MsgUpdate upd = new Game.MsgServer.MsgUpdate(stream, UID, 2);
                 stream = upd.Append(stream, Game.MsgServer.MsgUpdate.DataType.Hitpoints, (long)HitPoints);
                 stream = upd.Append(stream, Game.MsgServer.MsgUpdate.DataType.MaxHitpoints, (long)MaxHitPoints);
+                stream = upd.Append(stream, Game.MsgServer.MsgUpdate.DataType.Mesh, 8686);
                 stream = upd.GetArray(stream);
                 killer.Player.View.SendView(stream, true);
                 killer.Player.Away = 0;
