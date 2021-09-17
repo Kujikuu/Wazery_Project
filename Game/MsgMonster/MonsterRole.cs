@@ -348,23 +348,23 @@ namespace LightConquer_Project.Game.MsgMonster
 
                 if (killer != null)
                 {
-                    if (Map == 1015)//dis city map 2
-                    {
-                        killer.TotalSoulsBI++;
-                        if (killer.Inventory.Contain(721716, 1, 1))
-                        {
-                            killer.TotalSoulsBI++;
-                        }
-                        if (killer.TotalSoulsBI % 10000 == 0)
-                        {
-                            killer.SendSysMesage("You`ve killed " + killer.TotalSoulsBI + " so far, when you reach 25,000, u can claim your reward!", MsgMessage.ChatMode.TopLeft);
-                        }
-                        if (killer.TotalSoulsBI >= 25000)
-                        {
-                            killer.SendSysMesage("You`ve killed 25,000 soul, Go find the PointsRewards in TwinCity (463,366) to claim your reward!", MsgMessage.ChatMode.TopLeft);
+                    //if (Map == 1015)//dis city map 2
+                    //{
+                    //    killer.TotalSoulsBI++;
+                    //    if (killer.Inventory.Contain(721716, 1, 1))
+                    //    {
+                    //        killer.TotalSoulsBI++;
+                    //    }
+                    //    if (killer.TotalSoulsBI % 10000 == 0)
+                    //    {
+                    //        killer.SendSysMesage("You`ve killed " + killer.TotalSoulsBI + " so far, when you reach 25,000, u can claim your reward!", MsgMessage.ChatMode.TopLeft);
+                    //    }
+                    //    if (killer.TotalSoulsBI >= 25000)
+                    //    {
+                    //        killer.SendSysMesage("You`ve killed 25,000 soul, Go find the PointsRewards in TwinCity (463,366) to claim your reward!", MsgMessage.ChatMode.TopLeft);
 
-                        }
-                    }
+                    //    }
+                    //}
                     if (Map == 1081)
                     {
                         if (Game.MsgTournaments.MsgSchedules.CurrentTournament.Type == MsgTournaments.TournamentType.SpeedHunterGame
@@ -449,103 +449,103 @@ namespace LightConquer_Project.Game.MsgMonster
                             killer.SendSysMesage("congratulations! you have completed all stage, come back tomorrow to get you other tokens or quest.");
                     }
                     #endregion
-                    #region TotalSouls
+                    /*                    #region TotalSouls
 
-                    killer.TotalSouls++;
+                                        killer.TotalSouls++;
 
-                    if (killer.TotalSouls % 10000 == 0)
-                    {
-                        killer.SendSysMesage("You`ve killed " + killer.TotalSouls + " so far, when you reach 25,000, u can claim your reward!", MsgMessage.ChatMode.TopLeft);
-                    }
-                    if (killer.TotalSouls >= 25000)
-                    {
-                        killer.SendSysMesage("You`ve killed 25,000 soul, Go find the PointsRewards in TwinCity (463,366) to claim your reward!", MsgMessage.ChatMode.TopLeft);
+                                        //if (killer.TotalSouls % 10000 == 0)
+                                        //{
+                                        //    killer.SendSysMesage("You`ve killed " + killer.TotalSouls + " so far, when you reach 25,000, u can claim your reward!", MsgMessage.ChatMode.TopLeft);
+                                        //}
+                                        //if (killer.TotalSouls >= 25000)
+                                        //{
+                                        //    killer.SendSysMesage("You`ve killed 25,000 soul, Go find the PointsRewards in TwinCity (463,366) to claim your reward!", MsgMessage.ChatMode.TopLeft);
 
-                    }
-                    #endregion
+                                        //}
+                                        #endregion
 
-                    #region TotalSoulsBI
-                    if (Map == 1015)//dis city map 2
-                    {
-                        killer.TotalSoulsBI++;
-                        if (killer.Inventory.Contain(721716, 1, 1))
-                        {
-                            killer.TotalSoulsBI++;
-                        }
-                        if (killer.TotalSoulsBI % 10000 == 0)
-                        {
-                            killer.SendSysMesage("You`ve killed " + killer.TotalSoulsBI + " so far, when you reach 25,000, u can claim your reward!", MsgMessage.ChatMode.TopLeft);
-                        }
-                        if (killer.TotalSoulsBI >= 25000)
-                        {
-                            killer.SendSysMesage("You`ve killed 25,000 soul, Go find the PointsRewards in TwinCity (463,366) to claim your reward!", MsgMessage.ChatMode.TopLeft);
+                                        #region TotalSoulsBI
+                                        if (Map == 1015)//dis city map 2
+                                        {
+                                            killer.TotalSoulsBI++;
+                                            if (killer.Inventory.Contain(721716, 1, 1))
+                                            {
+                                                killer.TotalSoulsBI++;
+                                            }
+                                            if (killer.TotalSoulsBI % 10000 == 0)
+                                            {
+                                                killer.SendSysMesage("You`ve killed " + killer.TotalSoulsBI + " so far, when you reach 25,000, u can claim your reward!", MsgMessage.ChatMode.TopLeft);
+                                            }
+                                            if (killer.TotalSoulsBI >= 25000)
+                                            {
+                                                killer.SendSysMesage("You`ve killed 25,000 soul, Go find the PointsRewards in TwinCity (463,366) to claim your reward!", MsgMessage.ChatMode.TopLeft);
 
-                        }
-                    }
-                    #endregion
-                    #region TotalSoulsTC
-                    if (Map == 1002)//dis city map 2
-                    {
-                        if (killer.Inventory.Contain(721715, 1, 1))
-                        {
-                            killer.TotalSoulsTC++;
-
-
-                            if (killer.TotalSoulsTC >= 25000)
-                            {
-                                killer.SendSysMesage("You`ve killed 25,000 soul, Go find the PointsRewards in TwinCity (463,366) to claim your reward!", MsgMessage.ChatMode.TopLeft);
-
-                            }
-                        }
-                    }
-                    #endregion
-                    #region TotalSoulsDC
-                    if (Map == 1000)//dis city map 2
-                    {
-                        if (killer.Inventory.Contain(721720, 1, 1))
-                        {
-                            killer.TotalSoulsDC++;
+                                            }
+                                        }
+                                        #endregion
+                                        #region TotalSoulsTC
+                                        if (Map == 1002)//dis city map 2
+                                        {
+                                            if (killer.Inventory.Contain(721715, 1, 1))
+                                            {
+                                                killer.TotalSoulsTC++;
 
 
-                            if (killer.TotalSoulsDC >= 25000)
-                            {
-                                killer.SendSysMesage("You`ve killed 25,000 soul, Go find the PointsRewards in TwinCity (463,366) to claim your reward!", MsgMessage.ChatMode.TopLeft);
+                                                if (killer.TotalSoulsTC >= 25000)
+                                                {
+                                                    killer.SendSysMesage("You`ve killed 25,000 soul, Go find the PointsRewards in TwinCity (463,366) to claim your reward!", MsgMessage.ChatMode.TopLeft);
 
-                            }
-                        }
-                    }
-                    #endregion
-                    #region TotalSoulsPC
-                    if (Map == 1011)//dis city map 2
-                    {
-                        if (killer.Inventory.Contain(721718, 1, 1))
-                        {
-                            killer.TotalSoulsPC++;
+                                                }
+                                            }
+                                        }
+                                        #endregion
+                                        #region TotalSoulsDC
+                                        if (Map == 1000)//dis city map 2
+                                        {
+                                            if (killer.Inventory.Contain(721720, 1, 1))
+                                            {
+                                                killer.TotalSoulsDC++;
 
 
-                            if (killer.TotalSoulsPC >= 25000)
-                            {
-                                killer.SendSysMesage("You`ve killed 25,000 soul, Go find the PointsRewards in TwinCity (463,366) to claim your reward!", MsgMessage.ChatMode.TopLeft);
+                                                if (killer.TotalSoulsDC >= 25000)
+                                                {
+                                                    killer.SendSysMesage("You`ve killed 25,000 soul, Go find the PointsRewards in TwinCity (463,366) to claim your reward!", MsgMessage.ChatMode.TopLeft);
 
-                            }
-                        }
-                    }
-                    #endregion
-                    #region TotalSoulsAC
-                    if (Map == 1020)//dis city map 2
-                    {
-                        if (killer.Inventory.Contain(721719, 1, 1))
-                        {
-                            killer.TotalSoulsAC++;
+                                                }
+                                            }
+                                        }
+                                        #endregion
+                                        #region TotalSoulsPC
+                                        if (Map == 1011)//dis city map 2
+                                        {
+                                            if (killer.Inventory.Contain(721718, 1, 1))
+                                            {
+                                                killer.TotalSoulsPC++;
 
-                            if (killer.TotalSoulsAC >= 25000)
-                            {
-                                killer.SendSysMesage("You`ve killed 25,000 soul, Go find the PointsRewards in TwinCity (463,366) to claim your reward!", MsgMessage.ChatMode.TopLeft);
 
-                            }
-                        }
-                    }
-                    #endregion
+                                                if (killer.TotalSoulsPC >= 25000)
+                                                {
+                                                    killer.SendSysMesage("You`ve killed 25,000 soul, Go find the PointsRewards in TwinCity (463,366) to claim your reward!", MsgMessage.ChatMode.TopLeft);
+
+                                                }
+                                            }
+                                        }
+                                        #endregion
+                                        #region TotalSoulsAC
+                                        if (Map == 1020)//dis city map 2
+                                        {
+                                            if (killer.Inventory.Contain(721719, 1, 1))
+                                            {
+                                                killer.TotalSoulsAC++;
+
+                                                if (killer.TotalSoulsAC >= 25000)
+                                                {
+                                                    killer.SendSysMesage("You`ve killed 25,000 soul, Go find the PointsRewards in TwinCity (463,366) to claim your reward!", MsgMessage.ChatMode.TopLeft);
+
+                                                }
+                                            }
+                                        }
+                                        #endregion*/
                     #region Emerald
                     if (Family.ID == 0015)
                     {
