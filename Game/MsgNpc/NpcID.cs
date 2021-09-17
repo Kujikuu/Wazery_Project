@@ -784,6 +784,7 @@ namespace LightConquer_Project.Game.MsgNpc
         UnknowMan = 3825,
         MillionaireLee = 5004,
         GarmentShopKeeper = 6002,
+        GarmentExchanger = 60020,
 
         Confiscator = 4450,
         JailConfiscator = 4542,

@@ -12,7 +12,7 @@ namespace LightConquer_Project.Game.MsgServer
             Accept = stream.ReadUInt32();
         }
 
-        public static unsafe ServerSockets.Packet StaticMessageCreate(this ServerSockets.Packet stream,MsgStaticMessage.Messages Message
+        public static unsafe ServerSockets.Packet StaticMessageCreate(this ServerSockets.Packet stream, MsgStaticMessage.Messages Message
             , MsgStaticMessage.Action Mode, uint Seconds)
         {
             stream.InitWriter();
@@ -71,6 +71,7 @@ namespace LightConquer_Project.Game.MsgServer
             VampireWar = 10571,
             WhackTheThief = 10572,
             Couple = 10573,//The Couple Tournament is about to kick-off. Join now?
+            Vote = 10575,
 
         }
         public enum Action : uint

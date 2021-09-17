@@ -132,12 +132,12 @@ namespace LightConquer_Project.Game.MsgTournaments
 
 
                     #region CaptureTheFlag
-                    if (CaptureTheFlag.Proces == ProcesType.Alive)
-                    {
-                        CaptureTheFlag.UpdateMapScore();
-                        CaptureTheFlag.CheckUpX2();
-                        CaptureTheFlag.SpawnFlags();
-                    }
+                    //if (CaptureTheFlag.Proces == ProcesType.Alive)
+                    //{
+                    //    CaptureTheFlag.UpdateMapScore();
+                    //    CaptureTheFlag.CheckUpX2();
+                    //    CaptureTheFlag.SpawnFlags();
+                    //}
                     #endregion
 
                     #region Events list
@@ -426,10 +426,10 @@ namespace LightConquer_Project.Game.MsgTournaments
                             //}
                             #endregion
                             #region ElitePkTournament
-                            if ((Now64.Hour == 18 && Now64.Minute == 59))
-                            {
-                                ElitePkTournament.Start();
-                            }
+                            //if ((Now64.Hour == 18 && Now64.Minute == 59))
+                            //{
+                            //    ElitePkTournament.Start();
+                            //}
                             #endregion
 
                             #region GuildWar
@@ -572,8 +572,8 @@ namespace LightConquer_Project.Game.MsgTournaments
                             }
                             #endregion
                             #region TeamPkTournament
-                            if ((Now64.Hour == 18 && Now64.Minute == 15))
-                                TeamPkTournament.Start();
+                            //if ((Now64.Hour == 18 && Now64.Minute == 15))
+                            //    TeamPkTournament.Start();
                             #endregion
                             break;
                         }
@@ -605,14 +605,14 @@ namespace LightConquer_Project.Game.MsgTournaments
                         {
 
                             #region CaptureTheFlag
-                            if ((Now64.Hour == 16 && Now64.Minute == 00))
-                            {
-                                CaptureTheFlag.Start();
-                            }
-                            if ((Now64.Hour == 17 && Now64.Minute == 00))
-                            {
-                                CaptureTheFlag.CheckFinish();
-                            }
+                            //if ((Now64.Hour == 16 && Now64.Minute == 00))
+                            //{
+                            //    CaptureTheFlag.Start();
+                            //}
+                            //if ((Now64.Hour == 17 && Now64.Minute == 00))
+                            //{
+                            //    CaptureTheFlag.CheckFinish();
+                            //}
                             #endregion
                             #region Elite Ladder Tournament
                             //if (DateTime.Now.Hour == 16 && DateTime.Now.Minute == 30 && Now64.Second < 0.5)
