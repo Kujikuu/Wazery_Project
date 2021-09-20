@@ -185,24 +185,24 @@ namespace LightConquer_Project.Game.MsgTournaments
                     }
                     #endregion
                     #region UnlimitedArena
-                    if ((DateTime.Now.Hour == 12 && DateTime.Now.Minute == 1 && DateTime.Now.Second <= 1))
-                    {
-                        using (var rec = new ServerSockets.RecycledPacket())
-                        {
-                            var stream = rec.GetStream();
-                            Role.Core.SendGlobalMessage(stream, $"[UnlimitedArena] Hello everyone, the Arena is available now #06", MsgMessage.ChatMode.TopLeftSystem);
-                        }
-                    }
+                    //if ((DateTime.Now.Hour == 12 && DateTime.Now.Minute == 1 && DateTime.Now.Second <= 1))
+                    //{
+                    //    using (var rec = new ServerSockets.RecycledPacket())
+                    //    {
+                    //        var stream = rec.GetStream();
+                    //        Role.Core.SendGlobalMessage(stream, $"[UnlimitedArena] Hello everyone, the Arena is available now #06", MsgMessage.ChatMode.TopLeftSystem);
+                    //    }
+                    //}
                     #endregion
                     #region ArenaDuel
-                    if ((DateTime.Now.Hour == 18 && DateTime.Now.Minute == 1 && DateTime.Now.Second <= 1))
-                    {
-                        using (var rec = new ServerSockets.RecycledPacket())
-                        {
-                            var stream = rec.GetStream();
-                            Role.Core.SendGlobalMessage(stream, $"[ArenaDuel] Hello everyone, the Arena is available now #06", MsgMessage.ChatMode.TopLeftSystem);
-                        }
-                    }
+                    //if ((DateTime.Now.Hour == 18 && DateTime.Now.Minute == 1 && DateTime.Now.Second <= 1))
+                    //{
+                    //    using (var rec = new ServerSockets.RecycledPacket())
+                    //    {
+                    //        var stream = rec.GetStream();
+                    //        Role.Core.SendGlobalMessage(stream, $"[ArenaDuel] Hello everyone, the Arena is available now #06", MsgMessage.ChatMode.TopLeftSystem);
+                    //    }
+                    //}
                     #endregion
 
 
@@ -362,6 +362,18 @@ namespace LightConquer_Project.Game.MsgTournaments
                                 CurrentTournament = Tournaments[TournamentType.TreasureThief];
                             if (X == 2)
                                 CurrentTournament = Tournaments[TournamentType.SpeedHunterGame];
+                            CurrentTournament.Open();
+                            Console.WriteLine("Started Tournament " + CurrentTournament.Type.ToString() + "at " + DateTime.Now);
+
+                        }
+                    }
+
+                    if (CurrentTournament.Process == ProcesType.Dead)
+                    {
+
+                        if (Now64.Minute == 25 && Now64.Second < 4)
+                        {
+                            CurrentTournament = Tournaments[TournamentType.DBShower];
                             CurrentTournament.Open();
                             Console.WriteLine("Started Tournament " + CurrentTournament.Type.ToString() + "at " + DateTime.Now);
 

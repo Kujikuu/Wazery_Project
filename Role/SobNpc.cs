@@ -152,7 +152,7 @@ namespace LightConquer_Project.Role
                 killer.Player.View.SendView(stream, true);
                 return;
             }
-            if (UID >= 7000 && UID <= 17007)
+            if (UID >= 7000 && UID <= 17007 && UID != 7001)
             {
                 Mesh = StaticMesh.OpenRightGate;
                 Game.MsgServer.MsgUpdate upd = new Game.MsgServer.MsgUpdate(stream, UID, 1);

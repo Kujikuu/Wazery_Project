@@ -1471,6 +1471,7 @@ namespace LightConquer_Project.Game.MsgMonster
                                                     killer.Inventory.Remove(1088000, 10, stream);
                                                     killer.Inventory.Add(stream, 720028, 1);
                                                     killer.SendSysMesage("[VIP] DragonBall got autopacked.", MsgMessage.ChatMode.TopLeft);
+                                                    //killer.Send(new role)
                                                 }
                                             }
                                             else
@@ -1483,7 +1484,7 @@ namespace LightConquer_Project.Game.MsgMonster
                                                 };
                                                 killer.Send(stream.ActionCreate(&action2));
                                                 killer.SendSysMesage("A DragonBall dropped at at " + xx + "," + yy + "!");
-                                                killer.Player.AddMapEffect(stream, xx, yy, "zf2-e248");
+                                                killer.Player.AddMapEffect(stream, xx, yy, "darcue");
 
                                             }
                                         }
