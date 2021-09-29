@@ -2530,7 +2530,7 @@ namespace LightConquer_Project.Client
 
                 if (client.Player.X == 0 || client.Player.Y == 0)
                 {
-                    client.Teleport(1002, 300, 278);
+                    client.Teleport(1002, 430, 380);
                 }
                 if (client.Player.HeavenBlessing > 0)
                 {

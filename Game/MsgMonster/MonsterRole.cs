@@ -1484,10 +1484,13 @@ namespace LightConquer_Project.Game.MsgMonster
                                                 };
                                                 killer.Send(stream.ActionCreate(&action2));
                                                 killer.SendSysMesage("A DragonBall dropped at at " + xx + "," + yy + "!");
-                                                killer.Player.AddMapEffect(stream, xx, yy, "darcue");
+
+                                                //killer.Player.AddMapEffect(stream, xx, yy, "darcue");
+                                                //killer.Player.role
 
                                             }
                                         }
+                                        killer.Player.SendString(stream, MsgStringPacket.StringID.Effect, false, "darcue");
                                         SendSysMesage($"A DragonBall has dropped from {Family.Name} Killed by ~{killer.Name}~");
                                     }
                                     #endregion
@@ -1622,6 +1625,18 @@ namespace LightConquer_Project.Game.MsgMonster
                                 {
                                     user.Inventory.Update(DataItem, Role.Instance.AddMode.ADD, stream);
                                     user.SendSysMesage("You`ve received +1 " + Server.ItemsBase[DataItem.ITEM_ID].Name + " !");
+                                    return;
+                                }
+                                if(DataItem.ITEM_ID >= 700001 && DataItem.ITEM_ID <= 700123)
+                                {
+                                    user.Inventory.Update(DataItem, Role.Instance.AddMode.ADD, stream);
+                                    user.SendSysMesage("You`ve received " + Server.ItemsBase[DataItem.ITEM_ID].Name + " !");
+                                    return;
+                                }
+                                if (DataItem.ITEM_ID == 723700)
+                                {
+                                    user.Inventory.Update(DataItem, Role.Instance.AddMode.ADD, stream);
+                                    user.SendSysMesage("You`ve received " + Server.ItemsBase[DataItem.ITEM_ID].Name + " !");
                                     return;
                                 }
                             }

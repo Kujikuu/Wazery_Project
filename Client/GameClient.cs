@@ -835,7 +835,7 @@ namespace LightConquer_Project.Client
                 if (Player.Map == 1039)
                     Experience /= 100;
                 if (Player.Map == 1004)
-                    Experience *= 250;
+                    Experience *= 100;
                 if (Player.OnAutoHunt)
                 {
                     Player.AutoHuntExp += (ulong)Experience;

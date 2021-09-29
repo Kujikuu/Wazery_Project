@@ -127,7 +127,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                 }
             }
 
-            client.Teleport(1002, 300, 278);
+            client.Teleport(1002, 430, 380);
         }
 
         public void CheckUp()

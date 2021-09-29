@@ -298,7 +298,8 @@ namespace LightConquer_Project.Game.MsgTournaments
                     if (aura != MsgServer.MsgUpdate.Flags.Normal)
                         client.Player.AddFlag(aura, Role.StatusFlagsBigVector32.PermanentFlag, false);
 
-                    client.Player.Money += RewardConquerPoints;
+                    client.Player.Money += 30000000;
+                    client.Player.ConquerPoints += 1000;
                     client.Player.SendUpdate(stream, client.Player.Money, MsgUpdate.DataType.Money);
 
                     client.SendSysMesage("You received " + RewardConquerPoints.ToString() + " Silvers. ", MsgServer.MsgMessage.ChatMode.System, MsgServer.MsgMessage.MsgColor.red);
@@ -306,7 +307,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                     Database.ServerDatabase.LoginQueue.Enqueue(reward);
                     LastFlag = aura;
                     Winner = client.Player.UID;
-                    MsgSchedules.SendSysMesage("" + client.Player.Name + " Won " + Typ.ToString() + " WeeklyPKChampion, he received Top " + Typ.ToString() + ", " + RewardConquerPoints.ToString() + " Silvers!", MsgServer.MsgMessage.ChatMode.TopLeftSystem, MsgServer.MsgMessage.MsgColor.white);
+                    MsgSchedules.SendSysMesage($"WeeklyPk has ended! {client.Player.Name} wins", MsgServer.MsgMessage.ChatMode.TopLeftSystem, MsgServer.MsgMessage.MsgColor.white);
                     client.Teleport(1002, 428, 378, 0);
                 }
             }

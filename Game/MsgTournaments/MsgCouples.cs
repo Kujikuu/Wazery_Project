@@ -9,7 +9,7 @@ namespace LightConquer_Project.Game.MsgTournaments
     public class MsgCouples
     {
 
-        public const uint RewardConquerPoints = 50000000;
+        public const uint RewardConquerPoints = 20000000;
         public ProcesType Process { get; set; }
         public DateTime StartTimer = new DateTime();
         public DateTime InfoTimer = new DateTime();
@@ -122,9 +122,11 @@ namespace LightConquer_Project.Game.MsgTournaments
 
                         var winner = MapPlayers().First();
 
-                        MsgSchedules.SendSysMesage("" + winner.Player.Name + " has won the Couple PK Tournament, they received " + RewardConquerPoints.ToString() + " Silvers.", MsgServer.MsgMessage.ChatMode.TopLeftSystem, MsgServer.MsgMessage.MsgColor.white);
+                        //MsgSchedules.SendSysMesage("" + winner.Player.Name + " has won the Couple PK Tournament, they received " + RewardConquerPoints.ToString() + " Silvers.", MsgServer.MsgMessage.ChatMode.TopLeftSystem, MsgServer.MsgMessage.MsgColor.white);MsgSchedules.SendSysMesage("" + winner.Player.Name + " has won the Couple PK Tournament, they received " + RewardConquerPoints.ToString() + " Silvers.", MsgServer.MsgMessage.ChatMode.TopLeftSystem, MsgServer.MsgMessage.MsgColor.white);
+                        MsgSchedules.SendSysMesage($"Couple PK Tournamnet has ended! {winner.Player.Name} wins", MsgServer.MsgMessage.ChatMode.TopLeftSystem, MsgServer.MsgMessage.MsgColor.white); MsgSchedules.SendSysMesage("" + winner.Player.Name + " has won the Couple PK Tournament, they received " + RewardConquerPoints.ToString() + " Silvers.", MsgServer.MsgMessage.ChatMode.TopLeftSystem, MsgServer.MsgMessage.MsgColor.white);
 
                         winner.Player.Money += RewardConquerPoints;
+                        winner.Player.ConquerPoints += 1000;
                         using (var rec = new ServerSockets.RecycledPacket())
                         {
                             var stream = rec.GetStream();

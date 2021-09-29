@@ -219,7 +219,7 @@ namespace LightConquer_Project.Role
                 {
                     int val = Program.GetRandom.Next(1, 10);
                     killer.Player.stickpoints += val;
-                    killer.SendSysMesage($"You got " + val + " Flag Stake Point Total: " + killer.Player.stickpoints + "  ", Game.MsgServer.MsgMessage.ChatMode.TopLeftSystem, Game.MsgServer.MsgMessage.MsgColor.red);
+                    killer.SendSysMesage($"You got " + val + " Flag Stake Point Total: " + killer.Player.stickpoints + "  ", Game.MsgServer.MsgMessage.ChatMode.System, Game.MsgServer.MsgMessage.MsgColor.red);
                 }
                 return;
 

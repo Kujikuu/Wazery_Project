@@ -9,7 +9,7 @@ namespace LightConquer_Project.Game.MsgTournaments
     public class MsgClassPKWar
     {
         public const ushort MapID = 1764;
-        public const uint RewardConquerPoints = 50000000;
+        public const uint RewardConquerPoints = 25000000;
         public const string FilleName = "\\ClassPkWar.ini";
 
         public enum TournamentType : byte
@@ -313,7 +313,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                     Database.ServerDatabase.LoginQueue.Enqueue(reward);
                     LastFlag = aura;
                     Winner = client.Player.UID;
-                    MsgSchedules.SendSysMesage("" + client.Player.Name + " Won " + Typ.ToString() + " ClassPKWar, he received Top " + Typ.ToString() + ", " + RewardConquerPoints.ToString() + " Silvers!", MsgServer.MsgMessage.ChatMode.TopLeftSystem, MsgServer.MsgMessage.MsgColor.white);
+                    MsgSchedules.SendSysMesage($"ClassPkWar has ended! {client.Player.Name} won", MsgServer.MsgMessage.ChatMode.TopLeftSystem, MsgServer.MsgMessage.MsgColor.white);
                     client.Teleport(1002, 430, 269, 0);
                 }
             }

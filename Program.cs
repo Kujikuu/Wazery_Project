@@ -164,9 +164,9 @@ namespace LightConquer_Project
             public static ushort WebPort = 9900;
             public static string AccServerIPAddres = "";
 
-            public static uint ExpRateSpell = 1;
-            public static uint ExpRateProf = 1;
-            public static uint UserExpRate = 70;
+            public static uint ExpRateSpell = 100;//1
+            public static uint ExpRateProf = 100;//1
+            public static uint UserExpRate = 270;//70
             public static uint PhysicalDamage = 100;// + 150%  
 
             //loader

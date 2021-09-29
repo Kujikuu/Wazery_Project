@@ -42,7 +42,7 @@ namespace LightConquer_Project.Database
        }
        internal static void LoadSobNpcs()
        {
-           string[] baseText = File.ReadAllLines(Program.ServerConfig.DbLocation + "SobNpcs.txt");
+           string[] baseText = File.ReadAllLines(Program.ServerConfig.DbLocation + "SobNpcs.ini");
            foreach (var bas_line in baseText)
            {
                Database.DBActions.ReadLine line = new DBActions.ReadLine(bas_line, ',');
@@ -113,9 +113,9 @@ namespace LightConquer_Project.Database
         public static void LoadNpcs()
        {
            uint Count = 0;
-           if (System.IO.File.Exists(Program.ServerConfig.DbLocation + "npcs.txt"))
+           if (System.IO.File.Exists(Program.ServerConfig.DbLocation + "npcs.ini"))
            {
-               using (System.IO.StreamReader read = System.IO.File.OpenText(Program.ServerConfig.DbLocation + "npcs.txt"))
+               using (System.IO.StreamReader read = System.IO.File.OpenText(Program.ServerConfig.DbLocation + "npcs.ini"))
                {
                    while (true)
                    {

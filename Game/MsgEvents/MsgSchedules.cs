@@ -273,9 +273,9 @@ namespace LightConquer_Project.Game.MsgTournaments
 
                     }
 
-                    if (!Server.ServerMaps[1002].ContainMobID(21060))
+                    if (!Server.ServerMaps[1004].ContainMobID(21060))
                         using (var rec = new ServerSockets.RecycledPacket())
-                            Server.AddMapMonster(rec.GetStream(), Server.ServerMaps[1002], 21060, 421, 378, 1, 1, 1);
+                            Server.AddMapMonster(rec.GetStream(), Server.ServerMaps[1004], 21060, 51, 50, 1, 1, 1);
 
 
                     if (Now64.Minute == 45 && Now64.Second < 2)
@@ -607,7 +607,6 @@ namespace LightConquer_Project.Game.MsgTournaments
                                 ClassPkWar.Start();
                             }
                             #endregion
-
                             break;
                         }
                     #endregion
