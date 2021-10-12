@@ -73,6 +73,7 @@ namespace LightConquer_Project.Database
                         guild.UseAdvertise = GuildReader.Read((byte)0) == 1;
                         guild.BuletinEnrole = GuildReader.Read((int)0);
                         guild.UnionID = GuildReader.Read((uint)0);
+                        guild.wins = GuildReader.Read((byte)0);
 
                         //----------------------------------
 

@@ -760,6 +760,9 @@ namespace LightConquer_Project.Role.Instance
             }
         }
 
+        public byte wins = 0;
+
+
         public Member[] GetOnlineMembers
         {
             get { return Members.Values.OrderByDescending(p => p.IsOnline).ToArray();  }

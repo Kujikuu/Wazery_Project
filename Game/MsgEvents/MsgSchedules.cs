@@ -378,59 +378,60 @@ namespace LightConquer_Project.Game.MsgTournaments
                     //}
                     #endregion
                     #region Rand Tournament
-                    if (DateTime.Now.Minute == 25 || DateTime.Now.Minute == 15 && Now64.Second < 5)
-                    {
-                        //byte _totalEvents = 8;
-                        //int _nextEvent = Program.Rnd.Next(0, _totalEvents);
-
-                        //while (Program.WorldEvent == _nextEvent)
-                        //    _nextEvent = Program.Rnd.Next(0, _totalEvents);
-
-
-                        int _nextEvent = 0;
-                        _nextEvent = Program.CurrentEvent + 1;
-                        if (_nextEvent > 7)
-                            _nextEvent = 0;
-                        LightConquer_Project.Game.MsgEvents.Events NextEvent = new LightConquer_Project.Game.MsgEvents.Events();
-                        switch (_nextEvent)
+                    if (Program.Events.Count == 0)
+                        if (DateTime.Now.Minute == 25 || DateTime.Now.Minute == 15 && Now64.Second < 5)
                         {
-                            case 0:
-                                NextEvent = new DragonWar();
-                                Program.CurrentEvent = 0;
-                                break;
-                            case 1:
-                                NextEvent = new FFa();
-                                Program.CurrentEvent = 1;
-                                break;
-                            case 2:
-                                NextEvent = new FreezeWar();
-                                Program.CurrentEvent = 2;
-                                break;
-                            case 3:
-                                NextEvent = new Get5Out();
-                                Program.CurrentEvent = 3;
-                                break;
-                            case 4:
-                                NextEvent = new LastManStand();
-                                Program.CurrentEvent = 4;
-                                break;
-                            case 5:
-                                NextEvent = new PTB();
-                                Program.CurrentEvent = 5;
-                                break;
-                            case 6:
-                                NextEvent = new SkillChampionship();
-                                Program.CurrentEvent = 6;
-                                break;
-                            case 7:
-                                NextEvent = new skillmaster();
-                                Program.CurrentEvent = 7;
-                                break;
-                        }
-                        NextEvent.StartTournament();
-                        Console.WriteLine("Started Tournament " + NextEvent.ToString() + "at " + DateTime.Now);
+                            //byte _totalEvents = 8;
+                            //int _nextEvent = Program.Rnd.Next(0, _totalEvents);
 
-                    }
+                            //while (Program.WorldEvent == _nextEvent)
+                            //    _nextEvent = Program.Rnd.Next(0, _totalEvents);
+
+
+                            int _nextEvent = 0;
+                            _nextEvent = Program.CurrentEvent + 1;
+                            if (_nextEvent > 7)
+                                _nextEvent = 0;
+                            LightConquer_Project.Game.MsgEvents.Events NextEvent = new LightConquer_Project.Game.MsgEvents.Events();
+                            switch (_nextEvent)
+                            {
+                                case 0:
+                                    NextEvent = new DragonWar();
+                                    Program.CurrentEvent = 0;
+                                    break;
+                                case 1:
+                                    NextEvent = new FFa();
+                                    Program.CurrentEvent = 1;
+                                    break;
+                                case 2:
+                                    NextEvent = new FreezeWar();
+                                    Program.CurrentEvent = 2;
+                                    break;
+                                case 3:
+                                    NextEvent = new Get5Out();
+                                    Program.CurrentEvent = 3;
+                                    break;
+                                case 4:
+                                    NextEvent = new LastManStand();
+                                    Program.CurrentEvent = 4;
+                                    break;
+                                case 5:
+                                    NextEvent = new PTB();
+                                    Program.CurrentEvent = 5;
+                                    break;
+                                case 6:
+                                    NextEvent = new SkillChampionship();
+                                    Program.CurrentEvent = 6;
+                                    break;
+                                case 7:
+                                    NextEvent = new skillmaster();
+                                    Program.CurrentEvent = 7;
+                                    break;
+                            }
+                            NextEvent.StartTournament();
+                            Console.WriteLine("Started Tournament " + NextEvent.ToString() + "at " + DateTime.Now);
+
+                        }
                     #endregion
 
                 }

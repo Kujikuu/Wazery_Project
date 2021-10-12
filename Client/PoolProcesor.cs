@@ -871,6 +871,7 @@ namespace LightConquer_Project.Client
             }
 
         }
+       
         public static unsafe void CheckSeconds(Client.GameClient client)
         {
             try
@@ -963,8 +964,17 @@ namespace LightConquer_Project.Client
                 {
                     if (client.Player.StampGuildWarScore.AddSeconds(3) < timer)
                     {
-                        client.SendSysMesage("# GuildWar Stats #", MsgMessage.ChatMode.FirstRightCorner, MsgMessage.MsgColor.yellow);
+                        client.SendSysMesage("*GuildWar Stars*", MsgMessage.ChatMode.FirstRightCorner, MsgMessage.MsgColor.yellow);
                         client.SendSysMesage($"WinnerGuild: {MsgSchedules.GuildWar.Winner.Name}", MsgMessage.ChatMode.ContinueRightCorner, MsgMessage.MsgColor.yellow);
+                        client.SendSysMesage($"GuildLeader: {Role.Instance.Guild.GuildPoll[MsgSchedules.GuildWar.Winner.GuildID].GetGuildLeader.Name}", MsgMessage.ChatMode.ContinueRightCorner, MsgMessage.MsgColor.yellow);
+                        foreach (var GuildMember in Role.Instance.Guild.GuildPoll[MsgSchedules.GuildWar.Winner.GuildID].Members.Values)
+                        {
+                            if (GuildMember.Rank == Role.Flags.GuildMemberRank.DeputyLeader)
+                            {
+                                client.SendSysMesage($"DLeader: {GuildMember.Name}", MsgMessage.ChatMode.ContinueRightCorner, MsgMessage.MsgColor.yellow);
+                            }
+                        }
+                        client.SendSysMesage($"MOTGW: {MsgSchedules.GuildWar.GWKiller}", MsgMessage.ChatMode.ContinueRightCorner, MsgMessage.MsgColor.yellow);
                         client.Player.StampGuildWarScore = timer;
                     }
                 }

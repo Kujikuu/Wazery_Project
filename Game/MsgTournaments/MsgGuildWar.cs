@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections.Concurrent;
+using LightConquer_Project.Client;
 
 namespace LightConquer_Project.Game.MsgTournaments
 {
@@ -117,6 +118,7 @@ namespace LightConquer_Project.Game.MsgTournaments
         public ConcurrentDictionary<uint, GuildWarScrore> ScoreList;
         public GuildWarScrore Winner;
         public Dictionary<MsgNpc.NpcID, GuildConductor> GuildConductors;
+        public string GWKiller = "None";
 
         public bool LeftGateOpen { get { return Furnitures[Role.SobNpc.StaticMesh.LeftGate].Mesh == Role.SobNpc.StaticMesh.OpenLeftGate; } }
         public bool RightGateOpen { get { return Furnitures[Role.SobNpc.StaticMesh.RightGate].Mesh == Role.SobNpc.StaticMesh.OpenRightGate; } }
@@ -227,16 +229,54 @@ namespace LightConquer_Project.Game.MsgTournaments
 
 
             }
-
+            Role.Instance.Guild.GuildPoll[Winner.GuildID].wins++;
             RewardDeputiLeader.Clear();
             RewardLeader.Clear();
             Winner.DeputiLeaderReward = 7;
             Winner.LeaderReward = 1;
+
+            //List<GameClient> GWKillers = new List<GameClient>();
+            var MaxPts = Database.Server.GamePoll.OrderByDescending(x => x.Value.Player.GWKills).FirstOrDefault().Value;
+            //foreach (var Player in Database.Server.GamePoll.Values)
+            //{
+            //    if (Player.Player.GWKills > 0)
+            //        GWKillers.Add(Player);
+            //}
+
+            //uint MaxValue = FindMaxPoints(GWKillers);
+
+            //foreach (var p in GWKillers)
+            //{
+            //    if (p.Player.GWKills == MaxValue)
+            //        GWKiller = p.Player.Name;
+            //}
+
+            //GWKillers.Clear();
+
+            GWKiller = MaxPts.Player.Name;
+
             using (var rec = new ServerSockets.RecycledPacket())
             {
                 var stream = rec.GetStream();
                 Role.Instance.Union.CheckGuildWar(stream);
             }
+        }
+
+        public uint FindMaxPoints(List<GameClient> list)
+        {
+            if (list.Count == 0)
+            {
+                throw new InvalidOperationException("Empty list");
+            }
+            uint maxAge = uint.MinValue;
+            foreach (GameClient type in list)
+            {
+                if (type.Player.GWKills > maxAge)
+                {
+                    maxAge = type.Player.GWKills;
+                }
+            }
+            return maxAge;
         }
 
         internal unsafe void Start()
@@ -328,6 +368,14 @@ namespace LightConquer_Project.Game.MsgTournaments
             if (Proces != ProcesType.Dead)
             {
                 StampShuffleScore = DateTime.Now.AddSeconds(8);
+                using (var rec = new ServerSockets.RecycledPacket())
+                {
+                    var stream = rec.GetStream();
+
+                    Game.MsgServer.MsgMessage msg1 = new MsgServer.MsgMessage("*GuildWar Ranks*"
+                           , MsgServer.MsgMessage.MsgColor.yellow, MsgServer.MsgMessage.ChatMode.FirstRightCorner);
+                    SendMapPacket(msg1.GetArray(stream));
+                }
                 var Array = ScoreList.Values.ToArray();
                 var DescendingList = Array.OrderByDescending(p => p.Score).ToArray();
                 for (int x = 0; x < DescendingList.Length; x++)
@@ -338,18 +386,37 @@ namespace LightConquer_Project.Game.MsgTournaments
                     using (var rec = new ServerSockets.RecycledPacket())
                     {
                         var stream = rec.GetStream();
-#if Arabic
-                         Game.MsgServer.MsgMessage msg = new MsgServer.MsgMessage("No " + (x + 1).ToString() + ". " + element.Name + " (" + element.Score.ToString() + ")"
-                            , MsgServer.MsgMessage.MsgColor.yellow, x == 0 ? MsgServer.MsgMessage.ChatMode.FirstRightCorner : MsgServer.MsgMessage.ChatMode.ContinueRightCorner);
-#else
+
                         Game.MsgServer.MsgMessage msg = new MsgServer.MsgMessage("No " + (x + 1).ToString() + ". " + element.Name + " (" + element.Score.ToString() + ")"
-                           , MsgServer.MsgMessage.MsgColor.yellow, x == 0 ? MsgServer.MsgMessage.ChatMode.FirstRightCorner : MsgServer.MsgMessage.ChatMode.ContinueRightCorner);
-#endif
+                           , MsgServer.MsgMessage.MsgColor.yellow, MsgServer.MsgMessage.ChatMode.ContinueRightCorner);
 
                         SendMapPacket(msg.GetArray(stream));
 
                     }
                     if (x == 4)
+                        break;
+                }
+                using (var rec = new ServerSockets.RecycledPacket())
+                {
+                    var stream = rec.GetStream();
+
+                    Game.MsgServer.MsgMessage msg2 = new MsgServer.MsgMessage("------------------------"
+                           , MsgServer.MsgMessage.MsgColor.yellow, MsgServer.MsgMessage.ChatMode.FirstRightCorner);
+                    SendMapPacket(msg2.GetArray(stream));
+                }
+                var KillersDescList = Database.Server.GamePoll.OrderByDescending(x => x.Value.Player.GWKills).ToArray();
+                for (int i = 0; i < KillersDescList.Length; i++)
+                {
+                    var element = KillersDescList[i];
+                    using (var rec = new ServerSockets.RecycledPacket())
+                    {
+                        var stream = rec.GetStream();
+
+                        Game.MsgServer.MsgMessage msg3 = new MsgServer.MsgMessage("No " + (i + 1).ToString() + ". " + element.Value.Player.Name + " (" + element.Value.Player.GWKills.ToString() + "/" + element.Value.Player.GWDies.ToString() + ")"
+                           , MsgServer.MsgMessage.MsgColor.yellow, MsgServer.MsgMessage.ChatMode.ContinueRightCorner);
+                        SendMapPacket(msg3.GetArray(stream));
+                    }
+                    if (i == 4)
                         break;
                 }
             }
@@ -452,7 +519,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                 write.WriteString("Pole", "Name", Winner.Name);
                 write.Write<int>("Pole", "HitPoints", Furnitures[Role.SobNpc.StaticMesh.Pole].HitPoints);
             }
-
+            write.WriteString("Info", "GWKiller", GWKiller);
             write.WriteString("Condutors", "GuildConductor1", GuildConductors[MsgNpc.NpcID.TeleGuild1].ToString());
             write.WriteString("Condutors", "GuildConductor2", GuildConductors[MsgNpc.NpcID.TeleGuild2].ToString());
             write.WriteString("Condutors", "GuildConductor3", GuildConductors[MsgNpc.NpcID.TeleGuild3].ToString());
@@ -474,7 +541,7 @@ namespace LightConquer_Project.Game.MsgTournaments
 
             Furnitures[Role.SobNpc.StaticMesh.Pole].Name = reader.ReadString("Pole", "Name", "None");
             Furnitures[Role.SobNpc.StaticMesh.Pole].HitPoints = reader.ReadInt32("Pole", "HitPoints", 0);
-
+            GWKiller = reader.ReadString("Info", "GWKiller", "None");
             for (int x = 0; x < 4; x++)
             {
                 GuildConductor conductor = new GuildConductor();

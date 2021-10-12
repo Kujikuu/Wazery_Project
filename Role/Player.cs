@@ -2876,6 +2876,7 @@ namespace LightConquer_Project.Role
             }
         }
         public unsafe byte Reborn;
+        public uint GWKills = 0, GWDies = 0;
         public long Money;
         public uint ConquerPointsLimitaion = 0;
         public byte ConquerPointDropLimitLayer = 1;

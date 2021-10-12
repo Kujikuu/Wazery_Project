@@ -11827,7 +11827,7 @@ namespace LightConquer_Project.Game.MsgServer
                         #region
                         case 723726://LifeFruit
                             {
-                                if (DateTime.Now > client.Player.MedicineStamp.AddMilliseconds(500))
+                                if (DateTime.Now > client.Player.MedicineStamp.AddMilliseconds(500) && client.Player.Map == 6000)
                                 {
                                     client.Inventory.Update(item, Role.Instance.AddMode.REMOVE, stream);
                                     client.Player.HitPoints = (int)client.Status.MaxHitpoints;
