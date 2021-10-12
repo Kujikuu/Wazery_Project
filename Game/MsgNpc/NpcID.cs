@@ -42,6 +42,8 @@ namespace LightConquer_Project.Game.MsgNpc
 
         BigHunter = 77002,
         OnlineTraining = 99995,
+        PVPPoints = 77003,
+        GruTodd = 77004,
         HideNSeek = 81700,
         Nina = 2055,
         UnlimitedArena = 710010,
@@ -869,6 +871,7 @@ namespace LightConquer_Project.Game.MsgNpc
         ClassPkWar = 16851,
 
         ElitePk = 7879,
+        DragonNPC = 9999,
 
         SelectP7WeaponSoulPack = uint.MaxValue - 1,
         SelectP7EquipmentSoulPack = uint.MaxValue - 2,

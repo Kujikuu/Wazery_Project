@@ -31,6 +31,7 @@ namespace LightConquer_Project.Game.MsgTournaments
     }
     public class MsgSpeedHunterGame : ITournament
     {
+        public uint SecondsTillEnd = 300;
         public ProcesType Process { get; set; }
         private DateTime StartTimer = new DateTime();
         public DateTime ScoreStamp = new DateTime();
@@ -51,6 +52,7 @@ namespace LightConquer_Project.Game.MsgTournaments
             {
                 user.Player.SpeedHunterGamePoints = 0;
                 user.Teleport(1081, 196, 214);
+                user.SendSysMesage("Good luck hunting these monsters, you must be the fastest! To get out of here teleport or log out!");
                 return true;
             }
             return false;
@@ -62,7 +64,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                 StartTimer = DateTime.Now;
                 Process = ProcesType.Idle;
                 Map = Database.Server.ServerMaps[1081];
-
+                SecondsTillEnd = 300;
                 foreach (var client in Database.Server.GamePoll.Values)
                 {
                     client.Player.MessageBox(
@@ -78,7 +80,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                     }), null, 60);
                 }
             }
-          
+
         }
         public bool InTournament(Client.GameClient user)
         {
@@ -111,19 +113,36 @@ namespace LightConquer_Project.Game.MsgTournaments
                 using (var rec = new ServerSockets.RecycledPacket())
                 {
                     var stream = rec.GetStream();
-                    if (Winner.Inventory.HaveSpace(2))
-                        Winner.Inventory.Add(stream, Database.ItemType.PowerExpBall, 4);
-                    else
-                        Winner.Inventory.AddReturnedItem(stream, Database.ItemType.PowerExpBall, 4);
-#if Arabic
-                                    Winner.SendSysMesage("You received " + RewardConquerPoints.ToString() + " ConquerPoints and 2PowerExpBalls. ", MsgServer.MsgMessage.ChatMode.System, MsgServer.MsgMessage.MsgColor.red);
-                    
-#else
-                    Winner.SendSysMesage("You received 2 PowerExpBalls. ", MsgServer.MsgMessage.ChatMode.System, MsgServer.MsgMessage.MsgColor.red);
 
-#endif
-                    client.Player.SpeedHunterGamePoints = 0;
+                    //client.Player.SpeedHunterGamePoints = 0;
 
+                    if(array[0] == client)
+                    {
+                        if (client.Inventory.HaveSpace(2))
+                            client.Inventory.Add(stream, Database.ItemType.DragonBall, 1);
+                        client.Player.Money += 6000000;
+                        client.SendSysMesage("You received 6KK silvers and Dragonball. ", MsgServer.MsgMessage.ChatMode.System, MsgServer.MsgMessage.MsgColor.red);
+                    }
+                    else if (array[1] == client)
+                    {
+                        client.Player.Money += 5000000;
+                        client.SendSysMesage("You received 5KK silvers. ", MsgServer.MsgMessage.ChatMode.System, MsgServer.MsgMessage.MsgColor.red);
+                    }
+                    else if (array[2] == client)
+                    {
+                        client.Player.Money += 4000000;
+                        client.SendSysMesage("You received 4KK silvers. ", MsgServer.MsgMessage.ChatMode.System, MsgServer.MsgMessage.MsgColor.red);
+                    }
+                    else if (array[3] == client)
+                    {
+                        client.Player.Money += 3000000;
+                        client.SendSysMesage("You received 3KK silvers. ", MsgServer.MsgMessage.ChatMode.System, MsgServer.MsgMessage.MsgColor.red);
+                    }
+                    else if (array[4] == client)
+                    {
+                        client.Player.Money += 2000000;
+                        client.SendSysMesage("You received 2KK silvers. ", MsgServer.MsgMessage.ChatMode.System, MsgServer.MsgMessage.MsgColor.red);
+                    }
                 }
             }
 
@@ -159,16 +178,17 @@ namespace LightConquer_Project.Game.MsgTournaments
                         }
                     }
                 }
-                
+
             }
             if (Process == ProcesType.Alive)
             {
                 using (var rec = new ServerSockets.RecycledPacket())
                 {
                     var stream = rec.GetStream();
+                    SecondsTillEnd--;
                     ShuffleGuildScores(stream);
                 }
-                if (StartTimer.AddMinutes(3) < DateTime.Now)
+                if (StartTimer.AddMinutes(5) < DateTime.Now)
                 {
                     Process = ProcesType.Dead;
 
@@ -178,7 +198,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                         GetOut(user);
 
                 }
-                
+
             }
 
         }
@@ -186,30 +206,18 @@ namespace LightConquer_Project.Game.MsgTournaments
         {
             foreach (var user in Map.Values)
             {
-#if Arabic
-                 Game.MsgServer.MsgMessage msg = new MsgServer.MsgMessage("---Your Score: " + user.Player.CurrentTreasureBoxes + "---", MsgServer.MsgMessage.MsgColor.yellow, MsgServer.MsgMessage.ChatMode.FirstRightCorner);
-                
-#else
-                Game.MsgServer.MsgMessage msg = new MsgServer.MsgMessage("---Your Score: " + user.Player.SpeedHunterGamePoints + "---", MsgServer.MsgMessage.MsgColor.yellow, MsgServer.MsgMessage.ChatMode.FirstRightCorner);
-
-#endif
+                Game.MsgServer.MsgMessage msg = new MsgServer.MsgMessage("--SpeedHunterGame--", MsgServer.MsgMessage.MsgColor.yellow, MsgServer.MsgMessage.ChatMode.FirstRightCorner);
                 user.Send(msg.GetArray(stream));
             }
             var array = Map.Values.OrderByDescending(p => p.Player.eveSpeedHunterGamePoints).ToArray();
-            for (int x = 0; x < Math.Min(10, Map.Values.Length); x++)
+            for (int x = 0; x < Math.Min(5, Map.Values.Length); x++)
             {
                 var element = array[x];
-#if Arabic
-                   Game.MsgServer.MsgMessage msg = new MsgServer.MsgMessage("No " + (x + 1).ToString() + "- " + element.Player.Name + " Opened " + element.Player.CurrentTreasureBoxes.ToString() + " Boxes!", MsgServer.MsgMessage.MsgColor.yellow, MsgServer.MsgMessage.ChatMode.ContinueRightCorner);
-             
-#else
-                Game.MsgServer.MsgMessage msg = new MsgServer.MsgMessage("No " + (x + 1).ToString() + "- " + element.Player.Name + " have " + element.Player.SpeedHunterGamePoints.ToString() + " Points!", MsgServer.MsgMessage.MsgColor.yellow, MsgServer.MsgMessage.ChatMode.ContinueRightCorner);
-
-#endif
+                Game.MsgServer.MsgMessage msg = new MsgServer.MsgMessage("No " + (x + 1).ToString() + "- " + element.Player.Name + " / " + element.Player.SpeedHunterGamePoints.ToString() + " Points!", MsgServer.MsgMessage.MsgColor.yellow, MsgServer.MsgMessage.ChatMode.ContinueRightCorner);
                 Send(msg.GetArray(stream));
-                
             }
-
+            Send(new MsgServer.MsgMessage("--------------------", MsgMessage.MsgColor.white, MsgMessage.ChatMode.ContinueRightCorner).GetArray(stream));
+            Send(new MsgServer.MsgMessage($"Time left: {0} Seconds!", MsgMessage.MsgColor.white, MsgMessage.ChatMode.ContinueRightCorner).GetArray(stream));
         }
         public void Send(ServerSockets.Packet stream)
         {
@@ -224,14 +232,12 @@ namespace LightConquer_Project.Game.MsgTournaments
             foreach (var user in Users)
                 Rank.Add(new Participant(user));
 
-            
-
             var array = Rank.OrderByDescending(p => p.SpeedHunterGame);
 
             int count = 0;
             foreach (var user in array)
             {
-                if (count == 3)
+                if (count == 5)
                     break;
                 Rank3.Add(user);
                 count++;
@@ -243,13 +249,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                 for (int x = 0; x < Rank3.Count; x++)
                 {
                     var element = Rank3[x];
-#if Arabic
-                         Program.SendGlobalPackets.Enqueue(new Game.MsgServer.MsgMessage("Congratulation! Rank " + (x + 1).ToString() + " " + element.Name + " with " + element.SpeedHunterGame.ToString() + " SpeedHunterGamePoints. .", MsgServer.MsgMessage.MsgColor.white, MsgServer.MsgMessage.ChatMode.System).GetArray(stream));
-               
-#else
-                    Program.SendGlobalPackets.Enqueue(new Game.MsgServer.MsgMessage("Congratulation! Rank " + (x + 1).ToString() + " " + element.Name + " with " + element.SpeedHunterGame.ToString() + " SpeedHunterGame Points. .", MsgServer.MsgMessage.MsgColor.white, MsgServer.MsgMessage.ChatMode.System).GetArray(stream));
-               
-#endif
+                    Program.SendGlobalPackets.Enqueue(new Game.MsgServer.MsgMessage("SpeedHunterGame has ended: TOP " + (x + 1).ToString() + " " + element.Name + " with " + element.SpeedHunterGame.ToString() + " Points has won.", MsgServer.MsgMessage.MsgColor.white, MsgServer.MsgMessage.ChatMode.Talk).GetArray(stream));
                 }
             }
         }

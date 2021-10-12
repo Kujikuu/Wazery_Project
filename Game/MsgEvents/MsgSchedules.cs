@@ -76,7 +76,7 @@ namespace LightConquer_Project.Game.MsgTournaments
             {
                 var stream = rec.GetStream();
 
-                var packet = new Game.MsgServer.MsgMessage(Message, MsgServer.MsgMessage.MsgColor.yellow, MsgServer.MsgMessage.ChatMode.Center).GetArray(stream);
+                var packet = new Game.MsgServer.MsgMessage(Message, MsgServer.MsgMessage.MsgColor.yellow, MsgServer.MsgMessage.ChatMode.System).GetArray(stream);
                 foreach (var client in Database.Server.GamePoll.Values)
                 {
                     if (!client.Player.OnMyOwnServer || client.IsConnectedInterServer())
@@ -213,8 +213,7 @@ namespace LightConquer_Project.Game.MsgTournaments
 
 
                     #region TeratoDragon
-                    if (Now64.Minute == 44 && Now64.Second < 2)
-
+                    if (Now64.Minute == 44 && Now64.Second < 2 && Program.LastBoss == "Snow")
                     {
                         using (var rec = new ServerSockets.RecycledPacket())
                         {
@@ -223,13 +222,11 @@ namespace LightConquer_Project.Game.MsgTournaments
                             Program.SendGlobalPackets.Enqueue(new MsgServer.MsgMessage(msg, "ALLUSERS", "Server", MsgServer.MsgMessage.MsgColor.red, MsgServer.MsgMessage.ChatMode.Center).GetArray(stream));
 
                         }
-
                     }
-                    if (Now64.Minute == 45 && Now64.Second < 2)
-
+                    if (Now64.Minute == 45 && Now64.Second < 2 && Program.LastBoss == "Snow")
                     {
                         var Map = Database.Server.ServerMaps[1645];
-
+                        Program.LastBoss = "Dragon";
                         if (!Map.ContainMobID(20060))
                         {
                             using (var rec = new ServerSockets.RecycledPacket())
@@ -261,12 +258,12 @@ namespace LightConquer_Project.Game.MsgTournaments
 
 
                     #region SnowBashee
-                    if (Now64.Minute == 44 && Now64.Second < 2)
+                    if (Now64.Minute == 44 && Now64.Second < 2 && Program.LastBoss == "Dragon")
                     {
                         using (var rec = new ServerSockets.RecycledPacket())
                         {
                             var stream = rec.GetStream();
-                            string msg = "SnowBashee is about to spawn and terrify the world!";
+                            string msg = "SnowBashee will be spawned in 120 seconds in TwinCity (658.670)";
                             Program.SendGlobalPackets.Enqueue(new MsgServer.MsgMessage(msg, "ALLUSERS", "Server", MsgServer.MsgMessage.MsgColor.red, MsgServer.MsgMessage.ChatMode.Center).GetArray(stream));
 
                         }
@@ -278,9 +275,9 @@ namespace LightConquer_Project.Game.MsgTournaments
                             Server.AddMapMonster(rec.GetStream(), Server.ServerMaps[1004], 21060, 51, 50, 1, 1, 1);
 
 
-                    if (Now64.Minute == 45 && Now64.Second < 2)
-
+                    if (Now64.Minute == 45 && Now64.Second < 2 && Program.LastBoss == "Dragon")
                     {
+                        Program.LastBoss = "Snow";
                         var Map = Database.Server.ServerMaps[1002];
                         if (!Map.ContainMobID(20070))
                         {
@@ -289,9 +286,9 @@ namespace LightConquer_Project.Game.MsgTournaments
                                 var stream = rec.GetStream();
                                 string msg = "SnowBashee has spawned and terrify the world!";
                                 Program.SendGlobalPackets.Enqueue(new MsgServer.MsgMessage(msg, "ALLUSERS", "Server", MsgServer.MsgMessage.MsgColor.red, MsgServer.MsgMessage.ChatMode.Center).GetArray(stream));
-                                Database.Server.AddMapMonster(stream, Map, 20070, 666, 675, 1, 1, 1);
+                                Database.Server.AddMapMonster(stream, Map, 20070, 658, 670, 1, 1, 1);
                             }
-                            SendInvitation("SnowBashee has spawned and terrify the world!", " \nWould you like to join the fight against it?", 674, 681, 1002, 0, 60, MsgServer.MsgStaticMessage.Messages.None);
+                            SendInvitation("SnowBashee has spawned and terrify the world!", " \nWould you like to join the fight against it?", 660, 670, 1002, 0, 60, MsgServer.MsgStaticMessage.Messages.None);
                             Console.WriteLine("SnowBashee has spawned at" + DateTime.Now);
                         }
                         else
@@ -359,7 +356,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                             if (X == 0)
                                 CurrentTournament = Tournaments[TournamentType.TreasureThief];
                             if (X == 1)
-                                CurrentTournament = Tournaments[TournamentType.TreasureThief];
+                                CurrentTournament = Tournaments[TournamentType.DBShower];
                             if (X == 2)
                                 CurrentTournament = Tournaments[TournamentType.SpeedHunterGame];
                             CurrentTournament.Open();
@@ -368,48 +365,67 @@ namespace LightConquer_Project.Game.MsgTournaments
                         }
                     }
 
-                    if (CurrentTournament.Process == ProcesType.Dead)
-                    {
+                    //if (CurrentTournament.Process == ProcesType.Dead)
+                    //{
 
-                        if (Now64.Minute == 25 && Now64.Second < 4)
-                        {
-                            CurrentTournament = Tournaments[TournamentType.DBShower];
-                            CurrentTournament.Open();
-                            Console.WriteLine("Started Tournament " + CurrentTournament.Type.ToString() + "at " + DateTime.Now);
+                    //    if (Now64.Minute == 25 && Now64.Second < 4)
+                    //    {
+                    //        CurrentTournament = Tournaments[TournamentType.DBShower];
+                    //        CurrentTournament.Open();
+                    //        Console.WriteLine("Started Tournament " + CurrentTournament.Type.ToString() + "at " + DateTime.Now);
 
-                        }
-                    }
+                    //    }
+                    //}
                     #endregion
                     #region Rand Tournament
-                    if (DateTime.Now.Minute == 25 && Now64.Second < 0.5)
+                    if (DateTime.Now.Minute == 25 || DateTime.Now.Minute == 15 && Now64.Second < 5)
                     {
-                        byte _totalEvents = 5;
-                        int _nextEvent = Program.Rnd.Next(0, _totalEvents);
+                        //byte _totalEvents = 8;
+                        //int _nextEvent = Program.Rnd.Next(0, _totalEvents);
 
-                        while (Program.WorldEvent == _nextEvent)
-                            _nextEvent = Program.Rnd.Next(0, _totalEvents);
+                        //while (Program.WorldEvent == _nextEvent)
+                        //    _nextEvent = Program.Rnd.Next(0, _totalEvents);
 
-                        Program.WorldEvent = _nextEvent;
+
+                        int _nextEvent = 0;
+                        _nextEvent = Program.CurrentEvent + 1;
+                        if (_nextEvent > 7)
+                            _nextEvent = 0;
                         LightConquer_Project.Game.MsgEvents.Events NextEvent = new LightConquer_Project.Game.MsgEvents.Events();
                         switch (_nextEvent)
                         {
                             case 0:
-                                NextEvent = new LastManStand();
+                                NextEvent = new DragonWar();
+                                Program.CurrentEvent = 0;
                                 break;
                             case 1:
-                                NextEvent = new HalloweenInfection();
+                                NextEvent = new FFa();
+                                Program.CurrentEvent = 1;
                                 break;
                             case 2:
-                                NextEvent = new Get3Out();
+                                NextEvent = new FreezeWar();
+                                Program.CurrentEvent = 2;
                                 break;
                             case 3:
-                                NextEvent = new EliteLadderTournament();
+                                NextEvent = new Get5Out();
+                                Program.CurrentEvent = 3;
                                 break;
                             case 4:
-                                NextEvent = new TDM();
+                                NextEvent = new LastManStand();
+                                Program.CurrentEvent = 4;
                                 break;
-
-
+                            case 5:
+                                NextEvent = new PTB();
+                                Program.CurrentEvent = 5;
+                                break;
+                            case 6:
+                                NextEvent = new SkillChampionship();
+                                Program.CurrentEvent = 6;
+                                break;
+                            case 7:
+                                NextEvent = new skillmaster();
+                                Program.CurrentEvent = 7;
+                                break;
                         }
                         NextEvent.StartTournament();
                         Console.WriteLine("Started Tournament " + NextEvent.ToString() + "at " + DateTime.Now);
@@ -473,14 +489,6 @@ namespace LightConquer_Project.Game.MsgTournaments
                                 }
                             }
                             #endregion
-
-
-
-
-
-
-
-
                             break;
                         }
                     #endregion
@@ -540,34 +548,34 @@ namespace LightConquer_Project.Game.MsgTournaments
                             #endregion
 
                             #region EliteGuildWar
-                            if (Now64.Hour >= 16 && Now64.Hour < 17)
-                            {
-                                if (EliteGuildWar.Proces == ProcesType.Dead)
-                                    EliteGuildWar.Start();
-                                if (EliteGuildWar.Proces == ProcesType.Idle)
-                                {
-                                    if (Now64 > EliteGuildWar.StampRound)
-                                        EliteGuildWar.Began();
-                                }
-                                if (EliteGuildWar.Proces != ProcesType.Dead)
-                                {
-                                    if (DateTime.Now > EliteGuildWar.StampShuffleScore)
-                                    {
-                                        EliteGuildWar.ShuffleGuildScores();
-                                    }
-                                }
+                            //if (Now64.Hour >= 16 && Now64.Hour < 17)
+                            //{
+                            //    if (EliteGuildWar.Proces == ProcesType.Dead)
+                            //        EliteGuildWar.Start();
+                            //    if (EliteGuildWar.Proces == ProcesType.Idle)
+                            //    {
+                            //        if (Now64 > EliteGuildWar.StampRound)
+                            //            EliteGuildWar.Began();
+                            //    }
+                            //    if (EliteGuildWar.Proces != ProcesType.Dead)
+                            //    {
+                            //        if (DateTime.Now > EliteGuildWar.StampShuffleScore)
+                            //        {
+                            //            EliteGuildWar.ShuffleGuildScores();
+                            //        }
+                            //    }
 
-                                if (EliteGuildWar.SendInvitation == false && (Now64.Hour == 16) && Now64.Minute == 30 && Now64.Second >= 30)
-                                {
-                                    SendInvitation("EliteGuildWar", "ConquerPoints", 437, 248, 1002, 0, 60, MsgServer.MsgStaticMessage.Messages.None);
-                                    EliteGuildWar.SendInvitation = true;
-                                }
-                            }
-                            else
-                            {
-                                if (EliteGuildWar.Proces == ProcesType.Alive || EliteGuildWar.Proces == ProcesType.Idle)
-                                    EliteGuildWar.CompleteEndGuildWar();
-                            }
+                            //    if (EliteGuildWar.SendInvitation == false && (Now64.Hour == 16) && Now64.Minute == 30 && Now64.Second >= 30)
+                            //    {
+                            //        SendInvitation("EliteGuildWar", "ConquerPoints", 437, 248, 1002, 0, 60, MsgServer.MsgStaticMessage.Messages.None);
+                            //        EliteGuildWar.SendInvitation = true;
+                            //    }
+                            //}
+                            //else
+                            //{
+                            //    if (EliteGuildWar.Proces == ProcesType.Alive || EliteGuildWar.Proces == ProcesType.Idle)
+                            //        EliteGuildWar.CompleteEndGuildWar();
+                            //}
                             #endregion
 
                             break;

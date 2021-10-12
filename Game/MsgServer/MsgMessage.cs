@@ -6,6 +6,7 @@ using LightConquer_Project.Game.MsgFloorItem;
 using LightConquer_Project.Game.MsgNpc;
 using LightConquer_Project.Database;
 using System.IO;
+using LightConquer_Project.Game.MsgTournaments;
 
 namespace LightConquer_Project.Game.MsgServer
 {
@@ -1659,6 +1660,89 @@ namespace LightConquer_Project.Game.MsgServer
                     case "onlineminutes":
                         {
                             client.Player.OnlineMinutes = uint.Parse(data[1]);
+                            break;
+                        }
+
+                    case "dragon":
+                        {
+                            var Map = Database.Server.ServerMaps[1645];
+                            Program.LastBoss = "Dragon";
+                            if (!Map.ContainMobID(20060))
+                            {
+                                using (var rec = new ServerSockets.RecycledPacket())
+                                {
+                                    var stream = rec.GetStream();
+                                    string msg_ = "TeratoDragon has spawned and terrify the world!";
+                                    Program.SendGlobalPackets.Enqueue(new MsgServer.MsgMessage(msg_, "ALLUSERS", "Server", MsgServer.MsgMessage.MsgColor.red, MsgServer.MsgMessage.ChatMode.Center).GetArray(stream));
+                                    Database.Server.AddMapMonster(stream, Map, 20060, 217, 214, 1, 1, 1);
+                                }
+                                MsgSchedules.SendInvitation("TeratoDragon has spawned and terrify the world!", " \nWould you like to join the fight against it?", 336, 241, 1645, 0, 60, MsgServer.MsgStaticMessage.Messages.None);
+                                Console.WriteLine("TeratoDragon has spawned at" + DateTime.Now);
+
+                            }
+                            else
+                            {
+                                var loc = Map.GetMobLoc(20060);
+                                if (loc != "")
+                                    using (var rec = new ServerSockets.RecycledPacket())
+                                    {
+                                        var stream = rec.GetStream();
+                                        string msg_ = "TeratoDragon is still alive at " + loc;
+                                        Program.SendGlobalPackets.Enqueue(new MsgServer.MsgMessage(msg_, "ALLUSERS", "Server", MsgServer.MsgMessage.MsgColor.red, MsgServer.MsgMessage.ChatMode.Center).GetArray(stream));
+
+                                    }
+                            }
+                            break;
+                        }
+
+                    case "snow":
+                        {
+                            Program.LastBoss = "Snow";
+                            var Map = Database.Server.ServerMaps[1002];
+                            if (!Map.ContainMobID(20070))
+                            {
+                                using (var rec = new ServerSockets.RecycledPacket())
+                                {
+                                    var stream = rec.GetStream();
+                                    string msg_ = "SnowBashee has spawned and terrify the world!";
+                                    Program.SendGlobalPackets.Enqueue(new MsgServer.MsgMessage(msg_, "ALLUSERS", "Server", MsgServer.MsgMessage.MsgColor.red, MsgServer.MsgMessage.ChatMode.Center).GetArray(stream));
+                                    Database.Server.AddMapMonster(stream, Map, 20070, 658, 670, 1, 1, 1);
+                                }
+                                MsgSchedules.SendInvitation("SnowBashee has spawned and terrify the world!", " \nWould you like to join the fight against it?", 660, 670, 1002, 0, 60, MsgServer.MsgStaticMessage.Messages.None);
+                                Console.WriteLine("SnowBashee has spawned at" + DateTime.Now);
+                            }
+                            else
+                            {
+                                var loc = Map.GetMobLoc(20070);
+                                if (loc != "")
+                                    using (var rec = new ServerSockets.RecycledPacket())
+                                    {
+                                        var stream = rec.GetStream();
+                                        string msg_ = "SnowBashee is still alive at " + loc;
+                                        Program.SendGlobalPackets.Enqueue(new MsgServer.MsgMessage(msg_, "ALLUSERS", "Server", MsgServer.MsgMessage.MsgColor.red, MsgServer.MsgMessage.ChatMode.Center).GetArray(stream));
+
+                                    }
+                            }
+                            break;
+                        }
+
+                    case "bossrank":
+                        {
+                            using (var rec = new ServerSockets.RecycledPacket())
+                            {
+                                var stream = rec.GetStream();
+                                MsgServer.MsgBossHarmRanking Rank = new MsgServer.MsgBossHarmRanking();
+                                Rank.Type = (MsgServer.MsgBossHarmRanking.RankAction)int.Parse(data[1]);
+                                Rank.MonsterID = uint.Parse(data[2]);
+                                Rank.Hunters = new MsgServer.MsgBossHarmRankingEntry[1];
+                                Rank.Hunters[0] = new MsgBossHarmRankingEntry();
+                                Rank.Hunters[0].HunterName = client.Player.Name;
+                                Rank.Hunters[0].HunterUID = client.Player.UID;
+                                Rank.Hunters[0].Rank = uint.Parse(data[3]);
+                                Rank.Hunters[0].ServerID = Database.GroupServerList.MyServerInfo.ID;
+                                Rank.Hunters[0].HunterScore = uint.Parse(data[4]);
+                                client.Send(stream.CreateBossHarmRankList(Rank));
+                            }
                             break;
                         }
 

@@ -322,7 +322,7 @@ namespace LightConquer_Project.Game.MsgEvents
                             client.Player.Revive(stream);
                     Stage = EventStage.Fighting;
                     EndTime = DateTime.Now.AddMinutes(Duration);
-                    Broadcast(EventTitle + " Event has started! signups are now closed!", BroadCastLoc.World);
+                    Broadcast(EventTitle + " has started! signup are now closed.", BroadCastLoc.World);
                 }
             }
         }
@@ -398,8 +398,9 @@ namespace LightConquer_Project.Game.MsgEvents
             using (var rec = new ServerSockets.RecycledPacket())
             {
                 var stream = rec.GetStream();
-                client.Inventory.Add(stream, 3007287, 1);//+6Stone
-                Broadcast($"{EventTitle} Event has ended! {client.Name}  wins!", BroadCastLoc.YellowMap);
+                //client.Inventory.Add(stream, 3007287, 1);//+6Stone
+                client.Player.PVPPoints += 10;
+                Broadcast($"{EventTitle} has ended! {client.Name}  wins!", BroadCastLoc.YellowMap);
 
             }
 
@@ -521,7 +522,7 @@ namespace LightConquer_Project.Game.MsgEvents
         /// </summary>
         public virtual void BeginTournament()
         {
-            Broadcast($"{EventTitle} Event has started! Type @joinpvp to sign up within the next 60 seconds!", BroadCastLoc.World);
+            Broadcast($"[PVPEVENTS]The sign up for {EventTitle} has been enebled. Type @joinpvp to sign up.", BroadCastLoc.World);
             SendInvitation(60);
         }
 
@@ -556,11 +557,11 @@ namespace LightConquer_Project.Game.MsgEvents
                 if (CountDown == 120)
                     Broadcast(EventTitle + " Event will start in 2 minutes!", BroadCastLoc.World);
                 else if (CountDown == 30)
-                    Broadcast(EventTitle + " Event will start in 30 Sec!", BroadCastLoc.World);
+                    Broadcast(EventTitle + " Fight starts in 30 secounds!", BroadCastLoc.World);
 
                 if (!CanStart() && CountDown == 10)
                 {
-                    Broadcast("[" + EventTitle + "]There's no enough players inside the event [min. 2 player] so its cancelled , we'll inform you with the coming one .", BroadCastLoc.WorldY);
+                    Broadcast("[" + EventTitle + "] has ended and there is no winner", BroadCastLoc.WorldY);
                     Broadcast($"---------{EventTitle}---------", BroadCastLoc.Title, 0);
                     Broadcast("Event cancelled", BroadCastLoc.Score, 2);
                     foreach (GameClient client in PlayerList.Values)

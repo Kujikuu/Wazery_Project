@@ -13,6 +13,7 @@ namespace LightConquer_Project.Game.MsgTournaments
         public int CurrentBoxes = 0;
         public DateTime StartTimer = new DateTime();
         public DateTime BoxesStamp = new DateTime();
+        public uint SecondsToEnd = 180;
         Role.GameMap _map;
         public Role.GameMap Map
         {
@@ -41,14 +42,10 @@ namespace LightConquer_Project.Game.MsgTournaments
                 foreach (var user in Database.Server.GamePoll.Values)
                     user.Player.CurrentTreasureBoxes = 0;
                 Process = ProcesType.Alive;
-                StartTimer = DateTime.Now.AddMinutes(10);
+                StartTimer = DateTime.Now.AddMinutes(3);
                 BoxesStamp = DateTime.Now.AddSeconds(30);
-#if Arabic
-                   MsgSchedules.SendInvitation("TreasureThief", "ConquerPoints,Money,Vip and others treasures", 311, 162, 1002, 0, 60);
-#else
-                MsgSchedules.SendInvitation("TreasureThief", "ConquerPoints,Money,Vip and others treasures", 311, 162, 1002, 0, 60);
-#endif
-
+                SecondsToEnd = 180;
+                MsgSchedules.SendInvitation("TreasureThief", "ExpBall(Event),Money,DB,Meteor and others treasures", 460, 366, 1002, 0, 60);
             }
         }
         public bool Join(Client.GameClient user, ServerSockets.Packet stream)
@@ -86,12 +83,12 @@ namespace LightConquer_Project.Game.MsgTournaments
                 np.NpcType = Role.Flags.NpcType.Talker;
                 switch (rand)
                 {
-                    case 0: np.Mesh = 26586; break;
-                    case 1: np.Mesh = 26596; break;
-                    case 2: np.Mesh = 26606; break;
-                    case 3: np.Mesh = 26616; break;
-                    case 4: np.Mesh = 26626; break;
-                    default: np.Mesh = 26586; break;
+                    case 0: np.Mesh = 9296; break;
+                    case 1: np.Mesh = 9296; break;
+                    case 2: np.Mesh = 9296; break;
+                    case 3: np.Mesh = 9296; break;
+                    case 4: np.Mesh = 9296; break;
+                    default: np.Mesh = 9296; break;
                 }
                 np.Map = MapID;
                 np.X = x;
@@ -106,13 +103,7 @@ namespace LightConquer_Project.Game.MsgTournaments
             {
                 if (DateTime.Now > StartTimer)
                 {
-#if Arabic
-                     MsgSchedules.SendSysMesage("All Players of Treasure Thief Stage 1 has teleported to Stage 2 in Frozen map!", MsgServer.MsgMessage.ChatMode.Center, MsgServer.MsgMessage.MsgColor.red);
-                   
-#else
-                    MsgSchedules.SendSysMesage("All Players of Treasure Thief Stage 1 has teleported to Stage 2 in Frozen map!", MsgServer.MsgMessage.ChatMode.Center, MsgServer.MsgMessage.MsgColor.red);
-
-#endif
+                    MsgSchedules.SendSysMesage("TreasureThief has ended! Congratulations to the winners!", MsgServer.MsgMessage.ChatMode.Talk, MsgServer.MsgMessage.MsgColor.red);
                     var Map2 = Database.Server.ServerMaps[1767];
                     foreach (var user in Map.Values)
                     {
@@ -136,6 +127,16 @@ namespace LightConquer_Project.Game.MsgTournaments
                     GenerateBoxes();
                     BoxesStamp = DateTime.Now.AddSeconds(30);
                 }
+
+                if (SecondsToEnd > 0)
+                {
+                    SecondsToEnd--;
+                    using (var rec = new ServerSockets.RecycledPacket())
+                    {
+                        var stream = rec.GetStream();
+                        ShuffleGuildScores(stream);
+                    }
+                }
             }
         }
         public void Reward(Client.GameClient user, Game.MsgNpc.Npc npc, ServerSockets.Packet stream)
@@ -156,7 +157,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                        
 #else
                         user.CreateBoxDialog("You've received " + value + " Money.");
-                        MsgSchedules.SendSysMesage(user.Player.Name + " got " + value.ToString() + " Money while opening the TreasureBox!", MsgServer.MsgMessage.ChatMode.System, MsgServer.MsgMessage.MsgColor.red);
+                        MsgSchedules.SendSysMesage("[TreasureBOX] " + user.Player.Name + " got " + value.ToString() + " Money while opening the TreasureBox!", MsgServer.MsgMessage.ChatMode.TopLeft, MsgServer.MsgMessage.MsgColor.red);
 
 #endif
                         break;
@@ -170,37 +171,34 @@ namespace LightConquer_Project.Game.MsgTournaments
                             MsgSchedules.SendSysMesage(user.Player.Name + " got 2xExpBalls while opening the TreasureBox!", MsgServer.MsgMessage.ChatMode.System, MsgServer.MsgMessage.MsgColor.red);
                      
 #else
-                        MsgSchedules.SendSysMesage(user.Player.Name + " got 2xExpBalls while opening the TreasureBox!", MsgServer.MsgMessage.ChatMode.System, MsgServer.MsgMessage.MsgColor.red);
+                        MsgSchedules.SendSysMesage("[TreasureBOX] " + user.Player.Name + " got 2xExpBalls while opening the TreasureBox!", MsgServer.MsgMessage.ChatMode.TopLeft, MsgServer.MsgMessage.MsgColor.red);
 
 #endif
                         break;
                     }
                 case 2://cps
                     {
-                        uint value = (uint)Program.GetRandom.Next(10000, 50000);
-                        user.Player.Money += value;
-                        user.Player.SendUpdate(stream, user.Player.Money, MsgServer.MsgUpdate.DataType.Money);
-#if Arabic
-                         user.CreateBoxDialog("You've received "+value+" Money.");
-                        MsgSchedules.SendSysMesage(user.Player.Name + " got " + value.ToString() + " Money while opening the TreasureBox!", MsgServer.MsgMessage.ChatMode.System, MsgServer.MsgMessage.MsgColor.red);
-                       
-#else
-                        user.CreateBoxDialog("You've received " + value + " Money.");
-                        MsgSchedules.SendSysMesage(user.Player.Name + " got " + value.ToString() + " Money while opening the TreasureBox!", MsgServer.MsgMessage.ChatMode.System, MsgServer.MsgMessage.MsgColor.red);
-
-#endif
+                        uint[] Items = new uint[]
+                        {
+                            Database.ItemType.OneStone,
+                            Database.ItemType.OneStone+1,
+                        };
+                        uint ItemID = Items[Program.GetRandom.Next(0, Items.Length)];
+                        Database.ItemType.DBItem DBItem;
+                        if (Database.Server.ItemsBase.TryGetValue(ItemID, out DBItem))
+                        {
+                            if (user.Inventory.HaveSpace(1))
+                                user.Inventory.Add(stream, DBItem.ID);
+                            else
+                                user.Inventory.AddReturnedItem(stream, DBItem.ID);
+                            MsgSchedules.SendSysMesage("[TreasureBOX] " + user.Player.Name + " got " + DBItem.Name + " while opening the TreasureBox!", MsgServer.MsgMessage.ChatMode.TopLeft, MsgServer.MsgMessage.MsgColor.red);
+                        }
                         break;
                     }
                 case 3://dead.
                     {
                         user.Player.Dead(null, user.Player.X, user.Player.Y, 0);
-#if Arabic
-                          MsgSchedules.SendSysMesage(user.Player.Name + " found DEATH! while opening the TreasureBox!", MsgServer.MsgMessage.ChatMode.System, MsgServer.MsgMessage.MsgColor.red);
-                      
-#else
-                        MsgSchedules.SendSysMesage(user.Player.Name + " found DEATH! while opening the TreasureBox!", MsgServer.MsgMessage.ChatMode.System, MsgServer.MsgMessage.MsgColor.red);
-
-#endif
+                        MsgSchedules.SendSysMesage("[TreasureBOX] " + user.Player.Name + " found DEATH! while opening the TreasureBox!", MsgServer.MsgMessage.ChatMode.TopLeft, MsgServer.MsgMessage.MsgColor.red);
                         break;
                     }
                 case 4://item.
@@ -225,13 +223,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                                 user.Inventory.Add(stream, DBItem.ID);
                             else
                                 user.Inventory.AddReturnedItem(stream, DBItem.ID);
-#if Arabic
-                                  MsgSchedules.SendSysMesage(user.Player.Name + " got " + DBItem.Name + " while opening the TreasureBox!", MsgServer.MsgMessage.ChatMode.System, MsgServer.MsgMessage.MsgColor.red);
-                      
-#else
-                            MsgSchedules.SendSysMesage(user.Player.Name + " got " + DBItem.Name + " while opening the TreasureBox!", MsgServer.MsgMessage.ChatMode.System, MsgServer.MsgMessage.MsgColor.red);
-
-#endif
+                            MsgSchedules.SendSysMesage("[TreasureBOX] " + user.Player.Name + " got " + DBItem.Name + " while opening the TreasureBox!", MsgServer.MsgMessage.ChatMode.TopLeft, MsgServer.MsgMessage.MsgColor.red);
                         }
                         break;
                     }
@@ -241,34 +233,17 @@ namespace LightConquer_Project.Game.MsgTournaments
             user.Player.SendString(stream, MsgServer.MsgStringPacket.StringID.Effect, true, "accession1");
             Map.RemoveNpc(npc, stream);
 
-            ShuffleGuildScores(stream);
+            //ShuffleGuildScores(stream);
 
         }
         public void ShuffleGuildScores(ServerSockets.Packet stream)
         {
             foreach (var user in Map.Values)
             {
-#if Arabic
-                 Game.MsgServer.MsgMessage msg = new MsgServer.MsgMessage("---Your Score: " + user.Player.CurrentTreasureBoxes + "---", MsgServer.MsgMessage.MsgColor.yellow, MsgServer.MsgMessage.ChatMode.FirstRightCorner);
-                
-#else
-                Game.MsgServer.MsgMessage msg = new MsgServer.MsgMessage("---Your Score: " + user.Player.CurrentTreasureBoxes + "---", MsgServer.MsgMessage.MsgColor.yellow, MsgServer.MsgMessage.ChatMode.FirstRightCorner);
-
-#endif
+                Game.MsgServer.MsgMessage msg = new MsgServer.MsgMessage("--TreasureThief--", MsgServer.MsgMessage.MsgColor.yellow, MsgServer.MsgMessage.ChatMode.FirstRightCorner);
                 user.Send(msg.GetArray(stream));
-            }
-            var array = Map.Values.OrderByDescending(p => p.Player.CurrentTreasureBoxes).ToArray();
-            for (int x = 0; x < Math.Min(10, Map.Values.Length); x++)
-            {
-                var element = array[x];
-#if Arabic
-                   Game.MsgServer.MsgMessage msg = new MsgServer.MsgMessage("No " + (x + 1).ToString() + "- " + element.Player.Name + " Opened " + element.Player.CurrentTreasureBoxes.ToString() + " Boxes!", MsgServer.MsgMessage.MsgColor.yellow, MsgServer.MsgMessage.ChatMode.ContinueRightCorner);
-             
-#else
-                Game.MsgServer.MsgMessage msg = new MsgServer.MsgMessage("No " + (x + 1).ToString() + "- " + element.Player.Name + " Opened " + element.Player.CurrentTreasureBoxes.ToString() + " Boxes!", MsgServer.MsgMessage.MsgColor.yellow, MsgServer.MsgMessage.ChatMode.ContinueRightCorner);
-
-#endif
-                Send(msg.GetArray(stream));
+                Game.MsgServer.MsgMessage msg2 = new MsgServer.MsgMessage($"TimeLeft: {SecondsToEnd} Seconds!", MsgServer.MsgMessage.MsgColor.yellow, MsgServer.MsgMessage.ChatMode.ContinueRightCorner);
+                user.Send(msg2.GetArray(stream));
             }
         }
         public void Send(ServerSockets.Packet stream)

@@ -111,8 +111,8 @@ namespace LightConquer_Project.Game.MsgMonster
         {
             try
             {
-                if (!Program.RankableFamilyIds.Contains(Family.ID))
-                    return;
+                //if (!Program.RankableFamilyIds.Contains(Family.ID))
+                //    return;
                 if (this.Hunters == null)
                     this.Hunters = new Dictionary<uint, MsgBossHarmRankingEntry>();
                 if (this.Hunters.ContainsKey(killer.Player.UID))
@@ -136,6 +136,17 @@ namespace LightConquer_Project.Game.MsgMonster
                 Rank.Hunters = array;
                 this.Send(stream.CreateBossHarmRankList(Rank));
                 array = null;
+
+
+                foreach (var player in Database.Server.GamePoll.Values)
+                {
+                    //if (InView(player.Player.X, player.Player.Y, MonsterView.ViewThreshold))
+                    {
+                        player.SendSysMesage(Rank.MonsterID.ToString(), MsgMessage.ChatMode.FirstRightCorner);
+                        player.Send(stream.CreateBossHarmRankList(Rank));
+
+                    }
+                }
             }
             catch (Exception ex)
             {

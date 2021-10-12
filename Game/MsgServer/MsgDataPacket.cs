@@ -851,6 +851,21 @@ namespace LightConquer_Project.Game.MsgServer
                             client.Teleport(3998, 106, 383);
                             return;
                         }
+                        if (client.Player.Map == 1645)//Terato Dragon map
+                        {
+                            client.Teleport(1645, 201, 143);
+                            return;
+                        }
+                        if (client.Player.Map == 3820)//Terato Dragon map
+                        {
+                            var Map2 = Database.Server.ServerMaps[3820];
+                            ushort x = 0;
+                            ushort y = 0;
+                            Map2.GetRandCoord(ref x, ref y);
+
+                            client.Teleport(3820, x, y);
+                            return;
+                        }
                         if (client.Player.Map == 3935 && client.OnInterServer)
                         {
                             foreach (var server in Database.GroupServerList.GroupServers.Values)

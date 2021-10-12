@@ -42,13 +42,14 @@ namespace LightConquer_Project
         public static bool OnMainternance = false;
         public static List<uint> EventsMaps = new List<uint>() { (uint)1801, (uint)1767, (uint)700, (uint)701, (uint)1763, (uint)1080, (uint)1844, (uint)1505, (uint)1506, (uint)1507, (uint)1508 };
         public static int WorldEvent = 0;
+        public static byte CurrentEvent = 0;
         public static MyRandom Rnd = new MyRandom();
         public static string ExcAdd = "";
         public static List<Game.MsgEvents.Events> Events = new List<Game.MsgEvents.Events>();
         public static ulong BCPsHuntedSinceRestart = 0;
         public static ulong CPsHuntedSinceRestart = 0;
         public static Extensions.Time32 SaveDBStamp = Extensions.Time32.Now.AddMilliseconds(KernelThread.SaveDatabaseStamp);
-        public static List<uint> RankableFamilyIds = new List<uint>() { 20300, 20160, 20070, 29370, 29360, 29300, 29363 };
+        public static List<uint> RankableFamilyIds = new List<uint>() { 20300, 20160, 20070, 29370, 29360, 29300, 29363, 20070, 20060 };
         public static List<uint> NoDropItems = new List<uint>() { 1801,1767, 2510, 1764, 9998, 9999, 9997, 700, 3954, 3820, 2500, 9990 };
         public static List<uint> FreePkMap = new List<uint>() { 1801,1767, 3868, 2510, 3998,3071, 6000, 6001,1505, 1005, 1038, 700,1508/*PkWar*/, Game.MsgTournaments.MsgCaptureTheFlag.MapID};
         public static List<uint> BlockAttackMap = new List<uint>() { 1616, 6001, 6002, 3995, 3024, 601, 2080, 1099, 1098, 3825,3830, 3831, 3832,3834,3826,3827,3828,3829,3833, 9995,1068, 4020, 4000, 4003, 4006, 4008, 4009 , 1860 ,1858, 1801, 1780, 1779/*Ghost Map*/, 9972, 1806, 1002, 3954, 3081, 1036, 1004, 1008, 601, 1006, 1511, 1039, 700, Game.MsgTournaments.MsgEliteGroup.WaitingAreaID};
@@ -63,6 +64,7 @@ namespace LightConquer_Project
         public static SendGlobalPacket SendGlobalPackets;
         public static PacketInvoker MsgInvoker;
         public static ServerSockets.ServerSocket GameServer;
+        public static string LastBoss;
 
         [DllImport("kernel32.dll")]
         private static extern bool SetConsoleCtrlHandler(ConsoleHandlerDelegate handler, bool add);

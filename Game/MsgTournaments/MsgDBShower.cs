@@ -20,6 +20,7 @@ namespace LightConquer_Project.Game.MsgTournaments
         private DateTime RoundStamp = new DateTime();
         private byte AliveTime = 5;
         private bool PrepareToFinish = false;
+        private uint SecondsTillend = 180;
         public TournamentType Type { get; set; }
         public MsgDBShower(TournamentType _type)
         {
@@ -38,7 +39,8 @@ namespace LightConquer_Project.Game.MsgTournaments
                 Process = ProcesType.Idle;
                 StartTimer = DateTime.Now.AddMinutes(1);
                 MsgSchedules.SendInvitation(Name, Prize, 430, 380, 1002, 0, 60);
-                AliveTime = 5;
+                AliveTime = 3;
+                SecondsTillend = 180;
             }
         }
         public bool Join(Client.GameClient user, ServerSockets.Packet stream)
@@ -59,13 +61,13 @@ namespace LightConquer_Project.Game.MsgTournaments
                 {
                     Process = ProcesType.Alive;
 
-                    MsgSchedules.SendSysMesage("Meteorshower has started now at twincity come to enjoy!", MsgServer.MsgMessage.ChatMode.Center, MsgServer.MsgMessage.MsgColor.red);
+                    MsgSchedules.SendSysMesage("[PVPEVENTS] Meteorshower has started now at twincity come to enjoy!", MsgServer.MsgMessage.ChatMode.Center, MsgServer.MsgMessage.MsgColor.red);
                     using (var rec = new ServerSockets.RecycledPacket())
                     {
                         var stream = rec.GetStream();
                         AddMapEffect(stream);
                     }
-                    StartTimer = DateTime.Now.AddMinutes(5);
+                    StartTimer = DateTime.Now.AddMinutes(3);
                     RoundStamp = DateTime.Now.AddMinutes(1);
                 }
             }
@@ -74,6 +76,9 @@ namespace LightConquer_Project.Game.MsgTournaments
 
                 CheckAddEffect();
                 CheckAlivePlayers();
+                SecondsTillend--;
+
+                
 
                 if (DateTime.Now > StartTimer && PrepareToFinish == false)
                 {
@@ -98,6 +103,18 @@ namespace LightConquer_Project.Game.MsgTournaments
                 }
             }
 
+        }
+
+        public void ShuffleGuildScores(ServerSockets.Packet stream)
+        {
+            var Map = Database.Server.ServerMaps[1002];
+            foreach (var user in Map.Values)
+            {
+                Game.MsgServer.MsgMessage msg = new MsgServer.MsgMessage("--ShowerEvent--", MsgServer.MsgMessage.MsgColor.yellow, MsgServer.MsgMessage.ChatMode.FirstRightCorner);
+                user.Send(msg.GetArray(stream));
+                Game.MsgServer.MsgMessage msg2 = new MsgServer.MsgMessage($"TimeLeft: {SecondsTillend} Seconds!", MsgServer.MsgMessage.MsgColor.yellow, MsgServer.MsgMessage.ChatMode.ContinueRightCorner);
+                user.Send(msg2.GetArray(stream));
+            }
         }
         public void CheckAlivePlayers()
         {
@@ -261,13 +278,15 @@ namespace LightConquer_Project.Game.MsgTournaments
         }
         public void KillTarget(Client.GameClient user, ServerSockets.Packet stream)
         {
-            MsgServer.MsgSpellAnimation SpellPacket = new MsgServer.MsgSpellAnimation(434343
-                                                      , 0, user.Player.X, user.Player.Y, 10130, 0, 0);
-            SpellPacket.Targets.Enqueue(new MsgServer.MsgSpellAnimation.SpellObj(user.Player.UID, (uint)(user.Player.HitPoints + 100), MsgServer.MsgAttackPacket.AttackEffect.None));
-            SpellPacket.SetStream(stream);
-            SpellPacket.Send(user);
+            //MsgServer.MsgSpellAnimation SpellPacket = new MsgServer.MsgSpellAnimation(434343
+            //                                          , 0, user.Player.X, user.Player.Y, 10130, 0, 0);
+            //SpellPacket.Targets.Enqueue(new MsgServer.MsgSpellAnimation.SpellObj(user.Player.UID, (uint)(user.Player.HitPoints + 100), MsgServer.MsgAttackPacket.AttackEffect.None));
+            //SpellPacket.SetStream(stream);
+            //SpellPacket.Send(user);
 
-            user.Player.Dead(null, user.Player.X, user.Player.Y, 0);
+            //user.Player.Dead(null, user.Player.X, user.Player.Y, 0);
+
+            user.Player.AddFlag(MsgServer.MsgUpdate.Flags.Freeze, 15, true);
         }
     }
 }
