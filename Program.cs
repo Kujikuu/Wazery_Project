@@ -20,7 +20,7 @@ namespace LightConquer_Project
 
     class Program
     {
-        public static string LoginKey = "C238xs65pjy7HU9Q";
+        public static string LoginKey = "MW3PeM8ZGUbLopBZ";
         public static Client.GameClient CharacterFromName2(string Name)
         {
             foreach (Client.GameClient C in Database.Server.GamePoll.Values)
@@ -327,8 +327,8 @@ namespace LightConquer_Project
 
                
                // WebServer.Proces.Init();
-                TransferCipher.Key = Encoding.ASCII.GetBytes("EypKhLvYJ3zdLCTyz9Ak8RAgM78tY5F32b7CUXDuLDJDFBH8H67BWy9QThmaN5VS");
-                TransferCipher.Salt = Encoding.ASCII.GetBytes("MyqVgBf3ytALHWLXbJxSUX4uFEu3Xmz2UAY9sTTm8AScB7Kk2uwqDSnuNJske4BJ");
+                TransferCipher.Key = Encoding.ASCII.GetBytes("Eyp999vYJ3zdLCTyz9Ak8RAgM78tY5F32b7CUXDuLDJDFBH8H67BWy9QThmaN5VS");
+                TransferCipher.Salt = Encoding.ASCII.GetBytes("Myq999f3ytALHWLXbJxSUX4uFEu3Xmz2UAY9sTTm8AScB7Kk2uwqDSnuNJske4BJ");
                 transferCipher = new TransferCipher("127.0.0.1");
                 if (ServerConfig.IsInterServer == false)
                 {

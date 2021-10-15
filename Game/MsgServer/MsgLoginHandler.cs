@@ -288,9 +288,7 @@ namespace LightConquer_Project.Game.MsgServer
                     if (client.Player.Level >= 100 && client.Inventory.Contain(722122, 1))
                         client.Inventory.Remove(722122, 1, packet);
 
-                    if (client.Player.Map == 1616)
-                        client.Teleport(1002, 430, 380);
-
+                   
 
                     if(client.Player.Reborn < 2)
                         if(!client.Player.ContainFlag(MsgUpdate.Flags.NewbeeAura))

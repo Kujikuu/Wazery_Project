@@ -185,7 +185,7 @@ namespace LightConquer_Project.Database
                         || client.Player.Map == 10088 || client.Player.Map == 10089 || client.Player.Map == 10090
                         || client.Player.Map == 44455 || client.Player.Map == 44456 || client.Player.Map == 44457
                          || client.Player.Map == 44460 || client.Player.Map == 44461 || client.Player.Map == 44462 || client.Player.Map == 44463
-                        || client.Player.Map == 1860 || client.Player.Map == 1858
+                        || client.Player.Map == 1860 || client.Player.Map == 1858 || client.Player.Map == 1616
 
 
 )
@@ -639,8 +639,15 @@ namespace LightConquer_Project.Database
             client.Player.SecoundeClass = reader.ReadByte("Character", "SecoundeClass", 0);
             client.Player.Avatar = reader.ReadUInt16("Character", "Avatar", 0);
             client.Player.Map = reader.ReadUInt32("Character", "Map", 1002);
-            client.Player.X = reader.ReadUInt16("Character", "X", 248);
-            client.Player.Y = reader.ReadUInt16("Character", "Y", 238);
+            client.Player.X = reader.ReadUInt16("Character", "X", 430);
+            client.Player.Y = reader.ReadUInt16("Character", "Y", 380);
+
+            if (client.Player.Map == 1616)
+            {
+                client.Player.Map = 1002;
+                client.Player.X = 430;
+                client.Player.Y = 380;
+            }
 
             client.Player.PMap = reader.ReadUInt32("Character", "PMap", 1002);
             client.Player.PMapX = reader.ReadUInt16("Character", "PMapX", 300);
