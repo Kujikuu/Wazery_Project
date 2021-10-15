@@ -108,9 +108,9 @@ namespace LightConquer_Project.Game.MsgServer
                         client.Player.Body = Body;
 
                         client.Player.Level = 1;
-                        client.Player.Map = 1002;
-                        client.Player.X = 428;//300,279
-                        client.Player.Y = 378;
+                        client.Player.Map = 1100;
+                        client.Player.X = 139;//300,279
+                        client.Player.Y = 108;
 
 
                         Database.DataCore.LoadClient(client.Player);
