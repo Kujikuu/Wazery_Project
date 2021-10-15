@@ -76,7 +76,7 @@ namespace LightConquer_Project.Game.MsgTournaments
 
                         , new Action<Client.GameClient>(p =>
                     {
-                        p.Teleport(1036, 192, 223);
+                        p.Teleport(1002, 432, 365);
                     }), null, 60);
                 }
             }

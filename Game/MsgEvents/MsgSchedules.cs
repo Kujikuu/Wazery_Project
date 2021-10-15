@@ -236,7 +236,7 @@ namespace LightConquer_Project.Game.MsgTournaments
                                 Program.SendGlobalPackets.Enqueue(new MsgServer.MsgMessage(msg, "ALLUSERS", "Server", MsgServer.MsgMessage.MsgColor.red, MsgServer.MsgMessage.ChatMode.Center).GetArray(stream));
                                 Database.Server.AddMapMonster(stream, Map, 20060, 217, 214, 1, 1, 1);
                             }
-                            SendInvitation("TeratoDragon has spawned and terrify the world!", " \nWould you like to join the fight against it?", 336, 241, 1645, 0, 60, MsgServer.MsgStaticMessage.Messages.None);
+                            SendInvitation("TeratoDragon has spawned and terrify the world!", " \nWould you like to join the fight against it?", 427, 365, 1002, 0, 60, MsgServer.MsgStaticMessage.Messages.None);
                             Console.WriteLine("TeratoDragon has spawned at" + DateTime.Now);
 
                         }
