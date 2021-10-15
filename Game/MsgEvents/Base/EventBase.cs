@@ -86,7 +86,7 @@ namespace LightConquer_Project.Game.MsgEvents
                 switch (loc)
                 {
                     case BroadCastLoc.World:
-                        Program.SendGlobalPackets.Enqueue(new MsgServer.MsgMessage(msg, MsgColor.white, ChatMode.Center).GetArray(stream));
+                        Program.SendGlobalPackets.Enqueue(new MsgServer.MsgMessage(msg, MsgColor.white, ChatMode.BroadcastMessage).GetArray(stream));
                         break;
                     case BroadCastLoc.WorldY:
                         Program.SendGlobalPackets.Enqueue(new MsgServer.MsgMessage(msg, MsgColor.white, ChatMode.TopLeft).GetArray(stream));
