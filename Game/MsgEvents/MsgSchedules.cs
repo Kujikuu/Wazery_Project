@@ -213,7 +213,7 @@ namespace LightConquer_Project.Game.MsgTournaments
 
 
                     #region TeratoDragon
-                    if (Now64.Minute == 44 && Now64.Second < 2 && Program.LastBoss == "Snow")
+                    if (Now64.Minute == 44 && Now64.Second < 2 && Program.LastBoss == 1)
                     {
                         using (var rec = new ServerSockets.RecycledPacket())
                         {
@@ -223,10 +223,10 @@ namespace LightConquer_Project.Game.MsgTournaments
 
                         }
                     }
-                    if (Now64.Minute == 45 && Now64.Second < 2 && Program.LastBoss == "Snow")
+                    if (Now64.Minute == 45 && Now64.Second < 2 && Program.LastBoss == 1)
                     {
                         var Map = Database.Server.ServerMaps[1645];
-                        Program.LastBoss = "Dragon";
+                        Program.LastBoss = 0;
                         if (!Map.ContainMobID(20060))
                         {
                             using (var rec = new ServerSockets.RecycledPacket())
@@ -258,7 +258,7 @@ namespace LightConquer_Project.Game.MsgTournaments
 
 
                     #region SnowBashee
-                    if (Now64.Minute == 44 && Now64.Second < 2 && Program.LastBoss == "Dragon")
+                    if (Now64.Minute == 44 && Now64.Second < 2 && Program.LastBoss == 0)
                     {
                         using (var rec = new ServerSockets.RecycledPacket())
                         {
@@ -275,9 +275,9 @@ namespace LightConquer_Project.Game.MsgTournaments
                             Server.AddMapMonster(rec.GetStream(), Server.ServerMaps[1004], 21060, 51, 50, 1, 1, 1);
 
 
-                    if (Now64.Minute == 45 && Now64.Second < 2 && Program.LastBoss == "Dragon")
+                    if (Now64.Minute == 45 && Now64.Second < 2 && Program.LastBoss == 0)
                     {
-                        Program.LastBoss = "Snow";
+                        Program.LastBoss = 1;
                         var Map = Database.Server.ServerMaps[1002];
                         if (!Map.ContainMobID(20070))
                         {
@@ -387,44 +387,47 @@ namespace LightConquer_Project.Game.MsgTournaments
                         //    _nextEvent = Program.Rnd.Next(0, _totalEvents);
 
 
-                        int _nextEvent = 0;
-                        _nextEvent = Program.CurrentEvent + 1;
-                        if (_nextEvent > 7)
-                            _nextEvent = 0;
+                        //int _nextEvent = 0;
+                        //_nextEvent = Program.CurrentEvent;
+                        //if (_nextEvent > 7)
+                        //{
+                        //    _nextEvent = 0;
+                        //    Program.CurrentEvent = 0;
+                        //}
                         LightConquer_Project.Game.MsgEvents.Events NextEvent = new LightConquer_Project.Game.MsgEvents.Events();
-                        switch (_nextEvent)
+                        switch (Program.CurrentEvent)
                         {
                             case 0:
                                 NextEvent = new DragonWar();
-                                Program.CurrentEvent = 0;
+                                Program.CurrentEvent = 1;
                                 break;
                             case 1:
                                 NextEvent = new FFa();
-                                Program.CurrentEvent = 1;
+                                Program.CurrentEvent = 2;
                                 break;
                             case 2:
                                 NextEvent = new FreezeWar();
-                                Program.CurrentEvent = 2;
+                                Program.CurrentEvent = 3;
                                 break;
                             case 3:
                                 NextEvent = new Get5Out();
-                                Program.CurrentEvent = 3;
+                                Program.CurrentEvent = 4;
                                 break;
                             case 4:
                                 NextEvent = new LastManStand();
-                                Program.CurrentEvent = 4;
+                                Program.CurrentEvent = 5;
                                 break;
                             case 5:
                                 NextEvent = new PTB();
-                                Program.CurrentEvent = 5;
+                                Program.CurrentEvent = 6;
                                 break;
                             case 6:
                                 NextEvent = new SkillChampionship();
-                                Program.CurrentEvent = 6;
+                                Program.CurrentEvent = 7;
                                 break;
                             case 7:
                                 NextEvent = new skillmaster();
-                                Program.CurrentEvent = 7;
+                                Program.CurrentEvent = 0;
                                 break;
                         }
                         NextEvent.StartTournament();

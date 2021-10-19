@@ -100,12 +100,12 @@ namespace LightConquer_Project.Game.MsgMonster
         public MobItemGenerator(MonsterFamily family)
         {
             Family = family;
-            Refined = new MobRateWatcher(10);//500 / Family.Level);//1000 / Family.Level);
-            Unique = new MobRateWatcher(20);//2000 / Family.Level);//4000 / Family.Level);
-            Elite = new MobRateWatcher(25);//4000 / Family.Level);//8000 / Family.Level);
-            Super = new MobRateWatcher(30);//5000 / Family.Level);//10000 / Family.Level);
-            PlusOne = new MobRateWatcher(11);//2000 / Family.Level);//3000 / Family.Level);
-            PlusTwo = new MobRateWatcher(15);//4000 / Family.Level);//6000 / Family.Level);
+            Refined = new MobRateWatcher(15);//500 / Family.Level);//1000 / Family.Level);
+            Unique = new MobRateWatcher(30);//2000 / Family.Level);//4000 / Family.Level);
+            Elite = new MobRateWatcher(35);//4000 / Family.Level);//8000 / Family.Level);
+            Super = new MobRateWatcher(40);//5000 / Family.Level);//10000 / Family.Level);
+            PlusOne = new MobRateWatcher(20);//2000 / Family.Level);//3000 / Family.Level);
+            PlusTwo = new MobRateWatcher(40);//4000 / Family.Level);//6000 / Family.Level);
 
 
             DropHp = new MobRateWatcher(50);
@@ -113,10 +113,10 @@ namespace LightConquer_Project.Game.MsgMonster
 
             //MoonBox = new MobRateWatcher(700);
             //Study20 = new MobRateWatcher(70);
-            DragonBalls = new MobRateWatcher(130);//5000 / Family.Level);
+            DragonBalls = new MobRateWatcher(150);//5000 / Family.Level);
             //Stone = new MobRateWatcher(140);//5000 / Family.Level);
-            ExpBallEvent = new MobRateWatcher(30);//25
-            Meteor = new MobRateWatcher(75);//18
+            ExpBallEvent = new MobRateWatcher(35);//25
+            Meteor = new MobRateWatcher(65);//18
 
             //gems
             PhoenixGem = new MobRateWatcher(70);//2000 / Family.Level);//3000 / Family.Level);

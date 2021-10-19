@@ -215,11 +215,11 @@ namespace LightConquer_Project.Role
                 stream = upd.GetArray(stream);
                 killer.Player.View.SendView(stream, true);
                 killer.Player.Away = 0;
-                if (Common.PercentSuccess(5))
+                if (Common.PercentSuccess(3))
                 {
-                    int val = Program.GetRandom.Next(1, 10);
+                    int val = Program.GetRandom.Next(1, 5);
                     killer.Player.stickpoints += val;
-                    killer.SendSysMesage($"You got " + val + " Flag Stake Point Total: " + killer.Player.stickpoints + "  ", Game.MsgServer.MsgMessage.ChatMode.System, Game.MsgServer.MsgMessage.MsgColor.red);
+                    //killer.SendSysMesage($"You got " + val + " Flag Stake Point Total: " + killer.Player.stickpoints + "  ", Game.MsgServer.MsgMessage.ChatMode.System, Game.MsgServer.MsgMessage.MsgColor.red);
                 }
                 return;
 

@@ -64,7 +64,7 @@ namespace LightConquer_Project
         public static SendGlobalPacket SendGlobalPackets;
         public static PacketInvoker MsgInvoker;
         public static ServerSockets.ServerSocket GameServer;
-        public static string LastBoss;
+        public static int LastBoss;
 
         [DllImport("kernel32.dll")]
         private static extern bool SetConsoleCtrlHandler(ConsoleHandlerDelegate handler, bool add);

@@ -1326,7 +1326,7 @@ namespace LightConquer_Project.Game.MsgMonster
                         ushort rand = (ushort)(killer.Player.MyRandom.Next() % 1000);
                         byte count = 1;
                         #region SurpriseBox
-                        if (Common.PercentSuccess(0.1))//0.1
+                        if (Common.PercentSuccess(0.05))//0.1
                         {
                             Game.MsgNpc.Npc np = Game.MsgNpc.Npc.Create();
                             np.UID = uint.MaxValue - 61;
