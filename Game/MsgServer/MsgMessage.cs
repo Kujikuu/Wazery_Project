@@ -1666,7 +1666,7 @@ namespace LightConquer_Project.Game.MsgServer
                     case "dragon":
                         {
                             var Map = Database.Server.ServerMaps[1645];
-                            Program.LastBoss = "Dragon";
+                            //Program.LastBoss = "Dragon";
                             if (!Map.ContainMobID(20060))
                             {
                                 using (var rec = new ServerSockets.RecycledPacket())
@@ -1697,7 +1697,7 @@ namespace LightConquer_Project.Game.MsgServer
 
                     case "snow":
                         {
-                            Program.LastBoss = "Snow";
+                            //Program.LastBoss = "Snow";
                             var Map = Database.Server.ServerMaps[1002];
                             if (!Map.ContainMobID(20070))
                             {

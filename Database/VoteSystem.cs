@@ -87,7 +87,7 @@ namespace LightConquer_Project.Database
                         client.Player.DExpTime = 3600;
                         client.Player.CreateExtraExpPacket(stream);
                     }
-                    client.SendSysMesage(""[Xtremetop100] + client.Player.Name + " -Thank you for your support by voting.", ChatMode.TopLeft);
+                    client.SendSysMesage("[Xtremetop100] "+ client.Player.Name + " -Thank you for your support by voting.", ChatMode.TopLeft);
 
                     client.Player.StartVote = false;
                 }
